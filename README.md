@@ -72,7 +72,6 @@ Suggested packages:*.............
 x86_64*
 
     + находим свежую версию ядра для нашей архитектуры в репозитории [Ubuntu Mainline PPA](https://kernel.ubuntu.com/mainline)
-    ![alt text](image.png)
     + сохраняем ссылки на .deb-пакеты
     + в терминале создаем каталог **kernel** и сразу переходим в него
       ```
