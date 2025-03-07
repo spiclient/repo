@@ -197,7 +197,7 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
        ```
        sudo grub-set-default 0
        ```
-       >*user@nUbunta2204:~/kernel$ sudo grub-set-default 0  
+       >*user@nUbunta2204:~ /kernel$ sudo grub-set-default 0  
        user@nUbunta2204:~/kernel$*
 
     + перезагружаем систему
