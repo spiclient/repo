@@ -78,8 +78,8 @@ x86_64*
       ```
       mkdir kernel && cd kernel
       ```
-      >user@nUbuntu2204:~$ mkdir kernel && cd kernel  
-user@nUbuntu2204:~/kernel$
+      >*user@nUbuntu2204:~$ mkdir kernel && cd kernel
+      >user@nUbuntu2204:~/kernel$*
 
 
     + в каталог **kernel** загружаем последовательно **.deb**-пакеты с помощью команды ***wget*** и используя сохраненные ссылки
