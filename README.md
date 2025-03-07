@@ -79,7 +79,7 @@ x86_64*
       mkdir kernel && cd kernel
       ```
       >*user@nUbuntu2204:~$ mkdir kernel && cd kernel
-      >user@nUbuntu2204:~/kernel$*
+      user@nUbuntu2204:~/kernel$*
 
 
     + в каталог **kernel** загружаем последовательно **.deb**-пакеты с помощью команды ***wget*** и используя сохраненные ссылки
@@ -151,7 +151,7 @@ x86_64*
       Selecting previously unselected package linux-headers-6.14.0-061400rc5.  
       (Reading database ... 74801 files and directories currently installed.)  
       Preparing to unpack linux-headers-6.14.0-061400rc5_6.14.0-061400rc5.202503022109_all.deb ...  
-      Unpacking linux-headers-6.14.0-061400rc5 (6.14.0-061400rc5.202503022109) ...*
+      Unpacking linux-headers-6.14.0-061400rc5 (6.14.0-061400rc5.202503022109)* ...
 
     + проверяем, что ядро появилось в ***/boot***.
       ```
@@ -191,7 +191,7 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
       Warning: os-prober will not be executed to detect other bootable partitions.  
       Systems on them will not be added to the GRUB boot configuration.  
       Check GRUB_DISABLE_OS_PROBER documentation entry.
-done*
+      done*
 
     +  устанавливаем загрузку нового ядра по-умолчанию
        ```
