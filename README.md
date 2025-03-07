@@ -146,7 +146,7 @@ x86_64*
       ```
       sudo dpkg -i *.deb
       ```
-      >*user@nUbunta2204:~/kernel$ sudo dpkg -i *.deb  
+      >*user@nUbunta2204:~/kernel$ sudo dpkg -i* *.deb  
       [sudo] password for user:  
       Selecting previously unselected package linux-headers-6.14.0-061400rc5.  
       (Reading database ... 74801 files and directories currently installed.)  
