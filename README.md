@@ -78,7 +78,7 @@ x86_64*
       ```
       mkdir kernel && cd kernel
       ```
-      >*user@nUbuntu2204:*~*$mkdir kernel *&&* cd kernel  
+      >*user@nUbuntu2204:~ $mkdir kernel *&&* cd kernel  
       user@nUbuntu2204:~/kernel$*
 
 
