@@ -373,14 +373,28 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
         root@vbox:/opt/kernel/linux-5.15.179#*
 
      
-    + устанавливаем инструменты для сборки
+    + копируем конфигурацию текущего ядра
       ```
-      apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev
+      cp /boot/config-5.10.0-34-686-pae ./.config
       ```
-    + создаем файл конфигурации
+      >*root@vbox:/opt/kernel/linux-5.15.179# cp /boot/config-5.10.0-34-686-pae ./.config   
+        root@vbox:/opt/kernel/linux-5.15.179#*
+
+    + настраиваем функции и опции ядра (при необходимости) или оставляем всё по умолчанию 
       ```
-      make nconfig
+      make menuconfig
       ```
+      >*root@vbox:/opt/kernel/linux-5.15.179# make menuconfig   
+       HOSTCC  scripts/basic/fixdep   
+       UPD     scripts/kconfig/mconf-cfg   
+       HOSTCC  scripts/kconfig/mconf.o   
+       HOSTCC  scripts/kconfig/lxdialog/checklist.o   
+       HOSTCC  scripts/kconfig/lxdialog/inputbox.o   
+       HOSTCC  scripts/kconfig/lxdialog/menubox.o   
+       HOSTCC  scripts/kconfig/lxdialog/textbox.o*
+
+   
+
     + открываем редактором файл конфигурации, находим строки *debian/canonical-certs.pem* и удаляем их
       ```
       nano .config
