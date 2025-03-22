@@ -367,8 +367,11 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
 
     + переходим в каталог c распакованным архивом
       ```
-      cd linux-6.13.5
+      cd linux-5.15.179
       ```
+      >*root@vbox:/opt/kernel# cd linux-5.15.179   
+        root@vbox:/opt/kernel/linux-5.15.179#*
+
      
     + устанавливаем инструменты для сборки
       ```
