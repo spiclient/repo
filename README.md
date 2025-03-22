@@ -12,9 +12,9 @@
    + Вариант 2. Собрать ядро из исходных кодов.
    + Оформить отчет в README-файле в GitHub-репозитории.
 ## Выполнение
-1. Скачиваем **iso**-образ [Ubuntu 22.04.5](https://www.releases.ubuntu.com/22.04/) с официального сайта.
-2. В **VirtualBox** создаём виртуальную машину из скачанного образа и запускаем её.
-3. Выполняем предварительную настройку системы: 
+1. Скачиваем **iso**-образы [Ubuntu 22.04.5](https://www.releases.ubuntu.com/22.04/) и [Debian 11.0.0](https://cdimage.debian.org/cdimage/archive/11.0.0/i386/iso-dvd/debian-11.0.0-i386-DVD-1.iso) с официального сайта.
+2. В **VirtualBox** создаём виртуальные машины из скачанных образов, при разворачивании ВМ из Debian-образа устанавливаем дополнительно компонент ssh-server.
+3. Выполняем предварительную настройку системы Ubuntu: 
     + устанавливаем пароль на суперпользователя **root**
       ```
       sudo passwd
@@ -54,8 +54,49 @@ Suggested packages:
              └─1846 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
 
     + подключаемся к терминалу ВМ используя программу MobaXterm
+      
+4. Выполняем предварительную настройку системы Debian: 
+    + устанавливаем пароль на суперпользователя **root**
+      ```
+      sudo passwd
+      ```
+      >*user@nUbuntu2204:~$ sudo passwd  
+      [sudo] password for user:  
+      New password:  
+      Retype new password:  
+      passwd: password updated successfully*
+
+    + устанавливаем **ssh-server**
+      ```
+      sudo apt install openssh-server
+      ```
+      >*user@nUbuntu2204:~$ sudo apt install openssh-server  
+Reading package lists... Done  
+Building dependency tree... Done  
+Reading state information... Done  
+Suggested packages:  
+....................*
+
+    + проверяем статус **ssh**
+      ```
+      systemctl status ssh
+      ```
+      >*user@nUbuntu2204:~$ systemctl status ssh  
+● ssh.service - OpenBSD Secure Shell server  
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)  
+     Active: active (running) since Thu 2025-03-06 16:22:24 UTC; 18min ago  
+       Docs: man:sshd(8)  
+             man:sshd_config(5)  
+   Main PID: 1846 (sshd)  
+      Tasks: 1 (limit: 2224)  
+     Memory: 4.0M  
+        CPU: 211ms  
+     CGroup: /system.slice/ssh.service  
+             └─1846 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
+
+    + подключаемся к терминалу ВМ используя программу MobaXterm    
     
-    
+
       
 4. **Вариант 1.** Обновление ядра из mainline-репозитория
    + проверяем версию ядра 
