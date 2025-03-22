@@ -52,53 +52,38 @@ Suggested packages:
         CPU: 211ms  
      CGroup: /system.slice/ssh.service  
              └─1846 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
-
-    + подключаемся к терминалу ВМ используя программу MobaXterm
-      
+     
 4. Выполняем предварительную настройку системы Debian: 
     + устанавливаем пароль на суперпользователя **root**
       ```
-      sudo passwd
+      passwd root
       ```
-      >*user@nUbuntu2204:~$ sudo passwd  
-      [sudo] password for user:  
+      >*root@vbox:/home/user# passwd root  
       New password:  
       Retype new password:  
       passwd: password updated successfully*
-
-    + устанавливаем **ssh-server**
-      ```
-      sudo apt install openssh-server
-      ```
-      >*user@nUbuntu2204:~$ sudo apt install openssh-server  
-Reading package lists... Done  
-Building dependency tree... Done  
-Reading state information... Done  
-Suggested packages:  
-....................*
 
     + проверяем статус **ssh**
       ```
       systemctl status ssh
       ```
-      >*user@nUbuntu2204:~$ systemctl status ssh  
+      >*root@vbox:/home/user# systemctl status ssh  
 ● ssh.service - OpenBSD Secure Shell server  
      Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)  
-     Active: active (running) since Thu 2025-03-06 16:22:24 UTC; 18min ago  
+     Active: active (running) since Sat 2025-03-22 11:09:32 MSK; 28min ago  
        Docs: man:sshd(8)  
-             man:sshd_config(5)  
-   Main PID: 1846 (sshd)  
-      Tasks: 1 (limit: 2224)  
-     Memory: 4.0M  
-        CPU: 211ms  
+             man:sshd_config(5)
+   Process: 381 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 391 (sshd)  
+      Tasks: 1 (limit: 4915)  
+     Memory: 5.9M  
+        CPU: 915ms  
      CGroup: /system.slice/ssh.service  
-             └─1846 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
+             └─391 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
 
-    + подключаемся к терминалу ВМ используя программу MobaXterm    
-    
-
-      
-4. **Вариант 1.** Обновление ядра из mainline-репозитория
+5. Подключаемся к терминалу ВМ используя программу MobaXterm
+   
+6. **Вариант 1.** Обновление ядра из mainline-репозитория
    + проверяем версию ядра 
       ```
       uname -r
