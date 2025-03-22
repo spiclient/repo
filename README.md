@@ -416,7 +416,21 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       cd ..
       ls -l
       ```
-      >
+      >*root@vbox:/opt/kernel/linux-5.15.179# cd ..   
+        root@vbox:/opt/kernel# ls -l   
+        total 1084720   
+       drwxrwxr-x 26 root root      4096 Mar 22 22:55 linux-5.15.179   
+       -rw-r--r--  1 root root 126736344 Mar 13 14:58 linux-5.15.179.tar.xz   
+       -rw-r--r--  1 root root   8152472 Mar 22 22:59 linux-headers-5.15.179_5.15.179-1_i386.deb   
+       -rw-r--r--  1 root root  47138488 Mar 22 23:01 linux-image-5.15.179_5.15.179-1_i386.deb   
+       -rw-r--r--  1 root root 723431432 Mar 22 23:28 linux-image-5.15.179-dbg_5.15.179-1_i386.deb   
+       -rw-r--r--  1 root root   1199688 Mar 22 22:59 linux-libc-dev_5.15.179-1_i386.deb   
+       -rw-r--r--  1 root root    266425 Mar 22 14:52 linux-upstream_5.15.179-1.diff.gz   
+       -rw-r--r--  1 root root      1133 Mar 22 14:52 linux-upstream_5.15.179-1.dsc   
+       -rw-r--r--  1 root root      5656 Mar 22 23:28 linux-upstream_5.15.179-1_i386.buildinfo   
+       -rw-r--r--  1 root root      3102 Mar 22 23:28 linux-upstream_5.15.179-1_i386.changes   
+       -rw-r--r--  1 root root 203750285 Mar 22 14:51 linux-upstream_5.15.179.orig.tar.gz*   
+
     + устанавливаем все **.deb**-пакеты
       ```
       dpkg -i linux-*.deb
