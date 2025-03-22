@@ -245,15 +245,17 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
       >*user@vbox:~$ uname -r  
       5.10.0-34-686-pae*
 
-    + проверяем архитектуру ядра
-      ```
-      uname -p
-      ```
-      >*user@nUbuntu2204:~$ uname -p  
-x86_64*
-    + открываем сайт [Kernel.org](https://kernel.org/) и копируем ссылку на архив исходников ядра
+    + открываем сайт [Kernel.org](https://kernel.org/) и копируем ссылку на архив исходников ядра 5.15.179
       
-    + в терминале переходим в каталог ***root***
+    + переключаемся в суперпользователя
+      ```
+      su root
+      ```
+      >*user@vbox:~$ su root   
+        Password:   
+        root@vbox:/home/user#*
+
+    +  в терминале переходим в каталог ***root***
       ```
       cd /root
       ```
