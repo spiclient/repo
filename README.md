@@ -5,7 +5,7 @@
 ## Программные средства
 + VirtualBox 7.1.6
 + Visual Studio Code 1.97.2
-+ PuTTY 0.73
++ MobaXterm
 ## Описание домашнего задания:
    + Запустить ВМ c Ubuntu.
    + Вариант 1. Обновить ядро ОС на новейшую стабильную версию из mainline-репозитория.
@@ -53,7 +53,7 @@ Suggested packages:
      CGroup: /system.slice/ssh.service  
              └─1846 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
 
-    + подключаемся к терминалу ВМ используя программу PuTTy
+    + подключаемся к терминалу ВМ используя программу MobaXterm
     
     
       
