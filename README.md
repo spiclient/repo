@@ -255,25 +255,28 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
         Password:   
         root@vbox:/home/user#*
 
-    +  добавляем репозиторий *https://ftp.de.debian.org/debian* в файл /etc/apt/sources.list и комментируем строки с названием *deb cdrom*
+    +  добавляем репозиторий *http://ftp.de.debian.org/debian bullseye main* в файл /etc/apt/sources.list и комментируем строки с названием *deb cdrom* с помощью #
       ```
       nano /etc/apt/sources.list
       ```
-      >*deb https://ftp.de.debian.org/debian bullseye main   
+      >*deb http://ftp.de.debian.org/debian bullseye main   
         # deb cdrom:[Debian GNU/Linux 11.0.0 _Bullseye_ - Official i386 DVD Binary-1 20210814-10:0>   
         # deb cdrom:[Debian GNU/Linux 11.0.0 _Bullseye_ - Official i386 DVD Binary-1 20210814-10:0>
-
-
     + обновляем пакеты
       ```
-      apt-get dist-upgrade
+      apt update
       ```
-      >*root@vbox:/home/user# apt-get dist-upgrade   
-        Reading package lists... Done   
-        Building dependency tree... Done   
-        Reading state information... Done   
-        Calculating upgrade... Done   
-        0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.*
+      >*root@vbox:/home/user# apt update   
+       Hit:1 http://security.debian.org/debian-security bullseye-security InRelease
+       Get:2 http://ftp.de.debian.org/debian bullseye InRelease [116 kB]
+       Get:3 http://ftp.de.debian.org/debian bullseye/main i386 Packages [8,007 kB]
+       Get:4 http://ftp.de.debian.org/debian bullseye/main Translation-en [6,235 kB]
+       Fetched 14.4 MB in 11s (1,291 kB/s)
+       Reading package lists... Done
+       Building dependency tree... Done
+       Reading state information... Done
+       50 packages can be upgraded. Run 'apt list --upgradable' to see them.
+*
 
       
     + загружаем архив исходников ядра с помощью команды ***wget*** и используя сохраненную ссылку
