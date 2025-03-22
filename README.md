@@ -411,7 +411,7 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       ```
       make deb-pkg 
       ```
-      >..........................................
+      >..........................................   
       *HDRINST usr/include/asm/errno.h   
       HDRINST usr/include/asm/ioctls.h   
       HDRINST usr/include/asm/unistd_64.h   
