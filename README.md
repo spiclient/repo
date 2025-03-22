@@ -323,8 +323,18 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
 
     + загружаем архив исходников ядра с помощью команды ***wget*** и используя сохраненную ссылку
       ```
-      wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.5.tar.xz
+      wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.179.tar.xz
       ```
+      >*root@vbox:/opt/kernel# wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.179.tar.xz   
+       --2025-03-22 13:23:56--  https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.179.tar.xz   
+       Resolving cdn.kernel.org (cdn.kernel.org)... 151.101.85.176, 2a04:4e42:14::432   
+       Connecting to cdn.kernel.org (cdn.kernel.org)|151.101.85.176|:443... connected.   
+       HTTP request sent, awaiting response... 200 OK   
+       Length: 126736344 (121M) [application/x-xz]   
+       Saving to: ‘linux-5.15.179.tar.xz’   
+       linux-5.15.179.tar.xz      100%[=======================================>] 120.86M  9.25MB/s    in 13s   
+       2025-03-22 13:24:09 (9.52 MB/s) - ‘linux-5.15.179.tar.xz’ saved [126736344/126736344]*
+
     + разархивируем скачанный архив 
        ```
        tar -Jxvf linux-6.13.5.tar.xz
