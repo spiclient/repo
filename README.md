@@ -402,7 +402,8 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       ```
       >*root@vbox:/opt/kernel/linux-5.15.179# nano .config   
        root@vbox:/opt/kernel/linux-5.15.179#*
-      >#CONFIG_SYSTEM_TRUSTED_KEYRING=y      
+      
+      >#CONFIG_SYSTEM_TRUSTED_KEYRING=y          
        #CONFIG_SYSTEM_TRUSTED_KEYS="debian/certs/debian-uefi-certs.pem"
    
 
