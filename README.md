@@ -81,9 +81,9 @@ Suggested packages:
      CGroup: /system.slice/ssh.service  
              └─391 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
 
-5. Подключаемся к терминалу ВМ используя программу MobaXterm
+5. Подключаемся к терминалам ВМ используя программу MobaXterm
    
-6. **Вариант 1.** Обновление ядра из mainline-репозитория
+6. **Вариант 1.** Обновление ядра из mainline-репозитория. Ubuntu 22.04.5
    + проверяем версию ядра 
       ```
       uname -r
@@ -238,14 +238,15 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
       6.14.0-061400rc5-generic*
 
      
-1. **Вариант 2.** Собрать ядро из исходных кодов
+7. **Вариант 2.** Собрать ядро из исходных кодов
   
     + проверяем версию ядра 
       ```
       uname -r
       ```
-      >*user@nUbuntu2204:~$ uname -r  
-5.15.0-134-generic*
+      >*user@vbox:~$ uname -r
+5.10.0-34-686-pae
+user@vbox:~$*
 
     + проверяем архитектуру ядра
       ```
