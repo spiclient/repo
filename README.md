@@ -337,8 +337,34 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
 
     + разархивируем скачанный архив 
        ```
-       tar -Jxvf linux-6.13.5.tar.xz
+       tar xvf linux-5.15.179.tar.xz
        ```
+       >*root@vbox:/opt/kernel# tar xvf linux-5.15.179.tar.xz   
+        linux-5.15.179/   
+        linux-5.15.179/.clang-format   
+        linux-5.15.179/.cocciconfig   
+        linux-5.15.179/.get_maintainer.ignore   
+        linux-5.15.179/.gitattributes   
+        linux-5.15.179/.gitignore   
+        linux-5.15.179/.mailmap   
+        linux-5.15.179/COPYING   
+        linux-5.15.179/CREDITS   
+        linux-5.15.179/Documentation/   
+        linux-5.15.179/Documentation/.gitignore   
+        linux-5.15.179/Documentation/ABI/   
+        linux-5.15.179/Documentation/ABI/README   
+        linux-5.15.179/Documentation/ABI/obsolete/   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-bus-iio   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-bus-usb   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-class-dax   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-class-typec   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-cpuidle   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-driver-hid-roccat-arvo   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-driver-hid-roccat-isku   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-driver-hid-roccat-koneplus   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-driver-hid-roccat-konepure   
+        linux-5.15.179/Documentation/ABI/obsolete/sysfs-driver-hid-roccat-kovaplus*
+
     + переходим в каталог c распакованным архивом
       ```
       cd linux-6.13.5
