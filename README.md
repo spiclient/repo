@@ -255,7 +255,7 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
         Password:   
         root@vbox:/home/user#*
 
-    +  добавляем репозиторий *http://ftp.de.debian.org/debian bullseye main* в файл /etc/apt/sources.list и комментируем строки с названием *deb cdrom* с помощью #
+    +  добавляем репозиторий *http://ftp.de.debian.org/debian bullseye main* в файл /etc/apt/sources.list и комментируем строки с названием *deb cdrom* с помощью # решетки
       ```
       nano /etc/apt/sources.list
       ```
