@@ -275,10 +275,28 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
        Reading package lists... Done
        Building dependency tree... Done
        Reading state information... Done
-       50 packages can be upgraded. Run 'apt list --upgradable' to see them.
-*
+       50 packages can be upgraded. Run 'apt list --upgradable' to see them.*
 
-      
+      ```
+      apt-get dist-upgrade
+      ```
+      >*root@vbox:/home/user# apt-get dist-upgrade   
+       Reading package lists... Done   
+       Building dependency tree... Done   
+       Reading state information... Done   
+       Calculating upgrade... Done   
+       The following packages will be upgraded:   
+       adduser base-files bash cpio dbus debian-archive-keyring dpkg grep isc-dhcp-client isc-dhcp-common   
+       libbsd0 libc-bin libc-l10n libc6 libdbus-1-3 libfreetype6 libgmp10 libncurses6 libncursesw6   
+       libnftables1 libpam-modules libpam-modules-bin libpam-runtime libpam0g libpcre2-8-0 libseccomp2   
+       libssh2-1 libtinfo6 locales logrotate nano ncurses-base ncurses-bin ncurses-term nftables publicsuffix         python3-idna python3-reportbug reportbug sysvinit-utils tar task-english task-ssh-server tasksel   
+       tasksel-data traceroute vim-common vim-tiny wget xxd   
+       50 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.   
+       Need to get 23.6 MB of archives.   
+       After this operation, 87.0 kB of additional disk space will be used.   
+       Do you want to continue? [Y/n] y   
+       Get:1 http://ftp.de.debian.org/debian bullseye/main i386 base-files i386 11.1+deb11u11 [70.2 kB]*
+
     + загружаем архив исходников ядра с помощью команды ***wget*** и используя сохраненную ссылку
       ```
       wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.5.tar.xz
