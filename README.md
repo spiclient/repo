@@ -264,6 +264,18 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
         # deb cdrom:[Debian GNU/Linux 11.0.0 _Bullseye_ - Official i386 DVD Binary-1 20210814-10:0>
 
 
+    + обновляем пакеты
+      ```
+      apt-get dist-upgrade
+      ```
+      >*root@vbox:/home/user# apt-get dist-upgrade   
+        Reading package lists... Done   
+        Building dependency tree... Done   
+        Reading state information... Done   
+        Calculating upgrade... Done   
+        0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.*
+
+      
     + загружаем архив исходников ядра с помощью команды ***wget*** и используя сохраненную ссылку
       ```
       wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.5.tar.xz
