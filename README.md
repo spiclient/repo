@@ -314,6 +314,13 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
         libutempter0 libwebp6 libxpm4 linux-libc-dev m4 manpages-dev patch pinentry-curses zlib1g-dev   
         Suggested packages:*
 
+    + в каталоге */opt/* создаём папку **kernel** в которой будем компилировать ядро и сразу переходим в неё
+      ```
+      cd /opt/ ; mkdir kernel && cd kernel
+      ```
+      >*root@vbox:/home/user# cd /opt/ ; mkdir kernel && cd kernel   
+        root@vbox:/opt/kernel#*
+
     + загружаем архив исходников ядра с помощью команды ***wget*** и используя сохраненную ссылку
       ```
       wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.5.tar.xz
