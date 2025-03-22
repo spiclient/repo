@@ -82,7 +82,7 @@ Suggested packages:
              └─391 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
 
 5. Подключаемся к терминалам ВМ используя программу MobaXterm
-6. **Вариант 1.** Обновление ядра из mainline-репозитория. Ubuntu 22.04.5
+6. **Вариант 1.** Обновление ядра из mainline-репозитория. **Ubuntu 22.04.5**
    + проверяем версию ядра 
       ```
       uname -r
@@ -236,7 +236,7 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
       >*user@nUbunta2204:~$ uname -r  
       6.14.0-061400rc5-generic*
      
-7. **Вариант 2.** Собрать ядро из исходных кодов. Debian 11.0.0
+7. **Вариант 2.** Собрать ядро из исходных кодов. **Debian 11.0.0**
   
     + проверяем версию ядра 
       ```
@@ -296,6 +296,23 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
        After this operation, 87.0 kB of additional disk space will be used.   
        Do you want to continue? [Y/n] y   
        Get:1 http://ftp.de.debian.org/debian bullseye/main i386 base-files i386 11.1+deb11u11 [70.2 kB]*
+
+    + устанавливаем пакеты для компиляции ядра
+      ```
+      apt install make gcc libncurses-dev flex bison libssl-dev libelf-dev fakeroot rsync dpkg-dev bc screen -y
+      ```
+      >*root@vbox:/home/user# apt install make gcc libncurses-dev flex bison libssl-dev libelf-dev fakeroot    
+        rsync dpkg-dev bc screen -y   
+        Reading package lists... Done   
+        Building dependency tree... Done   
+        Reading state information... Done   
+        The following additional packages will be installed:   
+        binutils binutils-common binutils-i686-linux-gnu build-essential cpp cpp-10 dirmngr fontconfig-config          fonts-dejavu-core g++ g++-10 gcc-10 gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client   
+        gpg-wks-server gpgconf gpgsm libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl          libasan6 libassuan0 libatomic1 libbinutils libc-dev-bin libc-devtools libc6-dev libcc1-0 libcrypt-dev          libctf-nobfd0 libctf0 libdeflate0 libdpkg-perl libfakeroot libfile-fcntllock-perl libfl-dev libfl2   
+        libfontconfig1 libgcc-10-dev libgd3 libgomp1 libisl23 libitm1 libjbig0 libjpeg62-turbo libksba8 libmpc3   
+        libmpfr6 libnpth0 libnsl-dev libquadmath0 libsigsegv2 libstdc++-10-dev libtiff5 libtirpc-dev libubsan1   
+        libutempter0 libwebp6 libxpm4 linux-libc-dev m4 manpages-dev patch pinentry-curses zlib1g-dev   
+        Suggested packages:*
 
     + загружаем архив исходников ядра с помощью команды ***wget*** и используя сохраненную ссылку
       ```
