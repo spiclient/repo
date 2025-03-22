@@ -255,10 +255,15 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
         Password:   
         root@vbox:/home/user#*
 
-    +  в терминале переходим в каталог ***root***
+    +  добавляем репозиторий *https://ftp.de.debian.org/debian* в файл /etc/apt/sources.list и комментируем строки с названием *deb cdrom*
       ```
-      cd /root
+      nano /etc/apt/sources.list
       ```
+      >*deb https://ftp.de.debian.org/debian bullseye main   
+        # deb cdrom:[Debian GNU/Linux 11.0.0 _Bullseye_ - Official i386 DVD Binary-1 20210814-10:0>   
+        # deb cdrom:[Debian GNU/Linux 11.0.0 _Bullseye_ - Official i386 DVD Binary-1 20210814-10:0>
+
+
     + загружаем архив исходников ядра с помощью команды ***wget*** и используя сохраненную ссылку
       ```
       wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.5.tar.xz
