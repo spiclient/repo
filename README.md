@@ -411,6 +411,22 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       ```
       make deb-pkg 
       ```
+      >..........................................
+      *HDRINST usr/include/asm/errno.h   
+      HDRINST usr/include/asm/ioctls.h   
+      HDRINST usr/include/asm/unistd_64.h   
+      HDRINST usr/include/asm/termios.h   
+      HDRINST usr/include/asm/types.h   
+      INSTALL debian/linux-libc-dev/usr/include   
+      dpkg-deb: building package 'linux-libc-dev' in '../linux-libc-dev_5.15.179-1_i386.deb'.   
+      dpkg-deb: building package 'linux-image-5.15.179' in '../linux-image-5.15.179_5.15.179-1_i386.deb'.   
+      dpkg-deb: building package 'linux-image-5.15.179-dbg' in '../linux-image-5.15.179-dbg_5.15.179-1_i386.deb'.   
+      dpkg-genbuildinfo   
+      dpkg-genchanges  >../linux-upstream_5.15.179-1_i386.changes   
+      dpkg-genchanges: info: including full source code in upload   
+      dpkg-source -i.git --after-build .   
+      dpkg-buildpackage: info: full upload (original source is included)*
+
     + после завершения компиляции ядра, переходим в родительский каталог и проверяем наличие **.deb**-пакетов.
       ```
       cd ..
