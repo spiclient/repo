@@ -53,7 +53,7 @@ Suggested packages:
      CGroup: /system.slice/ssh.service  
              └─1846 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
      
-4. Выполняем предварительную настройку системы Debian: 
+4. Выполняем предварительную настройку системы **Debian**: 
     + устанавливаем пароль на суперпользователя **root**
       ```
       passwd root
