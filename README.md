@@ -471,5 +471,7 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       ```
       uname -r
       ```
-      >
+      >*user@vbox:~$ uname -r   
+        5.15.179*
+
    
