@@ -393,7 +393,7 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
        HOSTCC  scripts/kconfig/lxdialog/menubox.o   
        HOSTCC  scripts/kconfig/lxdialog/textbox.o*
 
-       + открываем редактором файл конфигурации ядра и удаляем или комментируем строки: *CONFIG_SYSTEM_TRUSTED_KEYRING=y,
+     + открываем редактором файл конфигурации ядра и удаляем или комментируем строки: *CONFIG_SYSTEM_TRUSTED_KEYRING=y,
 CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем использование доверенных серификатов). 
       ```
       nano .config
@@ -462,7 +462,7 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
         Preparing to unpack linux-image-5.15.179-dbg_5.15.179-1_i386.deb ...   
         Unpacking linux-image-5.15.179-dbg (5.15.179-1) ..._
 
-    + ВАЖНО!!! Если команда не выполняется и появляется следующий текст,
+    + **ВАЖНО!!!** Если команда не выполняется и появляется следующий текст,
       >_root@vbox:/opt/kernel# dpkg -i linux-*.deb   
        dpkg: warning: 'ldconfig' not found in PATH or not executable   
        dpkg: warning: 'start-stop-daemon' not found in PATH or not executable   
