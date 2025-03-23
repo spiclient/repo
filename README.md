@@ -4,7 +4,6 @@
 + Научиться обновлять ядро в ОС Linux.
 ## Программные средства
 + VirtualBox 7.1.6
-+ Visual Studio Code 1.97.2
 + MobaXterm
 ## Описание домашнего задания:
    + Запустить ВМ c Ubuntu или Debian.
