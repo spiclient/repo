@@ -411,7 +411,7 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       ```
       make deb-pkg 
       ```
-      >..........................................   
+      >..........*ниже завершающийся этап сборки*............   
       *HDRINST usr/include/asm/errno.h   
       HDRINST usr/include/asm/ioctls.h   
       HDRINST usr/include/asm/unistd_64.h   
@@ -430,6 +430,8 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
     + после завершения компиляции ядра, переходим в родительский каталог и проверяем наличие **.deb**-пакетов.
       ```
       cd ..
+      ```
+      ```
       ls -l
       ```
       >*root@vbox:/opt/kernel/linux-5.15.179# cd ..   
@@ -451,7 +453,7 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       ```
       dpkg -i linux-*.deb
       ```
-      >*root@vbox:/opt/kernel# dpkg -i linux-*.deb   
+      >_root@vbox:/opt/kernel# dpkg -i linux-*.deb   
         Selecting previously unselected package linux-headers-5.15.179.   
        (Reading database ... 39839 files and directories currently installed.)   
         Preparing to unpack linux-headers-5.15.179_5.15.179-1_i386.deb ...   
@@ -461,7 +463,7 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
         Unpacking linux-image-5.15.179 (5.15.179-1) ...   
         Selecting previously unselected package linux-image-5.15.179-dbg.   
         Preparing to unpack linux-image-5.15.179-dbg_5.15.179-1_i386.deb ...   
-        Unpacking linux-image-5.15.179-dbg (5.15.179-1) ...*
+        Unpacking linux-image-5.15.179-dbg (5.15.179-1) ..._
 
     + ВАЖНО! Если команда не выполняется и появляется следующий текст:
       >_root@vbox:/opt/kernel# dpkg -i linux-*.deb   
@@ -477,12 +479,12 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       ```
       root@vbox:~# nano .bashrc
       ```
-      >*export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin   
-       # ~/.bashrc: executed by bash(1) for non-login shells.   
-       # Note: PS1 and umask are already set in /etc/profile. You should not   
-       # need this unless you want different defaults for root.   
-       # PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '   
-       # umask 022
+      >_export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin   
+       #~/.bashrc: executed by bash(1) for non-login shells.   
+       #Note: PS1 and umask are already set in /etc/profile. You should not   
+       #need this unless you want different defaults for root.   
+       #PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '   
+       #umask 022_
       
     + после успешной установки **.deb**-пакетов перезагружаем систему
       ```
