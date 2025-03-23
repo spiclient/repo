@@ -451,7 +451,18 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
       ```
       dpkg -i linux-*.deb
       ```
-      >
+      >*root@vbox:/opt/kernel# dpkg -i linux-*.deb   
+        Selecting previously unselected package linux-headers-5.15.179.   
+       (Reading database ... 39839 files and directories currently installed.)   
+        Preparing to unpack linux-headers-5.15.179_5.15.179-1_i386.deb ...   
+        Unpacking linux-headers-5.15.179 (5.15.179-1) ...   
+        Selecting previously unselected package linux-image-5.15.179.   
+        Preparing to unpack linux-image-5.15.179_5.15.179-1_i386.deb ...   
+        Unpacking linux-image-5.15.179 (5.15.179-1) ...   
+        Selecting previously unselected package linux-image-5.15.179-dbg.   
+        Preparing to unpack linux-image-5.15.179-dbg_5.15.179-1_i386.deb ...   
+        Unpacking linux-image-5.15.179-dbg (5.15.179-1) ...*
+
     + перезагружаем систему
       ```
       systemctl reboot
