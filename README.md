@@ -13,8 +13,8 @@
    + Оформить отчет в README-файле в GitHub-репозитории.
 ## Выполнение
 1. Скачиваем **iso**-образы [Ubuntu 22.04.5](https://www.releases.ubuntu.com/22.04/) и [Debian 11.0.0](https://cdimage.debian.org/cdimage/archive/11.0.0/i386/iso-dvd/debian-11.0.0-i386-DVD-1.iso) с официального сайта.
-2. В **VirtualBox** создаём виртуальные машины из скачанных образов. При разворачивании ВМ из Debian-образа устанавливаем дополнительно компонент ssh-server.
-3. Выполняем предварительную настройку системы Ubuntu: 
+2. В **VirtualBox** создаём виртуальные машины из скачанных образов. При разворачивании ВМ из Debian-образа устанавливаем дополнительно компонент *ssh-server*.
+3. Выполняем предварительную настройку системы **Ubuntu**: 
     + устанавливаем пароль на суперпользователя **root**
       ```
       sudo passwd
@@ -463,7 +463,28 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
         Preparing to unpack linux-image-5.15.179-dbg_5.15.179-1_i386.deb ...   
         Unpacking linux-image-5.15.179-dbg (5.15.179-1) ...*
 
-    + перезагружаем систему
+    + ВАЖНО! Если команда не выполняется и появляется следующий текст:
+      >_root@vbox:/opt/kernel# dpkg -i linux-*.deb   
+       dpkg: warning: 'ldconfig' not found in PATH or not executable   
+       dpkg: warning: 'start-stop-daemon' not found in PATH or not executable   
+       dpkg: error: 2 expected programs not found in PATH or not executable   
+       Note: root's PATH should usually contain /usr/local/sbin, /usr/sbin and /sbin_
+
+      то необходимо в файл  */root/.bashrc* прописать строку *export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin*, перезагрузить систему и повторить повторно команду __dpkg -i linux-*.deb__
+      ```
+      root@vbox:/opt/kernel# cd /root/
+      ```
+      ```
+      root@vbox:~# nano .bashrc
+      ```
+      >*export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin   
+       # ~/.bashrc: executed by bash(1) for non-login shells.   
+       # Note: PS1 and umask are already set in /etc/profile. You should not   
+       # need this unless you want different defaults for root.   
+       # PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '   
+       # umask 022
+      
+    + после успешной установки **.deb**-пакетов перезагружаем систему
       ```
       reboot
       ```
