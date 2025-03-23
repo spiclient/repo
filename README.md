@@ -394,15 +394,15 @@ lrwxrwxrwx  1 root root        26 Mar  7 05:05 vmlinuz.old -> vmlinuz-5.15.0-134
        HOSTCC  scripts/kconfig/lxdialog/textbox.o*
 
      + открываем редактором файл конфигурации ядра и удаляем или комментируем строки: *CONFIG_SYSTEM_TRUSTED_KEYRING=y,
-CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем использование доверенных серификатов). 
-      ```
-      nano .config
-      ```
-      >*root@vbox:/opt/kernel/linux-5.15.179# nano .config   
-       root@vbox:/opt/kernel/linux-5.15.179#*
+CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем использование доверенных серификатов).   
+       ```
+       nano .config
+       ```
+       >*root@vbox:/opt/kernel/linux-5.15.179# nano .config   
+         root@vbox:/opt/kernel/linux-5.15.179#*
       
-      >#CONFIG_SYSTEM_TRUSTED_KEYRING=y          
-       #CONFIG_SYSTEM_TRUSTED_KEYS="debian/certs/debian-uefi-certs.pem"
+       >#CONFIG_SYSTEM_TRUSTED_KEYRING=y          
+        #CONFIG_SYSTEM_TRUSTED_KEYS="debian/certs/debian-uefi-certs.pem"
    
     + запускаем сборку ядра
       ```
