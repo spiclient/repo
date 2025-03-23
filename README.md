@@ -465,7 +465,7 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
 
     + перезагружаем систему
       ```
-      systemctl reboot
+      reboot
       ```
     + проверяем версию ядра 
       ```
