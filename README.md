@@ -469,7 +469,7 @@ CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"* (отключаем и�
        dpkg: error: 2 expected programs not found in PATH or not executable   
        Note: root's PATH should usually contain /usr/local/sbin, /usr/sbin and /sbin_
 
-      то необходимо в файл  */root/.bashrc* прописать строку *export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin*, перезагрузить систему и повторить повторно команду ___dpkg -i linux-*.deb___
+      то необходимо в файл  */root/.bashrc* прописать строку *export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin*, перезагрузить систему и повторить команду ___dpkg -i linux-*.deb___
       ```
       root@vbox:/opt/kernel# cd /root/
       ```
