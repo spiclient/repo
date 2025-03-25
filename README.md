@@ -36,15 +36,15 @@ sdg      8:96   0    2G  0 disk*
    ```
    sudo lshw -short | grep disk
    ```
->*user@nUbunta2204:~$ sudo lshw -short | grep disk
-[sudo] password for user:
-/0/100/d/0      /dev/sda   disk        26GB VBOX HARDDISK
-/0/100/d/1      /dev/sdb   disk        2147MB VBOX HARDDISK
-/0/100/d/2      /dev/sdc   disk        2147MB VBOX HARDDISK
-/0/100/d/3      /dev/sdd   disk        2147MB VBOX HARDDISK
-/0/100/d/4      /dev/sde   disk        2147MB VBOX HARDDISK
-/0/100/d/5      /dev/sdf   disk        2147MB VBOX HARDDISK
-/0/100/d/0.0.0  /dev/sdg   disk        2147MB VBOX HARDDISK*
+   >*user@nUbunta2204:~$ sudo lshw -short | grep disk
+   [sudo] password for user:
+   /0/100/d/0      /dev/sda   disk        26GB VBOX HARDDISK
+   /0/100/d/1      /dev/sdb   disk        2147MB VBOX HARDDISK
+   /0/100/d/2      /dev/sdc   disk        2147MB VBOX HARDDISK
+   /0/100/d/3      /dev/sdd   disk        2147MB VBOX HARDDISK
+   /0/100/d/4      /dev/sde   disk        2147MB VBOX HARDDISK
+   /0/100/d/5      /dev/sdf   disk        2147MB VBOX HARDDISK
+   /0/100/d/0.0.0  /dev/sdg   disk        2147MB VBOX HARDDISK*
 
 3. Проверяем наличие в системе *raid*-массивов или их отсутствие.
    ```
