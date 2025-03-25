@@ -130,7 +130,7 @@ Consistency Policy : resync
 [sudo] password for user:   
 mdadm: set /dev/sde faulty in /dev/md0*
 
-8. Проверяем состояние *raid*-массива
+8. Проверяем состояние *raid*-массива.
    ```
    cat /proc/mdstat
    ```
@@ -173,5 +173,29 @@ Consistency Policy : resync
        5       8       96        5      active sync set-B   /dev/sdg   
        3       8       64        -      faulty   /dev/sde*   
    
-10. 
+10. Удаляем сбойный диск из *raid*-массива.
+    ```
+    mdadm /dev/md0 --remove /dev/sde
+    ```
+    >*user@nUbunta2204:~$ sudo mdadm /dev/md0 --remove /dev/sde   
+mdadm: hot removed /dev/sde from /dev/md0*   
+
+12. После замены диска, добавляем новый в *raid*-массив.
+    ```
+    mdadm /dev/md0 --add /dev/sde
+    ```
+    >*user@nUbunta2204:~$ sudo mdadm /dev/md0 --add /dev/sde   
+mdadm: added /dev/sde*
+
+14. Проверяем состояние *raid*-массива.
+    ```
+    cat /proc/mdstat
+    ```
+    >*user@nUbunta2204:~$ cat /proc/mdstat   
+Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
+md0 : active raid10 **sde[6]** sdg[5] sdf[4] sdd[2] sdc[1] sdb[0]   
+      6282240 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU]   
+unused devices: <none>*   
+
+16. нг
    
