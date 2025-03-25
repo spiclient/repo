@@ -16,7 +16,7 @@
    ```
    lsblk
    ```
-   >*user@nUbunta2204:~$ lsblk   
+   >*user@nUbunta2204:~$ lsblk*   
    <pre>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS      
    loop0    7:0    0 63.9M  1 loop /snap/core20/2318   
    loop1    7:1    0 63.7M  1 loop /snap/core20/2496   
@@ -32,20 +32,20 @@
    sdd      8:48   0    2G  0 disk   
    sde      8:64   0    2G  0 disk   
    sdf      8:80   0    2G  0 disk   
-   sdg      8:96   0    2G  0 disk*
+   sdg      8:96   0    2G  0 disk
    </pre>    
    ```
    lshw -short | grep disk
    ```
    >*user@nUbunta2204:~$ sudo lshw -short | grep disk   
-   [sudo] password for user:   
+   [sudo] password for user:*   
    <pre>/0/100/d/0      /dev/sda   disk        26GB VBOX HARDDISK   
    /0/100/d/1      /dev/sdb   disk        2147MB VBOX HARDDISK   
    /0/100/d/2      /dev/sdc   disk        2147MB VBOX HARDDISK   
    /0/100/d/3      /dev/sdd   disk        2147MB VBOX HARDDISK   
    /0/100/d/4      /dev/sde   disk        2147MB VBOX HARDDISK   
    /0/100/d/5      /dev/sdf   disk        2147MB VBOX HARDDISK   
-   /0/100/d/0.0.0  /dev/sdg   disk        2147MB VBOX HARDDISK*
+   /0/100/d/0.0.0  /dev/sdg   disk        2147MB VBOX HARDDISK
    </pre>
 3. Проверяем наличие в системе *raid*-массивов или их отсутствие.
    ```
