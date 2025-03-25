@@ -34,7 +34,7 @@ sde      8:64   0    2G  0 disk
 sdf      8:80   0    2G  0 disk   
 sdg      8:96   0    2G  0 disk*   
    ```
-   sudo lshw -short | grep disk
+   lshw -short | grep disk
    ```
    >*user@nUbunta2204:~$ sudo lshw -short | grep disk   
    [sudo] password for user:   
@@ -54,4 +54,17 @@ sdg      8:96   0    2G  0 disk*
 Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
 unused devices: <none>*
 
-4. 
+4. Выполняем "зануление суперблоков"(удаление метаданных, связанных с конфигурациями RAID).
+   ```
+   mdadm --zero-superblock --force /dev/sd{b,c,d,e,f}
+   ```
+   >*user@nUbunta2204:~$ sudo mdadm --zero-superblock --force /dev/sd{b,c,d,e,f,g}   
+[sudo] password for user:   
+mdadm: Unrecognised md component device - /dev/sdb   
+mdadm: Unrecognised md component device - /dev/sdc   
+mdadm: Unrecognised md component device - /dev/sdd   
+mdadm: Unrecognised md component device - /dev/sde   
+mdadm: Unrecognised md component device - /dev/sdf   
+mdadm: Unrecognised md component device - /dev/sdg*   
+
+5. 
