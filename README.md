@@ -123,6 +123,7 @@ unused devices: <none>*
           4       8       80        4      active sync set-A   /dev/sdf   
           5       8       96        5      active sync set-B   /dev/sdg*  
 </pre>
+
 7. Переводим один из дисков в состояние *fail*
    ```
    mdadm /dev/md0 --fail /dev/sde
