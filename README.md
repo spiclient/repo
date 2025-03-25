@@ -54,7 +54,7 @@ sdg      8:96   0    2G  0 disk*
 Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
 unused devices: <none>*
 
-4. Выполняем "зануление суперблоков"(удаление метаданных, связанных с конфигурациями RAID).
+4. Выполняем "зануление суперблоков"(удаление метаданных, связанных с предыдущими конфигурациями RAID).
    ```
    mdadm --zero-superblock --force /dev/sd{b,c,d,e,f}
    ```
@@ -66,5 +66,17 @@ mdadm: Unrecognised md component device - /dev/sdd
 mdadm: Unrecognised md component device - /dev/sde   
 mdadm: Unrecognised md component device - /dev/sdf   
 mdadm: Unrecognised md component device - /dev/sdg*   
+5. Создаём *raid*-массив RAID10 из 6 дисков.
+   ```
+   mdadm --create --verbose /dev/md0 -l 10 -n 6 /dev/sd{b,c,d,e,f,g}
+   ```
+   >*user@nUbunta2204:~$ sudo mdadm --create --verbose /dev/md0 -l 10 -n 6 /dev/sd{b,c,d,e,f,g}   
+mdadm: layout defaults to n2   
+mdadm: layout defaults to n2   
+mdadm: chunk size defaults to 512K   
+mdadm: size set to 2094080K   
+mdadm: Defaulting to version 1.2 metadata   
+mdadm: array /dev/md0 started*.   
 
-5. 
+7. 
+   
