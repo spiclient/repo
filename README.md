@@ -286,13 +286,19 @@ user@nUbunta2204:/$*
     /dev/md0     xfs    6.0G   76M  6.0G   2% /mnt/d01
     </pre>
     
-16. Разбираем *raid*-массив (размонтируем).
+16. Разбираем *raid*-массив (размонтируем, останавливаем, ).
     ```
     umount /dev/md0 /mnt/d01
     ```
     >*user@nUbunta2204:/$ sudo umount /dev/md0 /mnt/d01   
 [sudo] password for user:      
 umount: /mnt/d01: not mounted.*
+    ```
+    mdadm -S /dev/md0
+    ```
+    >*user@nUbunta2204:/$ sudo mdadm -S /dev/md0
+mdadm: stopped /dev/md0*
+
 
 18. 
    
