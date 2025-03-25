@@ -65,8 +65,9 @@ mdadm: Unrecognised md component device - /dev/sdc
 mdadm: Unrecognised md component device - /dev/sdd   
 mdadm: Unrecognised md component device - /dev/sde   
 mdadm: Unrecognised md component device - /dev/sdf   
-mdadm: Unrecognised md component device - /dev/sdg*   
-5. Создаём *raid*-массив RAID10 из 6 дисков.
+mdadm: Unrecognised md component device - /dev/sdg*
+   
+5. Создаём *raid*-массив **RAID10** из 6 дисков.
    ```
    mdadm --create --verbose /dev/md0 -l 10 -n 6 /dev/sd{b,c,d,e,f,g}
    ```
@@ -78,5 +79,15 @@ mdadm: size set to 2094080K
 mdadm: Defaulting to version 1.2 metadata   
 mdadm: array /dev/md0 started*.   
 
-7. 
+6. Проверяем результат.
+   ```
+   cat /proc/mdstat
+   ```
+   >*user@nUbunta2204:~$ cat /proc/mdstat   
+Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
+md0 : __active raid10__ sdg[5] sdf[4] sde[3] sdd[2] sdc[1] sdb[0]   
+      6282240 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU]   
+unused devices: <none>*
+
+8. 
    
