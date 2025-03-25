@@ -136,7 +136,7 @@ mdadm: set /dev/sde faulty in /dev/md0*
    ```
    >*user@nUbunta2204:~$ cat /proc/mdstat   
 Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
-md0 : active raid10 sdg[5] sdf[4] sde[3](F) sdd[2] sdc[1] sdb[0]   
+md0 : active raid10 sdg[5] sdf[4] **sde[3] (F)** sdd[2] sdc[1] sdb[0]   
       6282240 blocks super 1.2 512K chunks 2 near-copies [6/5] [UUU_UU]   
 unused devices: <none>*
    ```
@@ -168,7 +168,7 @@ Consistency Policy : resync
        0       8       16        0      active sync set-A   /dev/sdb   
        1       8       32        1      active sync set-B   /dev/sdc   
        2       8       48        2      active sync set-A   /dev/sdd   
-       -       0        0        3      removed   
+    ***-       0        0        3      removed***   
        4       8       80        4      active sync set-A   /dev/sdf   
        5       8       96        5      active sync set-B   /dev/sdg   
        3       8       64        -      faulty   /dev/sde*   
