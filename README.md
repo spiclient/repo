@@ -14,7 +14,7 @@
 1. Создаём и добавляем в виртуальную машину в Virtual Box 6 жестких дисков объёмом **2ГБ**.
 2. Запускаем систему и смотрим информацию о дисках.
    ```
-   lsblk
+   ***lsblk***
    ```
    >*user@nUbunta2204:~$ lsblk   
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS      
