@@ -296,7 +296,7 @@ umount: /mnt/d01: not mounted.*
     ```
     mdadm -S /dev/md0
     ```
-    >*user@nUbunta2204:/$ sudo mdadm -S /dev/md0
+    >*user@nUbunta2204:/$ sudo mdadm -S /dev/md0   
 mdadm: stopped /dev/md0*
 
 
