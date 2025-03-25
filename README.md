@@ -94,34 +94,34 @@ unused devices: <none>*
    ```
    >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0   
 [sudo] password for user:*   
-<pre>/dev/md0:   
-           Version : 1.2   
-     Creation Time : Tue Mar 25 21:01:01 2025   
-        Raid Level : **raid10**   
-        Array Size : 6282240 (5.99 GiB 6.43 GB)   
-     Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
-      Raid Devices : 6   
-     Total Devices : 6   
-       Persistence : Superblock is persistent   
-       Update Time : Tue Mar 25 21:01:35 2025   
-             State : clean   
-    Active Devices : 6   
-   Working Devices : 6   
-    Failed Devices : 0   
-     Spare Devices : 0   
-            Layout : near=2   
-        Chunk Size : 512K   
-Consistency Policy : resync   
-              Name : nUbunta2204:0  (local to host nUbunta2204)   
-              UUID : f6307bfb:75b4a060:4172a3ae:d9a17e9a   
-            Events : 17   
-    Number   Major   Minor   RaidDevice State   
-       0       8       16        0      active sync set-A   /dev/sdb   
-       1       8       32        1      active sync set-B   /dev/sdc   
-       2       8       48        2      active sync set-A   /dev/sdd   
-       3       8       64        3      active sync set-B   /dev/sde   
-       4       8       80        4      active sync set-A   /dev/sdf   
-       5       8       96        5      active sync set-B   /dev/sdg*  
+   <pre>/dev/md0:   
+              Version : 1.2   
+        Creation Time : Tue Mar 25 21:01:01 2025   
+           Raid Level : **raid10**   
+           Array Size : 6282240 (5.99 GiB 6.43 GB)   
+        Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
+         Raid Devices : 6   
+        Total Devices : 6   
+          Persistence : Superblock is persistent   
+          Update Time : Tue Mar 25 21:01:35 2025   
+                State : clean   
+       Active Devices : 6   
+      Working Devices : 6   
+       Failed Devices : 0   
+        Spare Devices : 0   
+               Layout : near=2   
+           Chunk Size : 512K   
+   Consistency Policy : resync   
+                 Name : nUbunta2204:0  (local to host nUbunta2204)   
+                 UUID : f6307bfb:75b4a060:4172a3ae:d9a17e9a   
+               Events : 17   
+       Number   Major   Minor   RaidDevice State   
+          0       8       16        0      active sync set-A   /dev/sdb   
+          1       8       32        1      active sync set-B   /dev/sdc   
+          2       8       48        2      active sync set-A   /dev/sdd   
+          3       8       64        3      active sync set-B   /dev/sde   
+          4       8       80        4      active sync set-A   /dev/sdf   
+          5       8       96        5      active sync set-B   /dev/sdg*  
 </pre>
 7. Переводим один из дисков в состояние *fail*
    ```
