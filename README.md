@@ -17,22 +17,22 @@
    lsblk
    ```
    >*user@nUbunta2204:~$ lsblk   
-     NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS   
-loop0    7:0    0 63.9M  1 loop /snap/core20/2318
-loop1    7:1    0 63.7M  1 loop /snap/core20/2496
-loop2    7:2    0   87M  1 loop /snap/lxd/29351
-loop3    7:3    0 89.4M  1 loop /snap/lxd/31333
-loop4    7:4    0 38.8M  1 loop /snap/snapd/21759
-loop5    7:5    0 44.4M  1 loop /snap/snapd/23545
-sda      8:0    0   25G  0 disk
-├─sda1   8:1    0    1M  0 part
-└─sda2   8:2    0   25G  0 part /
-sdb      8:16   0    2G  0 disk
-sdc      8:32   0    2G  0 disk
-sdd      8:48   0    2G  0 disk
-sde      8:64   0    2G  0 disk
-sdf      8:80   0    2G  0 disk
-sdg      8:96   0    2G  0 disk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS      
+loop0    7:0    0 63.9M  1 loop /snap/core20/2318   
+loop1    7:1    0 63.7M  1 loop /snap/core20/2496   
+loop2    7:2    0   87M  1 loop /snap/lxd/29351   
+loop3    7:3    0 89.4M  1 loop /snap/lxd/31333   
+loop4    7:4    0 38.8M  1 loop /snap/snapd/21759   
+loop5    7:5    0 44.4M  1 loop /snap/snapd/23545   
+sda      8:0    0   25G  0 disk   
+├─sda1   8:1    0    1M  0 part   
+└─sda2   8:2    0   25G  0 part /   
+sdb      8:16   0    2G  0 disk   
+sdc      8:32   0    2G  0 disk   
+sdd      8:48   0    2G  0 disk   
+sde      8:64   0    2G  0 disk   
+sdf      8:80   0    2G  0 disk   
+sdg      8:96   0    2G  0 disk*   
 
 4. 
 5. 
