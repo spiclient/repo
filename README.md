@@ -258,7 +258,12 @@ log      =internal log           bsize=4096   blocks=2560, version=2
          =                       sectsz=512   sunit=8 blks, lazy-count=1   
 realtime =none                   extsz=4096   blocks=0, rtextents=0*
        
+14. Выполняем монтирование к каталогу */mnt/d01/*
+    ```
+    mount /dev/md0 /mnt/d01
+    ```
+    >*user@nUbunta2204:/$ sudo mount /dev/md0 /mnt/d01   
+user@nUbunta2204:/$*
 
-    >
-15. 
+16. fgh
    
