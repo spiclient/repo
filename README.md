@@ -269,8 +269,8 @@ user@nUbunta2204:/$*
     ```
     df -hT
     ```
-    <pre>*user@nUbunta2204:/$ df -hT   
-Filesystem   Type   Size  Used Avail Use% Mounted on   
+    >*user@nUbunta2204:/$ df -hT   
+<pre>Filesystem   Type   Size  Used Avail Use% Mounted on   
 tmpfs        tmpfs  197M  1.1M  196M   1% /run   
 /dev/sda2    ext4    25G  4.2G   20G  18% /   
 tmpfs        tmpfs  985M     0  985M   0% /dev/shm   
