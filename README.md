@@ -250,7 +250,7 @@ unused devices: <none>*
     ```
     mkfs.xfs -f /dev/md0
     ```
-    >*user@nUbunta2204:/$ sudo mkfs.xfs -f /dev/md0   
+    >*user@nUbunta2204:/$ sudo mkfs.xfs -f /dev/md0*   
          <pre>log stripe unit (524288 bytes) is too large (maximum is 256KiB)   
       log stripe unit adjusted to 32KiB   
       meta-data=/dev/md0               isize=512    agcount=8, agsize=196352 blks   
@@ -262,7 +262,7 @@ unused devices: <none>*
       naming   =version 2              bsize=4096   ascii-ci=0, ftype=1   
       log      =internal log           bsize=4096   blocks=2560, version=2   
                =                       sectsz=512   sunit=8 blks, lazy-count=1   
-      realtime =none                   extsz=4096   blocks=0, rtextents=0*
+      realtime =none                   extsz=4096   blocks=0, rtextents=0
 </pre>   
 
 14. Выполняем монтирование к каталогу */mnt/d01/*
