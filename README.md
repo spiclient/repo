@@ -56,7 +56,7 @@ unused devices: <none>*
 
 4. Выполняем "зануление суперблоков"(удаление метаданных, связанных с предыдущими конфигурациями RAID).
    ```
-   mdadm --zero-superblock --force /dev/sd{b,c,d,e,f}
+   mdadm --zero-superblock --force /dev/sd{b,c,d,e,f,g}
    ```
    >*user@nUbunta2204:~$ sudo mdadm --zero-superblock --force /dev/sd{b,c,d,e,f,g}   
 [sudo] password for user:   
