@@ -12,6 +12,7 @@
    + Создать GPT таблицу, пять разделов и смонтировать их в системе.
 ## Выполнение
 1. Создаём и добавляем в виртуальную машину в Virtual Box 6 жестких дисков объёмом **2ГБ**.
+
 2. Запускаем систему и смотрим информацию о дисках с помощью команд **lsblk** и **lshw**.
    ```
    lsblk
@@ -47,6 +48,7 @@
    /0/100/d/5      /dev/sdf   disk        2147MB VBOX HARDDISK   
    /0/100/d/0.0.0  /dev/sdg   disk        2147MB VBOX HARDDISK
    </pre>
+
 3. Проверяем наличие в системе *raid*-массивов или их отсутствие.
    ```
    cat /proc/mdstat
@@ -232,6 +234,7 @@ unused devices: <none>*
              4       8       80        4      active sync set-A   /dev/sdf   
              5       8       96        5      active sync set-B   /dev/sdg   
    </pre>
+   
 12. Создаём папки **d01, d02,d03,d04,d05** в каталоге */mnt/* для монтирования.
     ```
     mkdir d01
@@ -261,6 +264,7 @@ unused devices: <none>*
             =                       sectsz=512   sunit=8 blks, lazy-count=1   
    realtime =none                   extsz=4096   blocks=0, rtextents=0*
 </pre>   
+
 14. Выполняем монтирование к каталогу */mnt/d01/*
     ```
     mount /dev/md0 /mnt/d01
@@ -281,5 +285,6 @@ user@nUbunta2204:/$*
     tmpfs        tmpfs  197M  4.0K  197M   1% /run/user/1000   
     /dev/md0     xfs    6.0G   76M  6.0G   2% /mnt/d01
     </pre>
-17. ываыва
+    
+16. ываыва
    
