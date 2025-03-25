@@ -276,7 +276,7 @@ user@nUbunta2204:/$*
     tmpfs        tmpfs  985M     0  985M   0% /dev/shm   
     tmpfs        tmpfs  5.0M     0  5.0M   0% /run/lock   
     tmpfs        tmpfs  197M  4.0K  197M   1% /run/user/1000   
-    /dev/md0     xfs    6.0G   76M  6.0G   2% /mnt/d01**  
+    /dev/md0     xfs    6.0G   76M  6.0G   2% /mnt/d01
     </pre>
 17. ываыва
    
