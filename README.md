@@ -96,7 +96,7 @@ unused devices: <none>*
 /dev/md0:   
            Version : 1.2   
      Creation Time : Tue Mar 25 21:01:01 2025   
-        Raid Level : raid10   
+        Raid Level : **raid10**   
         Array Size : 6282240 (5.99 GiB 6.43 GB)   
      Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
       Raid Devices : 6   
@@ -122,5 +122,56 @@ Consistency Policy : resync
        4       8       80        4      active sync set-A   /dev/sdf   
        5       8       96        5      active sync set-B   /dev/sdg*  
 
-7. 
+7. Переводим один из дисков в состояние *fail*
+   ```
+   mdadm /dev/md0 --fail /dev/sde
+   ```
+   >*user@nUbunta2204:~$ sudo mdadm /dev/md0 --fail /dev/sde   
+[sudo] password for user:   
+mdadm: set /dev/sde faulty in /dev/md0*
+
+8. Проверяем состояние *raid*-массива
+   ```
+   cat /proc/mdstat
+   ```
+   >*user@nUbunta2204:~$ cat /proc/mdstat   
+Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
+md0 : active raid10 sdg[5] sdf[4] sde[3](F) sdd[2] sdc[1] sdb[0]   
+      6282240 blocks super 1.2 512K chunks 2 near-copies [6/5] [UUU_UU]   
+unused devices: <none>*
+   ```
+   mdadm -D /dev/md0
+   ```
+   >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0   
+/dev/md0:   
+           Version : 1.2   
+     Creation Time : Tue Mar 25 21:01:01 2025   
+        Raid Level : raid10   
+        Array Size : 6282240 (5.99 GiB 6.43 GB)   
+     Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
+      Raid Devices : 6   
+     Total Devices : 6   
+       Persistence : Superblock is persistent   
+       Update Time : Tue Mar 25 21:44:52 2025   
+             **State : clean, degraded**   
+    Active Devices : 5   
+   Working Devices : 5   
+    Failed Devices : 1   
+     Spare Devices : 0   
+            Layout : near=2   
+        Chunk Size : 512K   
+Consistency Policy : resync   
+              Name : nUbunta2204:0  (local to host nUbunta2204)   
+              UUID : f6307bfb:75b4a060:4172a3ae:d9a17e9a   
+            Events : 19   
+    Number   Major   Minor   RaidDevice State   
+       0       8       16        0      active sync set-A   /dev/sdb   
+       1       8       32        1      active sync set-B   /dev/sdc   
+       2       8       48        2      active sync set-A   /dev/sdd   
+       -       0        0        3      removed   
+       4       8       80        4      active sync set-A   /dev/sdf   
+       5       8       96        5      active sync set-B   /dev/sdg   
+       3       8       64        -      faulty   /dev/sde*   
+   
+10. 
    
