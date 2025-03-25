@@ -173,21 +173,21 @@ Consistency Policy : resync
        5       8       96        5      active sync set-B   /dev/sdg   
        3       8       64        -      faulty   /dev/sde*   
    
-10. Удаляем сбойный диск из *raid*-массива.
+09. Удаляем сбойный диск из *raid*-массива.
     ```
     mdadm /dev/md0 --remove /dev/sde
     ```
     >*user@nUbunta2204:~$ sudo mdadm /dev/md0 --remove /dev/sde   
 mdadm: hot removed /dev/sde from /dev/md0*   
 
-12. После замены диска, добавляем новый в *raid*-массив.
+10. После замены диска, добавляем новый в *raid*-массив.
     ```
     mdadm /dev/md0 --add /dev/sde
     ```
     >*user@nUbunta2204:~$ sudo mdadm /dev/md0 --add /dev/sde   
 mdadm: added /dev/sde*
 
-14. Проверяем состояние *raid*-массива.
+11. Проверяем состояние *raid*-массива.
     ```
     cat /proc/mdstat
     ```
@@ -229,5 +229,16 @@ Consistency Policy : resync
        4       8       80        4      active sync set-A   /dev/sdf   
        5       8       96        5      active sync set-B   /dev/sdg*   
 
-16. нг
+12. Создаём папки **d01, d02,d03,d04,d05** в каталоге */mnt/* для монтирования.
+    ```
+    mkdir d01
+    ```
+    >*user@nUbunta2204:/$ cd /mnt/   
+    user@nUbunta2204:/mnt$ mkdir d01
+    user@nUbunta2204:/mnt$ mkdir d02
+    user@nUbunta2204:/mnt$ mkdir d03
+    >user@nUbunta2204:/mnt$ mkdir d04
+    >user@nUbunta2204:/mnt$ mkdir d05*      
+
+17. 
    
