@@ -12,7 +12,7 @@
    + Создать GPT таблицу, пять разделов и смонтировать их в системе.
 ## Выполнение
 1. Создаём и добавляем в виртуальную машину в Virtual Box 6 жестких дисков объёмом **2ГБ**.
-2. Запускаем систему и проверяем доступность дисков.
+2. Запускаем систему и смотрим информацию о дисках.
    ```
    lsblk
    ```
@@ -34,44 +34,12 @@ sde      8:64   0    2G  0 disk
 sdf      8:80   0    2G  0 disk   
 sdg      8:96   0    2G  0 disk*   
 
-4. 
+3. Проверяем наличие в системе *raid*-массивов.
+   ```
+   cat /proc/mdstat
+   ```
+   >*user@nUbunta2204:~$ cat /proc/mdstat   
+Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
+unused devices: <none>*
+
 5. 
-6. В **VirtualBox** создаём виртуальные машины из скачанных образов. При разворачивании ВМ из Debian-образа устанавливаем дополнительно компонент **ssh-server**.
-7. Выполняем предварительную настройку системы **Ubuntu**: 
-    + устанавливаем пароль на суперпользователя **root**
-      ```
-      sudo passwd
-      ```
-      >*user@nUbuntu2204:~$ sudo passwd  
-      [sudo] password for user:  
-      New password:  
-      Retype new password:  
-      passwd: password updated successfully*
-
-    + устанавливаем **ssh-server**
-      ```
-      sudo apt install openssh-server
-      ```
-      >*user@nUbuntu2204:~$ sudo apt install openssh-server  
-Reading package lists... Done  
-Building dependency tree... Done  
-Reading state information... Done  
-Suggested packages:  
-....................*
-
-    + проверяем статус **ssh**
-      ```
-      systemctl status ssh
-      ```
-      >*user@nUbuntu2204:~$ systemctl status ssh  
-● ssh.service - OpenBSD Secure Shell server  
-     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)  
-     Active: active (running) since Thu 2025-03-06 16:22:24 UTC; 18min ago  
-       Docs: man:sshd(8)  
-             man:sshd_config(5)  
-   Main PID: 1846 (sshd)  
-      Tasks: 1 (limit: 2224)  
-     Memory: 4.0M  
-        CPU: 211ms  
-     CGroup: /system.slice/ssh.service  
-             └─1846 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"*
