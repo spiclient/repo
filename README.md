@@ -270,13 +270,13 @@ user@nUbunta2204:/$*
     df -hT
     ```
     >*user@nUbunta2204:/$ df -hT*   
-    <pre>Filesystem   Type   Size  Used Avail Use% Mounted on   
+    Filesystem$~~~$Type   Size  Used Avail Use% Mounted on   
     tmpfs        tmpfs  197M  1.1M  196M   1% /run   
     /dev/sda2    ext4    25G  4.2G   20G  18% /   
     tmpfs        tmpfs  985M     0  985M   0% /dev/shm   
     tmpfs        tmpfs  5.0M     0  5.0M   0% /run/lock   
     tmpfs        tmpfs  197M  4.0K  197M   1% /run/user/1000   
     /dev/md0     xfs    6.0G   76M  6.0G   2% /mnt/d01**  
-    </pre>
+    
 17. ываыва
    
