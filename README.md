@@ -303,6 +303,13 @@ mdadm: stopped /dev/md0*
     ```
     >*user@nUbunta2204:/$ sudo mdadm --zero-superblock /dev/sd{b,c,d,e,f,g}   
 user@nUbunta2204:/$*
+    ```
+    cat /proc/mdstat
+    ```
+    >*user@nUbunta2204:/$ cat /proc/mdstat   
+Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
+unused devices: <none>*
+
 
 18. 
    
