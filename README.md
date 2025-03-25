@@ -286,7 +286,7 @@ user@nUbunta2204:/$*
     /dev/md0     xfs    6.0G   76M  6.0G   2% /mnt/d01
     </pre>
     
-16. Разбираем *raid*-массив (размонтируем, останавливаем, ).
+16. Разбираем *raid*-массив (размонтируем, останавливаем, очищаем суперблоки).
     ```
     umount /dev/md0 /mnt/d01
     ```
@@ -298,7 +298,11 @@ umount: /mnt/d01: not mounted.*
     ```
     >*user@nUbunta2204:/$ sudo mdadm -S /dev/md0   
 mdadm: stopped /dev/md0*
-
+    ```
+    mdadm --zero-superblock /dev/sd{b,c,d,e,f,g}
+    ```
+    >*user@nUbunta2204:/$ sudo mdadm --zero-superblock /dev/sd{b,c,d,e,f,g}   
+user@nUbunta2204:/$*
 
 18. 
    
