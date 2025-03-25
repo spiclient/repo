@@ -122,5 +122,5 @@ Consistency Policy : resync
        4       8       80        4      active sync set-A   /dev/sdf   
        5       8       96        5      active sync set-B   /dev/sdg*  
 
-8. 
+7. 
    
