@@ -145,35 +145,35 @@ unused devices: <none>*
    mdadm -D /dev/md0
    ```
    >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0*   
-<pre>/dev/md0:   
-           Version : 1.2   
-     Creation Time : Tue Mar 25 21:01:01 2025   
-        Raid Level : raid10   
-        Array Size : 6282240 (5.99 GiB 6.43 GB)   
-     Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
-      Raid Devices : 6   
-     Total Devices : 6   
-       Persistence : Superblock is persistent   
-       Update Time : Tue Mar 25 21:44:52 2025   
-             **State : clean, degraded**   
-    Active Devices : 5   
-   Working Devices : 5   
-    Failed Devices : 1   
-     Spare Devices : 0   
-            Layout : near=2   
-        Chunk Size : 512K   
-Consistency Policy : resync   
-              Name : nUbunta2204:0  (local to host nUbunta2204)   
-              UUID : f6307bfb:75b4a060:4172a3ae:d9a17e9a   
-            Events : 19   
-    Number   Major   Minor   RaidDevice State   
-       0       8       16        0      active sync set-A   /dev/sdb   
-       1       8       32        1      active sync set-B   /dev/sdc   
-       2       8       48        2      active sync set-A   /dev/sdd   
-       -       0        0        3      removed   
-       4       8       80        4      active sync set-A   /dev/sdf   
-       5       8       96        5      active sync set-B   /dev/sdg   
-       3       8       64        -      faulty   /dev/sde   
+   <pre>/dev/md0:   
+              Version : 1.2   
+        Creation Time : Tue Mar 25 21:01:01 2025   
+           Raid Level : raid10   
+           Array Size : 6282240 (5.99 GiB 6.43 GB)   
+        Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
+         Raid Devices : 6   
+        Total Devices : 6   
+          Persistence : Superblock is persistent   
+          Update Time : Tue Mar 25 21:44:52 2025   
+                State : clean, degraded   
+       Active Devices : 5   
+      Working Devices : 5   
+       Failed Devices : 1   
+        Spare Devices : 0   
+               Layout : near=2   
+           Chunk Size : 512K   
+   Consistency Policy : resync   
+                 Name : nUbunta2204:0  (local to host nUbunta2204)   
+                 UUID : f6307bfb:75b4a060:4172a3ae:d9a17e9a   
+               Events : 19   
+       Number   Major   Minor   RaidDevice State   
+          0       8       16        0      active sync set-A   /dev/sdb   
+          1       8       32        1      active sync set-B   /dev/sdc   
+          2       8       48        2      active sync set-A   /dev/sdd   
+          -       0        0        3      removed   
+          4       8       80        4      active sync set-A   /dev/sdf   
+          5       8       96        5      active sync set-B   /dev/sdg   
+          3       8       64        -      faulty   /dev/sde   
 </pre>
 
 09. Удаляем сбойный диск из *raid*-массива.
@@ -202,36 +202,36 @@ unused devices: <none>*
     ```
     mdadm -D /dev/md0
     ```
-    >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0   
-/dev/md0:   
-           Version : 1.2   
-     Creation Time : Tue Mar 25 21:01:01 2025   
-        Raid Level : raid10   
-        Array Size : 6282240 (5.99 GiB 6.43 GB)   
-     Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
-      Raid Devices : 6   
-     Total Devices : 6   
-       Persistence : Superblock is persistent   
-       Update Time : Tue Mar 25 22:03:54 2025   
-             State : clean   
-    Active Devices : 6   
-   Working Devices : 6   
-    Failed Devices : 0   
-     Spare Devices : 0   
-            Layout : near=2   
-        Chunk Size : 512K   
-Consistency Policy : resync   
-              Name : nUbunta2204:0  (local to host nUbunta2204)   
-              UUID : f6307bfb:75b4a060:4172a3ae:d9a17e9a   
-            Events : 39   
-    Number   Major   Minor   RaidDevice State   
-       0       8       16        0      active sync set-A   /dev/sdb   
-       1       8       32        1      active sync set-B   /dev/sdc   
-       2       8       48        2      active sync set-A   /dev/sdd   
-       6       8       64        3      active sync set-B   /dev/sde   
-       4       8       80        4      active sync set-A   /dev/sdf   
-       5       8       96        5      active sync set-B   /dev/sdg*   
-
+    >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0*   
+   <pre>/dev/md0:   
+              Version : 1.2   
+        Creation Time : Tue Mar 25 21:01:01 2025   
+           Raid Level : raid10   
+           Array Size : 6282240 (5.99 GiB 6.43 GB)   
+        Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
+         Raid Devices : 6   
+        Total Devices : 6   
+          Persistence : Superblock is persistent   
+          Update Time : Tue Mar 25 22:03:54 2025   
+                State : clean   
+       Active Devices : 6   
+      Working Devices : 6   
+       Failed Devices : 0   
+        Spare Devices : 0   
+               Layout : near=2   
+           Chunk Size : 512K   
+   Consistency Policy : resync   
+                 Name : nUbunta2204:0  (local to host nUbunta2204)   
+                 UUID : f6307bfb:75b4a060:4172a3ae:d9a17e9a   
+               Events : 39   
+       Number   Major   Minor   RaidDevice State   
+          0       8       16        0      active sync set-A   /dev/sdb   
+          1       8       32        1      active sync set-B   /dev/sdc   
+          2       8       48        2      active sync set-A   /dev/sdd   
+          6       8       64        3      active sync set-B   /dev/sde   
+          4       8       80        4      active sync set-A   /dev/sdf   
+          5       8       96        5      active sync set-B   /dev/sdg   
+   </pre>
 12. Создаём папки **d01, d02,d03,d04,d05** в каталоге */mnt/* для монтирования.
     ```
     mkdir d01
@@ -248,7 +248,7 @@ Consistency Policy : resync
     mkfs.xfs -f /dev/md0
     ```
     >*user@nUbunta2204:/$ sudo mkfs.xfs -f /dev/md0   
-log stripe unit (524288 bytes) is too large (maximum is 256KiB)   
+<pre>log stripe unit (524288 bytes) is too large (maximum is 256KiB)   
 log stripe unit adjusted to 32KiB   
 meta-data=/dev/md0               isize=512    agcount=8, agsize=196352 blks   
          =                       sectsz=512   attr=2, projid32bit=1   
@@ -260,7 +260,7 @@ naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
 log      =internal log           bsize=4096   blocks=2560, version=2   
          =                       sectsz=512   sunit=8 blks, lazy-count=1   
 realtime =none                   extsz=4096   blocks=0, rtextents=0*
-       
+</pre>   
 14. Выполняем монтирование к каталогу */mnt/d01/*
     ```
     mount /dev/md0 /mnt/d01
