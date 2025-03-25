@@ -93,8 +93,8 @@ unused devices: <none>*
    mdadm -D /dev/md0
    ```
    >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0   
-[sudo] password for user:   
-/dev/md0:   
+[sudo] password for user:*   
+<pre>/dev/md0:   
            Version : 1.2   
      Creation Time : Tue Mar 25 21:01:01 2025   
         Raid Level : **raid10**   
@@ -122,7 +122,7 @@ Consistency Policy : resync
        3       8       64        3      active sync set-B   /dev/sde   
        4       8       80        4      active sync set-A   /dev/sdf   
        5       8       96        5      active sync set-B   /dev/sdg*  
-
+</pre>
 7. Переводим один из дисков в состояние *fail*
    ```
    mdadm /dev/md0 --fail /dev/sde
