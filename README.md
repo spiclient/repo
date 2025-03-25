@@ -12,9 +12,9 @@
    + Создать GPT таблицу, пять разделов и смонтировать их в системе.
 ## Выполнение
 1. Создаём и добавляем в виртуальную машину в Virtual Box 6 жестких дисков объёмом **2ГБ**.
-2. Запускаем систему и смотрим информацию о дисках.
+2. Запускаем систему и смотрим информацию о дисках с помощью команд **lsblk** и **lshw**.
    ```
-   ***lsblk***
+   lsblk
    ```
    >*user@nUbunta2204:~$ lsblk   
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS      
@@ -34,7 +34,20 @@ sde      8:64   0    2G  0 disk
 sdf      8:80   0    2G  0 disk   
 sdg      8:96   0    2G  0 disk*   
 
-3. Проверяем наличие в системе *raid*-массивов.
+```
+sudo lshw -short | grep disk
+```
+>*user@nUbunta2204:~$ sudo lshw -short | grep disk
+[sudo] password for user:
+/0/100/d/0      /dev/sda   disk        26GB VBOX HARDDISK
+/0/100/d/1      /dev/sdb   disk        2147MB VBOX HARDDISK
+/0/100/d/2      /dev/sdc   disk        2147MB VBOX HARDDISK
+/0/100/d/3      /dev/sdd   disk        2147MB VBOX HARDDISK
+/0/100/d/4      /dev/sde   disk        2147MB VBOX HARDDISK
+/0/100/d/5      /dev/sdf   disk        2147MB VBOX HARDDISK
+/0/100/d/0.0.0  /dev/sdg   disk        2147MB VBOX HARDDISK*
+
+3. Проверяем наличие в системе *raid*-массивов или их отсутствие.
    ```
    cat /proc/mdstat
    ```
@@ -42,4 +55,4 @@ sdg      8:96   0    2G  0 disk*
 Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
 unused devices: <none>*
 
-5. 
+4. 
