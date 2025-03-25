@@ -121,7 +121,7 @@ unused devices: <none>*
           2       8       48        2      active sync set-A   /dev/sdd   
           3       8       64        3      active sync set-B   /dev/sde   
           4       8       80        4      active sync set-A   /dev/sdf   
-          5       8       96        5      active sync set-B   /dev/sdg*  
+          5       8       96        5      active sync set-B   /dev/sdg  
 </pre>
 
 7. Переводим один из дисков в состояние *fail*
@@ -144,8 +144,8 @@ unused devices: <none>*
    ```
    mdadm -D /dev/md0
    ```
-   >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0   
-/dev/md0:   
+   >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0*   
+<pre>/dev/md0:   
            Version : 1.2   
      Creation Time : Tue Mar 25 21:01:01 2025   
         Raid Level : raid10   
@@ -170,11 +170,12 @@ Consistency Policy : resync
        0       8       16        0      active sync set-A   /dev/sdb   
        1       8       32        1      active sync set-B   /dev/sdc   
        2       8       48        2      active sync set-A   /dev/sdd   
-    ***-       0        0        3      removed***   
+       -       0        0        3      removed   
        4       8       80        4      active sync set-A   /dev/sdf   
        5       8       96        5      active sync set-B   /dev/sdg   
-       3       8       64        -      faulty   /dev/sde*   
-   
+       3       8       64        -      faulty   /dev/sde   
+</pre>
+
 09. Удаляем сбойный диск из *raid*-массива.
     ```
     mdadm /dev/md0 --remove /dev/sde
