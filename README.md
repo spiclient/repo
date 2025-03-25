@@ -233,11 +233,11 @@ Consistency Policy : resync
     ```
     mkdir d01
     ```
-    >*user@nUbunta2204:/$ cd /mnt/   
-    user@nUbunta2204:/mnt$ mkdir d01
-    user@nUbunta2204:/mnt$ mkdir d02
-    user@nUbunta2204:/mnt$ mkdir d03
-    >user@nUbunta2204:/mnt$ mkdir d04
+    >*user@nUbunta2204:/$ cd /mnt/      
+    user@nUbunta2204:/mnt$ mkdir d01   
+    user@nUbunta2204:/mnt$ mkdir d02   
+    user@nUbunta2204:/mnt$ mkdir d03   
+    >user@nUbunta2204:/mnt$ mkdir d04   
     >user@nUbunta2204:/mnt$ mkdir d05*      
 
 17. 
