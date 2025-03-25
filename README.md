@@ -251,7 +251,7 @@ unused devices: <none>*
     mkfs.xfs -f /dev/md0
     ```
     >*user@nUbunta2204:/$ sudo mkfs.xfs -f /dev/md0   
-      <pre>log stripe unit (524288 bytes) is too large (maximum is 256KiB)   
+         <pre>log stripe unit (524288 bytes) is too large (maximum is 256KiB)   
       log stripe unit adjusted to 32KiB   
       meta-data=/dev/md0               isize=512    agcount=8, agsize=196352 blks   
                =                       sectsz=512   attr=2, projid32bit=1   
