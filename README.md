@@ -33,10 +33,9 @@ sdd      8:48   0    2G  0 disk
 sde      8:64   0    2G  0 disk   
 sdf      8:80   0    2G  0 disk   
 sdg      8:96   0    2G  0 disk*   
-
-```
-sudo lshw -short | grep disk
-```
+   ```
+   sudo lshw -short | grep disk
+   ```
 >*user@nUbunta2204:~$ sudo lshw -short | grep disk
 [sudo] password for user:
 /0/100/d/0      /dev/sda   disk        26GB VBOX HARDDISK
