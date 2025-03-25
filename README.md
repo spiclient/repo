@@ -195,7 +195,39 @@ mdadm: added /dev/sde*
 Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
 md0 : active raid10 **sde[6]** sdg[5] sdf[4] sdd[2] sdc[1] sdb[0]   
       6282240 blocks super 1.2 512K chunks 2 near-copies [6/6] [UUUUUU]   
-unused devices: <none>*   
+unused devices: <none>*
+    ```
+    mdadm -D /dev/md0
+    ```
+    >*user@nUbunta2204:~$ sudo mdadm -D /dev/md0   
+/dev/md0:   
+           Version : 1.2   
+     Creation Time : Tue Mar 25 21:01:01 2025   
+        Raid Level : raid10   
+        Array Size : 6282240 (5.99 GiB 6.43 GB)   
+     Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)   
+      Raid Devices : 6   
+     Total Devices : 6   
+       Persistence : Superblock is persistent   
+       Update Time : Tue Mar 25 22:03:54 2025   
+             State : clean   
+    Active Devices : 6   
+   Working Devices : 6   
+    Failed Devices : 0   
+     Spare Devices : 0   
+            Layout : near=2   
+        Chunk Size : 512K   
+Consistency Policy : resync   
+              Name : nUbunta2204:0  (local to host nUbunta2204)   
+              UUID : f6307bfb:75b4a060:4172a3ae:d9a17e9a   
+            Events : 39   
+    Number   Major   Minor   RaidDevice State   
+       0       8       16        0      active sync set-A   /dev/sdb   
+       1       8       32        1      active sync set-B   /dev/sdc   
+       2       8       48        2      active sync set-A   /dev/sdd   
+       6       8       64        3      active sync set-B   /dev/sde   
+       4       8       80        4      active sync set-A   /dev/sdf   
+       5       8       96        5      active sync set-B   /dev/sdg*   
 
 16. нг
    
