@@ -324,18 +324,38 @@ unused devices: <none>*
 ### GPT-таблица
 
 18. Создаём разделы GPT на дисках, с помощью утилиты **gdisk**.
-   ```
-   gdisk /dev/sdb
-   ```
-   >*root@nUbunta2204:/# gdisk /dev/sdb
-   GPT fdisk (gdisk) version 1.0.8
-   Partition table scan:
-     MBR: not present
-     BSD: not present
-     APM: not present
-     GPT: not present
-   Creating new GPT entries in memory.*
->
+    ```
+    gdisk /dev/sdb
+    ```
+    >*root@nUbunta2204:/# gdisk /dev/sdb   
+    GPT fdisk (gdisk) version 1.0.8   
+    Partition table scan:   
+      MBR: not present   
+      BSD: not present   
+      APM: not present   
+      GPT: not present   
+    Creating new GPT entries in memory.*
+    
+    нажимаем **n**(add a new partition) прожимаем **Enter** до строки с вводом новой команды.
+    нажимаем **w** подтверждаем сохранение
+    >*Command (? for help): n   
+      Partition number (1-128, default 1):   
+      First sector (34-4194270, default = 2048) or {+-}size{KMGTP}:   
+      Last sector (2048-4194270, default = 4194270) or {+-}size{KMGTP}:   
+      Current type is 8300 (Linux filesystem)   
+      Hex code or GUID (L to show codes, Enter = 8300):   
+      Changed type of partition to 'Linux filesystem'*
+    >*Command (? for help): w      
+      Final checks complete. About to write GPT data. THIS WILL OVERWRITE EXISTING   
+      PARTITIONS!!   
+      Do you want to proceed? (Y/N): y   
+      OK; writing new GUID partition table (GPT) to /dev/sdb.   
+      The operation has completed successfully*.   
+
+    Повторяем операцию и для остальных дисков: **sdc, sde, sdf, sdg**
+       
+
+
 
 
 
