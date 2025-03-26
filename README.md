@@ -409,11 +409,29 @@ root@nUbunta2204:/# mount /dev/sde1 /mnt/d04
 root@nUbunta2204:/# mount /dev/sdf1 /mnt/d05   
 root@nUbunta2204:/# mount /dev/sdg1 /mnt/d06   
 root@nUbunta2204:/#*
-
+    
+    Проверяем
+    ```
+    df -h
+    ```
+    >*root@nUbunta2204:/# df -h*
+      <pre>Filesystem      Size  Used Avail Use% Mounted on
+      tmpfs           197M  1.1M  196M   1% /run
+      /dev/sda2        25G  4.2G   20G  18% /
+      tmpfs           985M     0  985M   0% /dev/shm
+      tmpfs           5.0M     0  5.0M   0% /run/lock
+      tmpfs           197M  4.0K  197M   1% /run/user/1000
+      /dev/sdb1       2.0G   24K  1.9G   1% /mnt/d01
+      /dev/sdc1       2.0G   24K  1.9G   1% /mnt/d02
+      /dev/sdd1       2.0G   24K  1.9G   1% /mnt/d03
+      /dev/sde1       2.0G   24K  1.9G   1% /mnt/d04
+      /dev/sdf1       2.0G   24K  1.9G   1% /mnt/d05
+      /dev/sdg1       2.0G   24K  1.9G   1% /mnt/d06
+      </pre>
 
     
+
     
-21. ываыв
 
 
 
