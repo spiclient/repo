@@ -322,5 +322,20 @@ Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
 unused devices: <none>*
 
 ### GPT-таблица
-18. 
-   
+
+18. Создаём разделы GPT на дисках, с помощью утилиты **gdisk**.
+   ```
+   gdisk /dev/sdb
+   ```
+   >*root@nUbunta2204:/# gdisk /dev/sdb
+   GPT fdisk (gdisk) version 1.0.8
+   Partition table scan:
+     MBR: not present
+     BSD: not present
+     APM: not present
+     GPT: not present
+   Creating new GPT entries in memory.*
+>
+
+
+
