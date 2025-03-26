@@ -7,7 +7,7 @@
 + MobaXterm
 ## Описание домашнего задания:
    + Добавить в виртуальную машину несколько дисков.
-   + Собрать RAID-0/1/5/10.
+   + Собрать RAID-10.
    + Сломать и починить RAID.
    + Создать GPT-таблицу с пятью разделами и смонтировать их в системе.
 ## Выполнение
@@ -72,7 +72,7 @@ mdadm: Unrecognised md component device - /dev/sde
 mdadm: Unrecognised md component device - /dev/sdf   
 mdadm: Unrecognised md component device - /dev/sdg*
    
-5. Создаём *raid*-массив **RAID10** из 6 дисков.
+5. Создаём *raid*-массив **RAID-10** из 6 дисков.
    ```
    mdadm --create --verbose /dev/md0 -l 10 -n 6 /dev/sd{b,c,d,e,f,g}
    ```
