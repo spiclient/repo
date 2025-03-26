@@ -11,6 +11,8 @@
    + Сломать и починить RAID.
    + Создать GPT таблицу, пять разделов и смонтировать их в системе.
 ## Выполнение
+
+### Работа с RAID-массивом
 1. Создаём и добавляем в виртуальную машину в Virtual Box 6 жестких дисков объёмом **2ГБ**.
 
 2. Запускаем систему и смотрим информацию о дисках с помощью команд **lsblk** и **lshw**.
@@ -286,23 +288,32 @@ user@nUbunta2204:/$*
     /dev/md0     xfs    6.0G   76M  6.0G   2% /mnt/d01
     </pre>
     
-16. Разбираем *raid*-массив (размонтируем, останавливаем, очищаем суперблоки, проверяем).
+16. Разбираем *raid*-массив (размонтирование, остановка, удаление суперблоков, проверка).
+    
+    **a. выполняем размонтирование**
+
     ```
     umount /dev/md0 /mnt/d01
     ```
     >*user@nUbunta2204:/$ sudo umount /dev/md0 /mnt/d01   
 [sudo] password for user:      
 umount: /mnt/d01: not mounted.*
+    
+    **b. останавливаем RAID**
     ```
     mdadm -S /dev/md0
     ```
     >*user@nUbunta2204:/$ sudo mdadm -S /dev/md0   
 mdadm: stopped /dev/md0*
+    
+    **c. зануляем суперблоки**
     ```
     mdadm --zero-superblock /dev/sd{b,c,d,e,f,g}
     ```
     >*user@nUbunta2204:/$ sudo mdadm --zero-superblock /dev/sd{b,c,d,e,f,g}   
 user@nUbunta2204:/$*
+    
+    **d. проверяем отсутствие RAID в системе**
     ```
     cat /proc/mdstat
     ```
@@ -310,6 +321,6 @@ user@nUbunta2204:/$*
 Personalities : [linear] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]   
 unused devices: <none>*
 
-
+### GPT-таблица
 18. 
    
