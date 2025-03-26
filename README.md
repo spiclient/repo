@@ -386,15 +386,15 @@ unused devices: <none>*
     ```
     mkfs.ext4 /dev/sdb
     ```
-    >*root@nUbunta2204:/# mkfs.ext4 /dev/sdb1  
-      mke2fs 1.46.5 (30-Dec-2021)
-      Creating filesystem with 524027 4k blocks and 131072 inodes
-      Filesystem UUID: f4cff792-60f8-4574-8190-70836b8aaf95
-      Superblock backups stored on blocks:
-              32768, 98304, 163840, 229376, 294912
-      Allocating group tables: done
-      Writing inode tables: done
-      Creating journal (8192 blocks): done
+    >*root@nUbunta2204:/# mkfs.ext4 /dev/sdb1     
+      mke2fs 1.46.5 (30-Dec-2021)   
+      Creating filesystem with 524027 4k blocks and 131072 inodes   
+      Filesystem UUID: f4cff792-60f8-4574-8190-70836b8aaf95   
+      Superblock backups stored on blocks:   
+              32768, 98304, 163840, 229376, 294912   
+      Allocating group tables: done   
+      Writing inode tables: done   
+      Creating journal (8192 blocks): done   
       Writing superblocks and filesystem accounting information: done*
      повторяем и для **sdc1, sdd1, sde1, sdf1, sdg1**
     
