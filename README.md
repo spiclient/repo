@@ -336,7 +336,7 @@ unused devices: <none>*
       GPT: not present   
     Creating new GPT entries in memory.*
     
-    нажимаем **n**(add a new partition) прожимаем **Enter** до строки с вводом новой команды.
+    нажимаем **n**(add a new partition) прожимаем **Enter** до строки с вводом новой команды.     
     нажимаем **w** подтверждаем сохранение
     >*Command (? for help): n   
       Partition number (1-128, default 1):   
@@ -352,9 +352,39 @@ unused devices: <none>*
       OK; writing new GUID partition table (GPT) to /dev/sdb.   
       The operation has completed successfully*.   
 
-    Повторяем операцию и для остальных дисков: **sdc, sde, sdf, sdg**
+    Повторяем операцию и для остальных дисков: **sdc, sdd, sde, sdf, sdg** и проверям создание разделов.
+    ```
+    lsblk
+    ```
+    >*root@nUbunta2204:/# lsblk*
+      <pre>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+      loop0    7:0    0 63.9M  1 loop /snap/core20/2318
+      loop1    7:1    0 63.7M  1 loop /snap/core20/2496
+      loop2    7:2    0   87M  1 loop /snap/lxd/29351
+      loop3    7:3    0 89.4M  1 loop /snap/lxd/31333
+      loop4    7:4    0 44.4M  1 loop /snap/snapd/23545
+      loop5    7:5    0 38.8M  1 loop /snap/snapd/21759
+      sda      8:0    0   25G  0 disk
+      ├─sda1   8:1    0    1M  0 part
+      └─sda2   8:2    0   25G  0 part /
+      sdb      8:16   0    2G  0 disk
+      └─sdb1   8:17   0    2G  0 part
+      sdc      8:32   0    2G  0 disk
+      └─sdc1   8:33   0    2G  0 part
+      sdd      8:48   0    2G  0 disk
+      └─sdd1   8:49   0    2G  0 part
+      sde      8:64   0    2G  0 disk
+      └─sde1   8:65   0    2G  0 part
+      sdf      8:80   0    2G  0 disk
+      └─sdf1   8:81   0    2G  0 part
+      sdg      8:96   0    2G  0 disk
+      └─sdg1   8:97   0    2G  0 part
+      </pre>
        
-
+20. Создаём файловую систему **ext4** на дисках.
+    ```
+    mkfs.ext4 /dev/sdb
+21. ыввыв
 
 
 
