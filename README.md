@@ -237,7 +237,7 @@ unused devices: <none>*
              5       8       96        5      active sync set-B   /dev/sdg   
    </pre>
    
-12. Создаём папки **d01, d02,d03,d04,d05** в каталоге */mnt/* для монтирования.
+12. Создаём папки **d01, d02,d03,d04,d05,d06** в каталоге */mnt/* для монтирования.
     ```
     mkdir d01
     ```
@@ -245,8 +245,9 @@ unused devices: <none>*
     user@nUbunta2204:/mnt$ mkdir d01   
     user@nUbunta2204:/mnt$ mkdir d02   
     user@nUbunta2204:/mnt$ mkdir d03   
-    >user@nUbunta2204:/mnt$ mkdir d04   
-    >user@nUbunta2204:/mnt$ mkdir d05*      
+    user@nUbunta2204:/mnt$ mkdir d04   
+    user@nUbunta2204:/mnt$ mkdir d05
+    user@nUbunta2204:/mnt$ mkdir d06*      
 
 13. Создаём на *raid*-массиве файловую систему **XFS**
     ```
@@ -323,7 +324,7 @@ unused devices: <none>*
 
 ### GPT-таблица
 
-18. Создаём разделы GPT на дисках, с помощью утилиты **gdisk**.
+17. Создаём разделы GPT на дисках, с помощью утилиты **gdisk**.
     ```
     gdisk /dev/sdb
     ```
@@ -352,7 +353,7 @@ unused devices: <none>*
       OK; writing new GUID partition table (GPT) to /dev/sdb.   
       The operation has completed successfully*.   
 
-    Повторяем операцию и для остальных дисков: **sdc, sdd, sde, sdf, sdg** и проверям создание разделов.
+    Повторяем операцию для остальных дисков: **sdc, sdd, sde, sdf, sdg** и проверям создание разделов.
     ```
     lsblk
     ```
@@ -381,10 +382,38 @@ unused devices: <none>*
       └─sdg1   8:97   0    2G  0 part
       </pre>
        
-20. Создаём файловую систему **ext4** на дисках.
+18. Создаём файловую систему **ext4** на разделах GPT.
     ```
     mkfs.ext4 /dev/sdb
-21. ыввыв
+    ```
+    >*root@nUbunta2204:/# mkfs.ext4 /dev/sdb1  
+      mke2fs 1.46.5 (30-Dec-2021)
+      Creating filesystem with 524027 4k blocks and 131072 inodes
+      Filesystem UUID: f4cff792-60f8-4574-8190-70836b8aaf95
+      Superblock backups stored on blocks:
+              32768, 98304, 163840, 229376, 294912
+      Allocating group tables: done
+      Writing inode tables: done
+      Creating journal (8192 blocks): done
+      Writing superblocks and filesystem accounting information: done*
+     повторяем и для **sdc1, sdd1, sde1, sdf1, sdg1**
+    
+19. Монтируем блочные устройства **sdb1, sdc1, sdd1, sde1, sdf1, sdg1** к файловым ресурсам **d01, d02, d03, d04, d05, d06**.
+    ```
+    mount /dev/sdb1 /mnt/d01
+    ```
+    >*root@nUbunta2204:/# mount /dev/sdb1 /mnt/d01   
+root@nUbunta2204:/# mount /dev/sdc1 /mnt/d02   
+root@nUbunta2204:/# mount /dev/sdd1 /mnt/d03   
+root@nUbunta2204:/# mount /dev/sde1 /mnt/d04   
+root@nUbunta2204:/# mount /dev/sdf1 /mnt/d05   
+root@nUbunta2204:/# mount /dev/sdg1 /mnt/d06   
+root@nUbunta2204:/#*
+
+
+    
+    
+21. ываыв
 
 
 
