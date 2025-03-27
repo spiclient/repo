@@ -446,7 +446,20 @@ root@nUbunta2204:/#*
           exit 1   
       fi**   
 
-22.   
+22.   Предварительная настройка в системе.
+
+    **a. в каталоге */usr/local/bin* создаём пустой файл.**
+      ```
+      cd /usr/local/bin
+      ```
+      ```
+      touch script.sh
+      ```
+      >*root@nUbunta2204:/# cd /usr/local/bin   
+        root@nUbunta2204:/usr/local/bin#   
+        root@nUbunta2204:/usr/local/bin# touch script.sh   
+        root@nUbunta2204:/usr/local/bin#*   
+      
     
 
     
