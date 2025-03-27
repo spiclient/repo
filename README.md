@@ -430,7 +430,8 @@ root@nUbunta2204:/#*
       </pre>
 
 20.   Создаём bash-скрипт для автоматизации процесса настройки RAID-массива.
-    >#!/bin/bash   
+    
+      >*#!/bin/bash      
       mdadm --zero-superblock --force /dev/sd{b,c,d,e,f,g}   
       mdadm --create --verbose /dev/md0 -l 10 -n 6 /dev/sd{b,c,d,e,f,g}   
       mkdir /mnt/d01   
