@@ -429,6 +429,23 @@ root@nUbunta2204:/#*
       /dev/sdg1       2.0G   24K  1.9G   1% /mnt/d06
       </pre>
 
+20.   Создаём bash-скрипт для автоматизации процесса настройки RAID-массива.
+    >#!/bin/bash   
+      mdadm --zero-superblock --force /dev/sd{b,c,d,e,f,g}   
+      mdadm --create --verbose /dev/md0 -l 10 -n 6 /dev/sd{b,c,d,e,f,g}   
+      mkdir /mnt/d01   
+      mkfs.xfs -f /dev/md0   
+      mount /dev/md0 /mnt/d01   
+      if [ $? -eq 0 ]   
+      then  
+          echo "RAID successfully created!"   
+          exit 0   
+      else   
+          echo "NOT CREATED. FAIL!!!"   
+          exit 1   
+      fi*   
+
+22.   
     
 
     
