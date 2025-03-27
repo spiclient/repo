@@ -476,31 +476,31 @@ root@nUbunta2204:/#*
       **d. так как скрипт находится в каталоге переменной среды PATH, то его можно запускать по имени из любого места.**
 
       >*root@nUbunta2204:/# script.sh*
-      <pre>mdadm: Unrecognised md component device - /dev/sdb
-mdadm: Unrecognised md component device - /dev/sdc
-mdadm: Unrecognised md component device - /dev/sdd
-mdadm: Unrecognised md component device - /dev/sde
-mdadm: Unrecognised md component device - /dev/sdf
-mdadm: Unrecognised md component device - /dev/sdg
-mdadm: layout defaults to n2
-mdadm: layout defaults to n2
-mdadm: chunk size defaults to 512K
-mdadm: size set to 2094080K
-mdadm: Defaulting to version 1.2 metadata
-mdadm: array /dev/md0 started.
-log stripe unit (524288 bytes) is too large (maximum is 256KiB)
-log stripe unit adjusted to 32KiB
-meta-data=/dev/md0               isize=512    agcount=8, agsize=196352 blks
-         =                       sectsz=512   attr=2, projid32bit=1
-         =                       crc=1        finobt=1, sparse=1, rmapbt=0
-         =                       reflink=1    bigtime=0 inobtcount=0
-data     =                       bsize=4096   blocks=1570560, imaxpct=25
-         =                       sunit=128    swidth=384 blks
-naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
-log      =internal log           bsize=4096   blocks=2560, version=2
-         =                       sectsz=512   sunit=8 blks, lazy-count=1
-realtime =none                   extsz=4096   blocks=0, rtextents=0
-RAID successfully created!
-</pre>
+      <pre> mdadm: Unrecognised md component device - /dev/sdb
+            mdadm: Unrecognised md component device - /dev/sdc
+            mdadm: Unrecognised md component device - /dev/sdd
+            mdadm: Unrecognised md component device - /dev/sde
+            mdadm: Unrecognised md component device - /dev/sdf
+            mdadm: Unrecognised md component device - /dev/sdg
+            mdadm: layout defaults to n2
+            mdadm: layout defaults to n2
+            mdadm: chunk size defaults to 512K
+            mdadm: size set to 2094080K
+            mdadm: Defaulting to version 1.2 metadata
+            mdadm: array /dev/md0 started.
+            log stripe unit (524288 bytes) is too large (maximum is 256KiB)
+            log stripe unit adjusted to 32KiB
+            meta-data=/dev/md0               isize=512    agcount=8, agsize=196352 blks
+                     =                       sectsz=512   attr=2, projid32bit=1
+                     =                       crc=1        finobt=1, sparse=1, rmapbt=0
+                     =                       reflink=1    bigtime=0 inobtcount=0
+            data     =                       bsize=4096   blocks=1570560, imaxpct=25
+                     =                       sunit=128    swidth=384 blks
+            naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+            log      =internal log           bsize=4096   blocks=2560, version=2
+                     =                       sectsz=512   sunit=8 blks, lazy-count=1
+            realtime =none                   extsz=4096   blocks=0, rtextents=0
+            RAID successfully created!
+      </pre>
        
 
