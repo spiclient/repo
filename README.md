@@ -397,6 +397,7 @@ unused devices: <none>*
       Writing inode tables: done   
       Creating journal (8192 blocks): done   
       Writing superblocks and filesystem accounting information: done*
+    
      повторяем и для **sdc1, sdd1, sde1, sdf1, sdg1**
     
 19. Монтируем блочные устройства **sdb1, sdc1, sdd1, sde1, sdf1, sdg1** к файловым ресурсам **d01, d02, d03, d04, d05, d06**.
