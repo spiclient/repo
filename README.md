@@ -351,7 +351,8 @@ unused devices: <none>*
       PARTITIONS!!   
       Do you want to proceed? (Y/N): y   
       OK; writing new GUID partition table (GPT) to /dev/sdb.   
-      The operation has completed successfully*.   
+      The operation has completed successfully*.
+       
 
     Повторяем операцию для остальных дисков: **sdc, sdd, sde, sdf, sdg** и проверям создание разделов.
     ```
