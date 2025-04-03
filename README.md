@@ -6,7 +6,10 @@
 + VirtualBox 7.1.6
 + MobaXterm
 ## Описание домашнего задания:
-   + Настроить LVM в Ubuntu 24.04 Server: создать **Physical Volume, Volume Group и Logical Volume.**
+   + Настроить LVM в Ubuntu 24.04 Server:
+     + создать **Physical Volume**
+     + создать **Volume Group**
+     + создать **Logical Volume.**
    + Отформатировать и смонтировать файловую систему.
    + Расширить файловую систему за счёт нового диска.
    + Выполнить **resize**
