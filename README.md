@@ -117,8 +117,8 @@ System:
     ```
     lvdisplay /dev/volgroup/logvol
     ```
-    >*root@ubuntu24:~# lvdisplay /dev/volgroup/logvol*
-    <phe>--- Logical volume ---
+    >*root@ubuntu24:~# lvdisplay /dev/volgroup/logvol*   
+    <phe> --- Logical volume ---
      LV Path                /dev/volgroup/logvol
      LV Name                logvol
      VG Name                volgroup
