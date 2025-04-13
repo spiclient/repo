@@ -11,9 +11,8 @@
      + создать **Volume Group**
      + создать **Logical Volume.**
      + отформатировать и смонтировать файловую систему.
-   + Расширить файловую систему за счёт нового диска.
-   + Выполнить **resize**
-   + Проверить корректность выполнения
+   + Расширить файловую систему за счёт нового диска. Выполнить **resize**
+   + Проверить корректность выполнения. Разобрать LVM.
    + Уменьшить том под **/** до **8G**.
    + Выделить том под */var* - сделать в mirror.
    + Выделить том под */home*.
@@ -249,7 +248,7 @@ Writing superblocks and filesystem accounting information: done*
         /dev/mapper/volgroup-logvol ext4   11G  7.8G  2.7G  75% /data
      </pre>
 
-### Уменьшаем том. Разбираем LVM. 
+### Разбираем LVM. 
 17. Размонтируем каталог
     ```
     umount dev/volgroup/logvol /data
@@ -264,8 +263,53 @@ Writing superblocks and filesystem accounting information: done*
     ```
     vgremove /dev/volgroup
     ```
+    ```
     pvremove /dev/sdb /dev/sdc
     ```
-           
-20. fdgdfgdfg
+### Уменьшаем том под **/** до **8G**.    
+19. Создаём Physical Volume, Volume Group, Logical Volume.
+    ```
+    pvcreate /dev/sdb
+    ```
+    ```
+    vgcreate vg_root /dev/sdb
+    ```
+    ```
+    lvcreate -n lv_root -l +100%FREE /dev/vg_root
+    ```
+20. Создаём файловую систему **ext4** и монтируем каталог */mnt*
+    ```
+    mkfs.ext4 /dev/vg_root/lv_root
+    ```
+    >*root@ubuntu24:~# mkfs.ext4 /dev/vg_root/lv_root    
+      mke2fs 1.47.0 (5-Feb-2023)    
+      Creating filesystem with 2620416 4k blocks and 655360 inodes    
+      Filesystem UUID: 76b21f67-0897-4284-a7d7-de0c3e0bbfba   
+      Superblock backups stored on blocks:   
+      32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632   
+      Allocating group tables: done   
+      Writing inode tables: done   
+      Creating journal (16384 blocks): done   
+      Writing superblocks and filesystem accounting information: done*
+    ```
+    mount /dev/vg_root/lv_root /mnt
+    ```
+   
+21. Копируем все данные из корневого каталога **/** в наш смонтированный каталог.
+    ```
+    rsync -avxHAX --progress / /mnt/
+    ```
+    >*root@ubuntu24:~# rsync -avxHAX --progress / /mnt/   
+      sending incremental file list    
+      ./   
+      bin -> usr/bin   
+      lib -> usr/lib   
+      lib64 -> usr/lib64   
+      sbin -> usr/sbin   
+      swap.img   
+      2,413,821,952 100%  223.02MB/s    0:00:10 (xfr#1, ir-chk=1032/1038)*   
+
+    
+
+23. укуцк
 
