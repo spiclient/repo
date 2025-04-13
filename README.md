@@ -38,11 +38,10 @@
 3. Проверяем версию ОС, ядра. 
    ```
    inxi -S     
-
    ```
-   >user@ubuntu24:~$ inxi -S
-System:
-  Host: ubuntu24 Kernel: 6.8.0-57-generic arch: x86_64 bits: 64
-  Desktop: N/A Distro: Ubuntu 24.04.2 LTS (Noble Numbat)<
+   >*user@ubuntu24:~$ inxi -S  
+System:  
+  Host: ubuntu24 Kernel: 6.8.0-57-generic arch: x86_64 bits: 64  
+  Desktop: N/A Distro: Ubuntu 24.04.2 LTS (Noble Numbat)<*
 
 
