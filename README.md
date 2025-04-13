@@ -185,10 +185,10 @@ Writing superblocks and filesystem accounting information: done*
  
 15. Для наглядности имитируем занятое пространство на Logical Volume
     ```
-    dd if=/dev/zero of=/data/test.log bs=1M \
+    dd if=/dev/zero of=/data/test.log bs=1M \   
  count=10000 status=progress
     ```
-    >*root@ubuntu24:~# dd if=/dev/zero of=/data/test.log bs=1M \
+    >*root@ubuntu24:~# dd if=/dev/zero of=/data/test.log bs=1M \   
  count=10000 status=progress   
      8167358464 bytes (8.2 GB, 7.6 GiB) copied, 18 s, 452 MB/s   
      dd: error writing '/data/test.log': No space left on device   
