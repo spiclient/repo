@@ -14,7 +14,7 @@
    + Расширить файловую систему за счёт нового диска. Выполнить **resize**
    + Проверить корректность выполнения. Разобрать LVM.
    + Уменьшить том под **/** до **8G**.
-   + Выделить том под */var* - сделать в mirror.
+   + Выделить том под */var*. Cделать в mirror.
    + Выделить том под */home*.
    + */home* - сделать том для снапшотов.
    + Прописать монтирование в **fstab**. ~~Попробовать с разными опциями и разными файловыми системами (на выбор).~~
@@ -361,7 +361,7 @@ Writing superblocks and filesystem accounting information: done*
        lv_root   vg_root   -wi-ao---- <10.00g   
     </pre>
 
-26. Возвращаем корневой каталог на целевое место. Выполняем *пункты 20. 21. 22*
+25. Возвращаем корневой каталог на целевое место. Выполняем *пункты 20. 21. 22*
     ```
     mkfs.ext4 /dev/ubuntu-vg/ubuntu-lv
     ```
@@ -384,9 +384,45 @@ Writing superblocks and filesystem accounting information: done*
     ```
     update-initramfs -u
     ```
+### Выделить том под */var*. Cделать в mirror.    
     
+26. Создаём Physical Volume на 2х дисках: sdc, sdd.
+    ```
+    pvcreate /dev/sdc /dev/sdd
+    ```
+    >*root@ubuntu24:/# pvcreate /dev/sdc /dev/sdd   
+      Physical volume "/dev/sdc" successfully created.   
+      Physical volume "/dev/sdd" successfully created.*
 
-
+27. Создаём Volume Group и Logical Volume.
+    ```
+    vgcreate vg_var /dev/sdc /dev/sdd
+    ```
+    ```
+    lvcreate -L 950M -m1 -n lv_var vg_var
+    ```
+28. Создаём на Logical Volume файловую систему **ext4**, монтируем и копируем в неё все данные из каталога **/var**.
+    ```
+    mkfs.ext4 /dev/vg_var/lv_var
+    ```
+    >*root@ubuntu24:/# mkfs.ext4 /dev/vg_var/lv_var   
+     mke2fs 1.47.0 (5-Feb-2023)   
+     Creating filesystem with 243712 4k blocks and 60928 inodes   
+     Filesystem UUID: 0410385d-e4e8-4416-82e0-7b5220994762   
+     Superblock backups stored on blocks:   
+           32768, 98304, 163840, 229376   
+     Allocating group tables: done   
+     Writing inode tables: done   
+     Creating journal (4096 blocks): done   
+     Writing superblocks and filesystem accounting information: done*
+    ```
+    mount /dev/vg_var/lv_var /mnt
+    ```
+    ```
+    cp -aR /var/* /mnt/
+    ```
     
-28. впарвр
+    
+       
 
+30. варпвапррвар
