@@ -14,10 +14,9 @@
    + Расширить файловую систему за счёт нового диска. Выполнить **resize**
    + Проверить корректность выполнения. Разобрать LVM.
    + Уменьшить том под **/** до **8G**.
-   + Выделить том под */var*. Cделать в mirror.
-   + Выделить том под */home*.
+   + Выделить том под */var*. Cделать в mirror. Установить автоматическое монтирование в fstab.
+   + Выделить том под */home*. Установить автоматическое монтирование в fstab.
    + */home* - сделать том для снапшотов.
-   + Прописать монтирование в **fstab**. ~~Попробовать с разными опциями и разными файловыми системами (на выбор).~~
    + Работа со снапшотами:
      + сгенерить файлы в */home/*;
      + снять снапшот;
@@ -384,7 +383,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
     update-initramfs -u
     ```
-### Выделить том под */var*. Cделать в mirror.    
+### Выделить том под */var*. Cделать в mirror. Установить автоматическое монтирование в fstab.    
     
 26. Создаём Physical Volume на 2х дисках: sdc, sdd.
     ```
@@ -421,10 +420,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
     cp -aR /var/* /mnt/
     ```
-29. Дополнительно сохраняем содержимое **/var**. Выполняем монтирование.
-    ```
-    mkdir /tmp/oldvar && mv /var/* /tmp/oldvar
-    ```
+29. Выполняем монтирование **/var**. 
     ```
     umount /mnt
     ```
@@ -442,4 +438,84 @@ Writing superblocks and filesystem accounting information: done*
     reboot
     ```
 
-32. jkghjkg
+31. Разбираем временную LVM созданную для корневого каталога.
+    ```
+    lvremove /dev/vg_root/lv_root
+    ```
+    ```
+    vgremove /dev/vg_root
+    ```
+    ```
+    pvremove /dev/sdb
+    ```
+### Выделить том под */home*. Установить автоматическое монтирование в fstab.  
+
+32. Создаём Logical Volume и файловую систему **ext4** для каталога **/home**. Монтируем.  
+    ```
+    lvcreate -n lv_home -L 2G /dev/ubuntu-vg
+    ```
+    ```
+    mkfs.ext4 /dev/ubuntu-vg/lv_home
+    ```
+    ```
+    mount /dev/ubuntu-vg/lv_home /mnt/
+    ```
+33. Копируем содержимое каталога **/home**, а потом его удаляем.
+    ```
+    cp -aR /home/* /mnt/
+    ``
+    ``
+    rm -rf /home/*
+    ```
+34. Монтируем новый **/home**.
+    ```
+    umount /mnt
+    ```
+    ```
+    mount /dev/ubuntu-vg/lv_home /home/
+    ```
+    ```
+35. Изменяем параметры автоматического монтирования **/home** в fstab.
+    ```
+    echo "`blkid | grep Home | awk '{print $2}'` \
+     /home ext4 defaults 0 0" >> /etc/fstab
+    ```
+    
+### Работа со снапшотами.
+37. Генерируем файлы в каталог **/home**.
+    ```
+    touch /home/file{1..20}
+    ```
+38. Делаем снапшот каталога **/home**.
+    ```
+    lvcreate -L 100MB -s -n home_snap \
+     /dev/ubuntu-vg/LogVol_Home
+    ```
+39. Удаляем часть данных из **/home**.
+    ```
+    rm -f /home/file{17..20}
+    ```
+      
+40. Процесс восстановления данных:
+    a. *размонтирование каталога **/home***
+    ```
+    umount /home
+    ```
+    b. *объединение изменения из снапшота в исходный том*
+    ```
+    lvconvert --merge /dev/ubuntu-vg/home_snap
+    ```
+    c. *монтирование*
+    ```
+    mount /dev/mapper/ubuntu--vg-lv_home /home
+    ```
+    d. *перезапуск службы с обновленной конфигурацией*
+    ```
+    systemctl daemon-reload
+    ```
+    e. *проверка*
+    ```
+    ls -al /home
+    ```
+    
+42. вмв
