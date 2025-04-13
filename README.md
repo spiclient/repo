@@ -61,11 +61,11 @@ System:
       sde                         8:64   0    1G  0 disk  
       sr0                        11:0    1 1024M  0 rom  
    </pre>
-6. Переключаемся в режим суперпользователя.
+5. Переключаемся в режим суперпользователя.
    ```
    sudo -i
    ```   
-8. Проверяем наличие physical volume, volume group, logical volume.
+6. Проверяем наличие physical volume, volume group, logical volume.
    ```
    pvs
    ```
@@ -92,5 +92,52 @@ System:
     ubuntu-lv ubuntu-vg -wi-ao---- <11.50g
    </pre>
 
-10. rfgeggre 
+7. Создаём physical volume
+    ```
+    pvcreate /dev/sdb
+    ```
+    >*root@ubuntu24:~# pvcreate /dev/sdb   
+  Physical volume "/dev/sdb" successfully created.*
+   
+8. Создаём volume group
+   ```
+   vgcreate volgroup /dev/sdb
+   ```
+   >*root@ubuntu24:~# vgcreate volgroup /dev/sdb   
+  Volume group "volgroup" successfully created*
+
+9. Создаём logical volume
+    ```
+    lvcreate -l+80%FREE -n logvol volgroup
+    ```
+    >*root@ubuntu24:~# lvcreate -l+80%FREE -n logvol volgroup   
+  Logical volume "logvol" created.*
+
+10. Проверяем информацию о созданной logical volume
+    ```
+    vgdisplay volgroup
+    ```
+    >*root@ubuntu24:~# vgdisplay volgroup*
+    <phe>--- Volume group ---
+     VG Name               volgroup
+     System ID
+     Format                lvm2
+     Metadata Areas        1
+     Metadata Sequence No  2
+     VG Access             read/write
+     VG Status             resizable
+     MAX LV                0
+     Cur LV                1
+     Open LV               0
+     Max PV                0
+     Cur PV                1
+     Act PV                1
+     VG Size               <10.00 GiB
+     PE Size               4.00 MiB
+     Total PE              2559
+     Alloc PE / Size       2047 / <8.00 GiB
+     Free  PE / Size       512 / 2.00 GiB
+     VG UUID               Aauq2Q-jxyq-kaNr-htI7-I56i-mjrZ-x0Vsas
+    </phe>
+13. sfsgsg
 
