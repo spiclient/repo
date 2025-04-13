@@ -194,7 +194,15 @@ Writing superblocks and filesystem accounting information: done*
      dd: error writing '/data/test.log': No space left on device   
      7944+0 records in   
      7943+0 records out   
-     8329297920 bytes (8.3 GB, 7.8 GiB) copied, 18.5249 s, 450 MB/s*    
+     8329297920 bytes (8.3 GB, 7.8 GiB) copied, 18.5249 s, 450 MB/s*
+    ```
+    df -Th /data/
+    ```
+    >*root@ubuntu24:~# df -Th /data/*
+    <pre>Filesystem                  Type  Size  Used Avail Use% Mounted on   
+         /dev/mapper/volgroup-logvol ext4  7.8G  7.8G     0 100% /data
+    </pre>
+     
 
 
 17. ssggsdg
