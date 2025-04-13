@@ -48,7 +48,8 @@ System:
    lsblk     
    ```
    >*user@ubuntu24:~$ lsblk*  
-   <pre>NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS  
+   <pre>
+      NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS  
       sda                         8:0    0   25G  0 disk  
       ├─sda1                      8:1    0    1M  0 part  
       ├─sda2                      8:2    0    2G  0 part /boot  
@@ -60,5 +61,26 @@ System:
       sde                         8:64   0    1G  0 disk  
       sr0                        11:0    1 1024M  0 rom  
    </pre>
-6. ыва 
+6. Переключаемся в режим суперпользователя.
+   ```
+   sudo -i
+   ```   
+8. Проверяем наличие physical volume, volume group, logical volume.
+   ```
+   pvs
+   vgs
+   lvs
+   ```
+   >*root@ubuntu24:~# pvs   
+  PV         VG        Fmt  Attr PSize   PFree   
+  /dev/sda3  ubuntu-vg lvm2 a--  <23.00g 11.50g   
+root@ubuntu24:~# vgs   
+  VG        #PV #LV #SN Attr   VSize   VFree   
+  ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g   
+root@ubuntu24:~# lvs   
+  LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert   
+  ubuntu-lv ubuntu-vg -wi-ao---- <11.50g                                               
+root@ubuntu24:~#*   
+
+10. rfgeggre 
 
