@@ -28,7 +28,6 @@
 
 Логировать работу можно с помощью утилиты script.
 ## Выполнение
-<u>Настраиваем LVM и монтируем каталог</u>
 ### Настраиваем LVM и монтируем каталог. 
 1. Создаём виртуальную машину под управлением ОС Ubuntu 24.04 в Virtual Box с LVM.
 2. Запускаем запись листинга команда в файл **lvm.log**  
@@ -174,7 +173,17 @@ Writing superblocks and filesystem accounting information: done*
     ```
     >*root@ubuntu24:~# vgdisplay -v volgroup | grep 'PV Name'   
      PV Name               /dev/sdb   
-     PV Name               /dev/sdc*   
+     PV Name               /dev/sdc*
+    ```
+    vgs
+    ```
+    >*root@ubuntu24:~# vgs*
+    <pre>VG        #PV #LV #SN Attr   VSize   VFree
+     ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g
+     volgroup    2   1   0 wz--n-  11.99g <4.00g
+    </pre>
+
+   
 
 15. аивипвапа
 
