@@ -517,5 +517,4 @@ Writing superblocks and filesystem accounting information: done*
     ```
     ls -al /home
     ```
-    
-42. вмв
+
