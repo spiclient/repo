@@ -29,7 +29,7 @@
 Логировать работу можно с помощью утилиты script.
 ## Выполнение
 
-### Работа с LVM
+### Настраиваем LVM и монтируем каталог. 
 1. Создаём виртуальную машину под управлением ОС Ubuntu 24.04 в Virtual Box с LVM.
 2. Запускаем запись листинга команда в файл **lvm.log**  
    ```
@@ -65,7 +65,7 @@ System:
    ```
    sudo -i
    ```   
-6. Проверяем наличие physical volume, volume group, logical volume.
+6. Проверяем наличие Physical Volume, Volume Group, Logical Volume.
    ```
    pvs
    ```
@@ -92,28 +92,28 @@ System:
     ubuntu-lv ubuntu-vg -wi-ao---- <11.50g
    </pre>
 
-7. Создаём physical volume
+7. Создаём Physical Volume
     ```
     pvcreate /dev/sdb
     ```
     >*root@ubuntu24:~# pvcreate /dev/sdb   
   Physical volume "/dev/sdb" successfully created.*
    
-8. Создаём volume group
+8. Создаём Volume Group
    ```
    vgcreate volgroup /dev/sdb
    ```
    >*root@ubuntu24:~# vgcreate volgroup /dev/sdb   
   Volume group "volgroup" successfully created*
 
-9. Создаём logical volume
+9. Создаём Logical Volume
     ```
     lvcreate -l+80%FREE -n logvol volgroup
     ```
     >*root@ubuntu24:~# lvcreate -l+80%FREE -n logvol volgroup   
   Logical volume "logvol" created.*
 
-10. Проверяем информацию о созданной logical volume
+10. Проверяем информацию о созданной Logical Volume
     ```
     lvdisplay /dev/volgroup/logvol
     ```
@@ -136,7 +136,7 @@ System:
      - currently set to     256
      Block device           252:1
     </pre>
-11. Создаём файловую систему на созданной logical volume **logvol**
+11. Создаём файловую систему на созданной Logical Volume **logvol**
     ```
     mkfs.ext4 /dev/volgroup/logvol
     ```
@@ -150,7 +150,31 @@ Allocating group tables: done
 Writing inode tables: done   
 Creating journal (16384 blocks): done   
 Writing superblocks and filesystem accounting information: done*   
-
     
-14. hgjghjgh
+12. Создаём каталог **data** и монтируем его  
+   ```
+   mkdir /data
+   ```
+   ```
+   mount /dev/volgroup/logvol /data/
+   ```
+### Расширяем файловую систему с помощью нового диска. 
+13. Создаём Physical Volume на новом диске
+    ```
+    pvcreate /dev/sdc
+    ```
+14. Расширяем Volume Group новым диском и проверяем.
+    ```
+    vgextend volgroup /dev/sdc
+    ```
+    >*root@ubuntu24:~# vgextend volgroup /dev/sdc   
+      Volume group "volgroup" successfully extended*
+    ```
+    vgdisplay -v volgroup | grep 'PV Name'
+    ```
+    >*root@ubuntu24:~# vgdisplay -v volgroup | grep 'PV Name'
+     PV Name               /dev/sdb
+     PV Name               /dev/sdc*
+
+15. аивипвапа
 
