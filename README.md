@@ -182,8 +182,20 @@ Writing superblocks and filesystem accounting information: done*
      ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g
      volgroup    2   1   0 wz--n-  11.99g <4.00g
     </pre>
+ 
+15. Для наглядности имитируем занятое пространство на Logical Volume
+    ```
+    dd if=/dev/zero of=/data/test.log bs=1M \
+ count=10000 status=progress
+    ```
+    >*root@ubuntu24:~# dd if=/dev/zero of=/data/test.log bs=1M \
+ count=10000 status=progress   
+     8167358464 bytes (8.2 GB, 7.6 GiB) copied, 18 s, 452 MB/s   
+     dd: error writing '/data/test.log': No space left on device   
+     7944+0 records in   
+     7943+0 records out   
+     8329297920 bytes (8.3 GB, 7.8 GiB) copied, 18.5249 s, 450 MB/s*    
 
-   
 
-15. аивипвапа
+17. ssggsdg
 
