@@ -328,10 +328,12 @@ Writing superblocks and filesystem accounting information: done*
     
     >*root@ubuntu24:/# update-initramfs -u   
     update-initramfs: Generating /boot/initrd.img-6.8.0-57-generic*
-      
 
-    
+    ***Перезагружаемся и проверяем.***
+    ```
+    reboot
+    ```   
 
 
-24. ewgweg
+23. ewgweg
 
