@@ -152,12 +152,12 @@ Creating journal (16384 blocks): done
 Writing superblocks and filesystem accounting information: done*   
     
 12. Создаём каталог **data** и монтируем его  
-   ```
-   mkdir /data
-   ```
-   ```
-   mount /dev/volgroup/logvol /data/
-   ```
+    ```
+    mkdir /data
+    ```
+    ```
+    mount /dev/volgroup/logvol /data/
+    ```
 ### Расширяем файловую систему с помощью нового диска. 
 13. Создаём Physical Volume на новом диске
     ```
@@ -172,9 +172,9 @@ Writing superblocks and filesystem accounting information: done*
     ```
     vgdisplay -v volgroup | grep 'PV Name'
     ```
-    >*root@ubuntu24:~# vgdisplay -v volgroup | grep 'PV Name'
-     PV Name               /dev/sdb
-     PV Name               /dev/sdc*
+    >*root@ubuntu24:~# vgdisplay -v volgroup | grep 'PV Name'   
+     PV Name               /dev/sdb   
+     PV Name               /dev/sdc*   
 
 15. аивипвапа
 
