@@ -421,8 +421,25 @@ Writing superblocks and filesystem accounting information: done*
     ```
     cp -aR /var/* /mnt/
     ```
+29. Дополнительно сохраняем содержимое **/var**. Выполняем монтирование.
+    ```
+    mkdir /tmp/oldvar && mv /var/* /tmp/oldvar
+    ```
+    ```
+    umount /mnt
+    ```
+    ```
+    mount /dev/vg_var/lv_var /var
+    ```
     
-    
-       
+30. Изменяем параметры автоматического монтирования **/var** в fstab.
+    ```
+    echo "`blkid | grep var: | awk '{print $2}'` \
+     /var ext4 defaults 0 0" >> /etc/fstab
+    ```
+    ***Перезагружаемся***
+    ```
+    reboot
+    ```
 
-30. варпвапррвар
+32. jkghjkg
