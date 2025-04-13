@@ -308,8 +308,27 @@ Writing superblocks and filesystem accounting information: done*
       sbin -> usr/sbin   
       swap.img   
       2,413,821,952 100%  223.02MB/s    0:00:10 (xfr#1, ir-chk=1032/1038)*   
+      ----------------------------
+22. Изменяем корневую директорию и выполняем конфигурацию загрузчика GRUB.
+    ```
+    for i in /proc/ /sys/ /dev/ /run/ /boot/; \
+ do mount --bind $i /mnt/$i; done
+    ```   
+    ```
+    chroot /mnt/
+    ```
+    ```
+    grub-mkconfig -o /boot/grub/grub.cfg
+    ```
+    ***Обновляем образ initrd.***
+    update-initramfs -u
+    ```
+    >*root@ubuntu24:/# update-initramfs -u   
+      update-initramfs: Generating /boot/initrd.img-6.8.0-57-generic*
+      
 
     
 
-23. укуцк
+
+24. ewgweg
 
