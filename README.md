@@ -203,8 +203,33 @@ Writing superblocks and filesystem accounting information: done*
        Filesystem                  Type  Size  Used Avail Use% Mounted on   
        /dev/mapper/volgroup-logvol ext4  7.8G  7.8G     0 100% /data
     </pre>
+  
+16. Расширяем Logical Volume **logvol**
+    ```
+    lvextend -l+80%FREE /dev/volgroup/logvol
+    ```
+    >*root@ubuntu24:~# lvextend -l+80%FREE /dev/volgroup/logvol   
+  Size of logical volume volgroup/logvol changed from <8.00 GiB (2047 extents) to <11.20 GiB (2866 extents).   
+  Logical volume volgroup/logvol successfully resized.*
+    
+    ***Проверяем внесенное изменение в размер тома.***
+    ```
+    lvs
+    ```
+    >*root@ubuntu24:~# lvs*
+    <pre> 
+      LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+     ubuntu-lv ubuntu-vg -wi-ao---- <11.50g
+     logvol    volgroup  -wi-ao---- <11.20g
+     </pre>
+     ```
+     df -Th /data/
+     ```
+     >*root@ubuntu24:~# df -Th /data/*   
+     <pre>
+      Filesystem                  Type  Size  Used Avail Use% Mounted on
+      /dev/mapper/volgroup-logvol ext4  7.8G  7.8G     0 100% /data
+     </pre>
      
-
-
-17. ssggsdg
+17. hgjhj
 
