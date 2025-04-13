@@ -78,16 +78,13 @@ System:
    >*root@ubuntu24:~# vgs   
   VG        #PV #LV #SN Attr   VSize   VFree   
   ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g* 
-
+   ```
    lvs
    ```
-   >*root@ubuntu24:~# vgs   
-  VG        #PV #LV #SN Attr   VSize   VFree   
-  ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g   
-root@ubuntu24:~# lvs   
-  LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert   
-  ubuntu-lv ubuntu-vg -wi-ao---- <11.50g                                               
-root@ubuntu24:~#*   
+   >*root@ubuntu24:~# lvs      
+  LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync   
+   Convert          
+  ubuntu-lv ubuntu-vg -wi-ao---- <11.50g*   
 
 10. rfgeggre 
 
