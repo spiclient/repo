@@ -115,29 +115,41 @@ System:
 
 10. Проверяем информацию о созданной logical volume
     ```
-    vgdisplay volgroup
+    lvdisplay /dev/volgroup/logvol
     ```
-    >*root@ubuntu24:~# vgdisplay volgroup*
-    <phe>--- Volume group ---
-     VG Name               volgroup
-     System ID
-     Format                lvm2
-     Metadata Areas        1
-     Metadata Sequence No  2
-     VG Access             read/write
-     VG Status             resizable
-     MAX LV                0
-     Cur LV                1
-     Open LV               0
-     Max PV                0
-     Cur PV                1
-     Act PV                1
-     VG Size               <10.00 GiB
-     PE Size               4.00 MiB
-     Total PE              2559
-     Alloc PE / Size       2047 / <8.00 GiB
-     Free  PE / Size       512 / 2.00 GiB
-     VG UUID               Aauq2Q-jxyq-kaNr-htI7-I56i-mjrZ-x0Vsas
+    >*root@ubuntu24:~# lvdisplay /dev/volgroup/logvol*
+    <phe>--- Logical volume ---
+     LV Path                /dev/volgroup/logvol
+     LV Name                logvol
+     VG Name                volgroup
+     LV UUID                PzbiiG-hFc3-ladP-iKth-GwIH-ZQ4R-t2O2kM
+     LV Write Access        read/write
+     LV Creation host, time ubuntu24, 2025-04-13 16:25:28 +0000
+     LV Status              available
+     # open                 0
+     LV Size                <8.00 GiB
+     Current LE             2047
+     Segments               1
+     Allocation             inherit
+     Read ahead sectors     auto
+     - currently set to     256
+     Block device           252:1
     </phe>
-13. sfsgsg
+11. Создаём файловую систему на созданной logical volume **logvol**
+    ```
+    mkfs.ext4 /dev/volgroup/logvol
+    ```
+    >*root@ubuntu24:~# mkfs.ext4 /dev/volgroup/logvol
+mke2fs 1.47.0 (5-Feb-2023)
+Creating filesystem with 2096128 4k blocks and 524288 inodes
+Filesystem UUID: 8340ca6a-c2c9-499d-8c82-4951497961d2
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information: done*
+
+    
+14. hgjghjgh
 
