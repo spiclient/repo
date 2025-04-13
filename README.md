@@ -343,7 +343,7 @@ Writing superblocks and filesystem accounting information: done*
       Do you really want to remove and DISCARD active logical volume ubuntu-vg/ubuntu-lv? [y/n]: y   
       Logical volume "ubuntu-lv" successfully removed.*
     
-25. Создаём новый Logical Volume на 8ГБ.
+24. Создаём новый Logical Volume на 8ГБ.
     ```
     lvcreate -n ubuntu-vg/ubuntu-lv -L 8G /dev/ubuntu-vg
     ```
@@ -355,13 +355,14 @@ Writing superblocks and filesystem accounting information: done*
     lvs
     ```
     >*root@ubuntu24:~# lvs*   
-    <pre>LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert   
-     ubuntu-lv ubuntu-vg -wi-a-----   8.00g   
-     lv_root   vg_root   -wi-ao---- <10.00g   
+    <pre>
+       LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert   
+       ubuntu-lv ubuntu-vg -wi-a-----   8.00g   
+       lv_root   vg_root   -wi-ao---- <10.00g   
     </pre>
 
 26. Возвращаем корневой каталог на целевое место. Выполняем *пункты 20. 21. 22*
-    ~~~
+    ```
     mkfs.ext4 /dev/ubuntu-vg/ubuntu-lv
     ```
     ```
