@@ -199,8 +199,9 @@ Writing superblocks and filesystem accounting information: done*
     df -Th /data/
     ```
     >*root@ubuntu24:~# df -Th /data/*
-    <pre>Filesystem                  Type  Size  Used Avail Use% Mounted on   
-         /dev/mapper/volgroup-logvol ext4  7.8G  7.8G     0 100% /data
+    <pre>
+       Filesystem                  Type  Size  Used Avail Use% Mounted on   
+       /dev/mapper/volgroup-logvol ext4  7.8G  7.8G     0 100% /data
     </pre>
      
 
