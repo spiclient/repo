@@ -249,6 +249,23 @@ Writing superblocks and filesystem accounting information: done*
         /dev/mapper/volgroup-logvol ext4   11G  7.8G  2.7G  75% /data
      </pre>
 
+### Уменьшаем том. Разбираем LVM. 
+17. Размонтируем каталог
+    ```
+    umount dev/volgroup/logvol /data
+    ```
+    >*root@ubuntu24:~# umount dev/volgroup/logvol /data   
+      umount: dev/volgroup/logvol: no mount point specified.*
 
-17. hgjhj
+18. Удаляем Logical Volume, Volume Group, Physical Volume.
+    ```
+    lvremove /dev/volgroup/logvol
+    ```
+    ```
+    vgremove /dev/volgroup
+    ```
+    pvremove /dev/sdb /dev/sdc
+    ```
+           
+20. fdgdfgdfg
 
