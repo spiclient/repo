@@ -35,10 +35,14 @@
    ```
    script lvm.log
    ```
-   
-4. 
-5. Запускаем систему и смотрим информацию о дисках с помощью команд **lsblk** и **lshw**.
+3. Проверяем версию ОС, ядра. 
    ```
-   lsblk
+   inxi -S     
+
    ```
+   >user@ubuntu24:~$ inxi -S
+System:
+  Host: ubuntu24 Kernel: 6.8.0-57-generic arch: x86_64 bits: 64
+  Desktop: N/A Distro: Ubuntu 24.04.2 LTS (Noble Numbat)<
+
 
