@@ -69,22 +69,28 @@ System:
    ```
    pvs
    ```
-   >*root@ubuntu24:~# pvs   
-  PV         VG        Fmt  Attr PSize   PFree   
-  /dev/sda3  ubuntu-vg lvm2 a--  <23.00g 11.50g* 
+   >*root@ubuntu24:~# pvs*   
+   <pre>
+   PV         VG        Fmt  Attr PSize   PFree   
+   /dev/sda3  ubuntu-vg lvm2 a--  <23.00g 11.50g
+   </pre>
    ```
    vgs
    ```
-   >*root@ubuntu24:~# vgs   
-  VG        #PV #LV #SN Attr   VSize   VFree   
-  ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g* 
+   >*root@ubuntu24:~# vgs*   
+   <pre>
+    VG        #PV #LV #SN Attr   VSize   VFree   
+    ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g
+   </pre>
    ```
    lvs
    ```
-   >*root@ubuntu24:~# lvs      
-  LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync   
-   Convert          
-  ubuntu-lv ubuntu-vg -wi-ao---- <11.50g*   
+   >*root@ubuntu24:~# lvs*
+   <pre>      
+    LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync   
+    Convert          
+    ubuntu-lv ubuntu-vg -wi-ao---- <11.50g
+   </pre>
 
 10. rfgeggre 
 
