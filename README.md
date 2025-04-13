@@ -48,17 +48,17 @@ System:
    lsblk     
    ```
    >*user@ubuntu24:~$ lsblk*  
-<pre>NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS  
-sda                         8:0    0   25G  0 disk  
-├─sda1                      8:1    0    1M  0 part  
-├─sda2                      8:2    0    2G  0 part /boot  
-└─sda3                      8:3    0   23G  0 part  
-  └─ubuntu--vg-ubuntu--lv 252:0    0 11.5G  0 lvm  /  
-sdb                         8:16   0   10G  0 disk  
-sdc                         8:32   0    2G  0 disk  
-sdd                         8:48   0    1G  0 disk  
-sde                         8:64   0    1G  0 disk  
-sr0                        11:0    1 1024M  0 rom  
+<pre> NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS  
+      sda                         8:0    0   25G  0 disk  
+      ├─sda1                      8:1    0    1M  0 part  
+      ├─sda2                      8:2    0    2G  0 part /boot  
+      └─sda3                      8:3    0   23G  0 part  
+        └─ubuntu--vg-ubuntu--lv 252:0    0 11.5G  0 lvm  /  
+      sdb                         8:16   0   10G  0 disk  
+      sdc                         8:32   0    2G  0 disk  
+      sdd                         8:48   0    1G  0 disk  
+      sde                         8:64   0    1G  0 disk  
+      sr0                        11:0    1 1024M  0 rom  
 </pre>
 6. ыва 
 
