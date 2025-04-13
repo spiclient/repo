@@ -335,5 +335,57 @@ Writing superblocks and filesystem accounting information: done*
     ```   
 
 
-23. ewgweg
+23. Удаляем Logical Volume на котором был корневой каталог **/**
+    ```
+    lvremove /dev/ubuntu-vg/ubuntu-lv
+    ```
+    >*root@ubuntu24:~# lvremove /dev/ubuntu-vg/ubuntu-lv   
+      Do you really want to remove and DISCARD active logical volume ubuntu-vg/ubuntu-lv? [y/n]: y   
+      Logical volume "ubuntu-lv" successfully removed.*
+    
+25. Создаём новый Logical Volume на 8ГБ.
+    ```
+    lvcreate -n ubuntu-vg/ubuntu-lv -L 8G /dev/ubuntu-vg
+    ```
+    >*root@ubuntu24:~# lvcreate -n ubuntu-vg/ubuntu-lv -L 8G /dev/ubuntu-vg   
+     WARNING: ext4 signature detected on /dev/ubuntu-vg/ubuntu-lv at offset 1080. Wipe it? [y/n]: y   
+     Wiping ext4 signature on /dev/ubuntu-vg/ubuntu-lv.   
+     Logical volume "ubuntu-lv" created.*
+    ```
+    lvs
+    ```
+    >*root@ubuntu24:~# lvs*   
+    <pre>LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert   
+     ubuntu-lv ubuntu-vg -wi-a-----   8.00g   
+     lv_root   vg_root   -wi-ao---- <10.00g   
+    </pre>
+
+26. Возвращаем корневой каталог на целевое место. Выполняем *пункты 20. 21. 22*
+    ~~~
+    mkfs.ext4 /dev/ubuntu-vg/ubuntu-lv
+    ```
+    ```
+    mount /dev/ubuntu-vg/ubuntu-lv /mnt
+    ```
+    ```
+    rsync -avxHAX --progress / /mnt/
+    ```
+    ```
+    for i in /proc/ /sys/ /dev/ /run/ /boot/; \
+ do mount --bind $i /mnt/$i; done
+ ```
+    ```
+    chroot /mnt/
+    ```
+    ```
+    grub-mkconfig -o /boot/grub/grub.cfg
+    ```
+    ```
+    update-initramfs -u
+    ```
+    
+
+
+    
+28. впарвр
 
