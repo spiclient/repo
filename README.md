@@ -318,13 +318,15 @@ Writing superblocks and filesystem accounting information: done*
     chroot /mnt/
     ```
     ```
-    grub-mkconfig -o /boot/grub/grub.cfg
+    grub-mkconfig -o /boot/grub/grub.cfg   
     ```
     ***Обновляем образ initrd.***
+    
+    ```
     update-initramfs -u
     ```
     >*root@ubuntu24:/# update-initramfs -u   
-      update-initramfs: Generating /boot/initrd.img-6.8.0-57-generic*
+    update-initramfs: Generating /boot/initrd.img-6.8.0-57-generic*
       
 
     
