@@ -312,7 +312,7 @@ Writing superblocks and filesystem accounting information: done*
 22. Изменяем корневую директорию и выполняем конфигурацию загрузчика GRUB.
     ```
     for i in /proc/ /sys/ /dev/ /run/ /boot/; \
-    do mount --bind $i /mnt/$i; done   
+     do mount --bind $i /mnt/$i; done   
     ```   
     ```
     chroot /mnt/
