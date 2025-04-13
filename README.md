@@ -118,7 +118,8 @@ System:
     lvdisplay /dev/volgroup/logvol
     ```
     >*root@ubuntu24:~# lvdisplay /dev/volgroup/logvol*   
-    <phe> --- Logical volume ---
+    <pre>
+          --- Logical volume ---
      LV Path                /dev/volgroup/logvol
      LV Name                logvol
      VG Name                volgroup
@@ -134,21 +135,21 @@ System:
      Read ahead sectors     auto
      - currently set to     256
      Block device           252:1
-    </phe>
+    </pre>
 11. Создаём файловую систему на созданной logical volume **logvol**
     ```
     mkfs.ext4 /dev/volgroup/logvol
     ```
-    >*root@ubuntu24:~# mkfs.ext4 /dev/volgroup/logvol
-mke2fs 1.47.0 (5-Feb-2023)
-Creating filesystem with 2096128 4k blocks and 524288 inodes
-Filesystem UUID: 8340ca6a-c2c9-499d-8c82-4951497961d2
-Superblock backups stored on blocks:
-        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
-Allocating group tables: done
-Writing inode tables: done
-Creating journal (16384 blocks): done
-Writing superblocks and filesystem accounting information: done*
+    >*root@ubuntu24:~# mkfs.ext4 /dev/volgroup/logvol   
+mke2fs 1.47.0 (5-Feb-2023)   
+Creating filesystem with 2096128 4k blocks and 524288 inodes   
+Filesystem UUID: 8340ca6a-c2c9-499d-8c82-4951497961d2   
+Superblock backups stored on blocks:   
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632   
+Allocating group tables: done   
+Writing inode tables: done   
+Creating journal (16384 blocks): done   
+Writing superblocks and filesystem accounting information: done*   
 
     
 14. hgjghjgh
