@@ -230,6 +230,25 @@ Writing superblocks and filesystem accounting information: done*
       Filesystem                  Type  Size  Used Avail Use% Mounted on
       /dev/mapper/volgroup-logvol ext4  7.8G  7.8G     0 100% /data
      </pre>
-     
+     ***Со стороны файловой системы изменения не отображаются.***
+     ***Выполняем resize***
+     ```
+     resize2fs /dev/mapper/volgroup-logvol
+     ```
+     >*root@ubuntu24:~# resize2fs /dev/mapper/volgroup-logvol   
+       resize2fs 1.47.0 (5-Feb-2023)    
+       Filesystem at /dev/mapper/volgroup-logvol is mounted on /data; on-line resizing required    
+       old_desc_blocks = 1, new_desc_blocks = 2    
+       The filesystem on /dev/mapper/volgroup-logvol is now 2934784 (4k) blocks long.*
+     ```
+     df -Th /data/
+     ```
+     >*root@ubuntu24:~# df -Th /data/
+     <pre>
+        Filesystem                  Type  Size  Used Avail Use% Mounted on
+        /dev/mapper/volgroup-logvol ext4   11G  7.8G  2.7G  75% /data
+     </pre>
+
+
 17. hgjhj
 
