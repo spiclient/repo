@@ -68,13 +68,20 @@ System:
 8. Проверяем наличие physical volume, volume group, logical volume.
    ```
    pvs
-   vgs
-   lvs
    ```
    >*root@ubuntu24:~# pvs   
   PV         VG        Fmt  Attr PSize   PFree   
-  /dev/sda3  ubuntu-vg lvm2 a--  <23.00g 11.50g   
-root@ubuntu24:~# vgs   
+  /dev/sda3  ubuntu-vg lvm2 a--  <23.00g 11.50g* 
+   ```
+   vgs
+   ```
+   >*root@ubuntu24:~# vgs   
+  VG        #PV #LV #SN Attr   VSize   VFree   
+  ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g* 
+
+   lvs
+   ```
+   >*root@ubuntu24:~# vgs   
   VG        #PV #LV #SN Attr   VSize   VFree   
   ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g   
 root@ubuntu24:~# lvs   
