@@ -176,7 +176,8 @@ Writing superblocks and filesystem accounting information: done*
     vgs
     ```
     >*root@ubuntu24:~# vgs*
-    <pre>VG        #PV #LV #SN Attr   VSize   VFree
+    <pre>
+     VG        #PV #LV #SN Attr   VSize   VFree
      ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g
      volgroup    2   1   0 wz--n-  11.99g <4.00g
     </pre>
