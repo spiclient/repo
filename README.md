@@ -460,14 +460,14 @@ Writing superblocks and filesystem accounting information: done*
     mount /dev/ubuntu-vg/lv_home /mnt/
     ```
 33. Копируем содержимое каталога **/home**, а потом его удаляем.
+
     ```
     cp -aR /home/* /mnt/
-    ``
-
-    ``
+    ```
+    ```
     rm -rf /home/*
     ```
-34. Монтируем новый **/home**.
+35. Монтируем новый **/home**.
     ```
     umount /mnt
     ```
@@ -475,7 +475,7 @@ Writing superblocks and filesystem accounting information: done*
     mount /dev/ubuntu-vg/lv_home /home/
     ```
     ```
-35. Изменяем параметры автоматического монтирования **/home** в fstab.
+36. Изменяем параметры автоматического монтирования **/home** в fstab.
     ```
     echo "`blkid | grep Home | awk '{print $2}'` \
      /home ext4 defaults 0 0" >> /etc/fstab
