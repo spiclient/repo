@@ -463,6 +463,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
     cp -aR /home/* /mnt/
     ``
+
     ``
     rm -rf /home/*
     ```
