@@ -430,8 +430,7 @@ Writing superblocks and filesystem accounting information: done*
     
 30. Изменяем параметры автоматического монтирования **/var** в fstab.
     ```
-    echo "`blkid | grep var: | awk '{print $2}'` \
-     /var ext4 defaults 0 0" >> /etc/fstab
+    echo "`blkid | grep var: | awk '{print $2}'` /var ext4 defaults 0 0" >> /etc/fstab
     ```
     ***Перезагружаемся***
     ```
