@@ -476,8 +476,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
 35. Изменяем параметры автоматического монтирования **/home** в fstab.
     ```
-    echo "`blkid | grep Home | awk '{print $2}'` \
-     /home ext4 defaults 0 0" >> /etc/fstab
+    echo "`blkid | grep Home | awk '{print $2}'` /home ext4 defaults 0 0" >> /etc/fstab
     ```
     
 ### Работа со снапшотами.
@@ -487,8 +486,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
 37. Делаем снапшот каталога **/home**.
     ```
-    lvcreate -L 100MB -s -n home_snap \
-     /dev/ubuntu-vg/LogVol_Home
+    lvcreate -L 100MB -s -n home_snap /dev/ubuntu-vg/LogVol_Home
     ```
 38. Удаляем часть данных из **/home**.
     ```
