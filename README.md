@@ -467,36 +467,35 @@ Writing superblocks and filesystem accounting information: done*
     ```
     rm -rf /home/*
     ```
-35. Монтируем новый **/home**.
+34. Монтируем новый **/home**.
     ```
     umount /mnt
     ```
     ```
     mount /dev/ubuntu-vg/lv_home /home/
     ```
-    ```
-36. Изменяем параметры автоматического монтирования **/home** в fstab.
+35. Изменяем параметры автоматического монтирования **/home** в fstab.
     ```
     echo "`blkid | grep Home | awk '{print $2}'` \
      /home ext4 defaults 0 0" >> /etc/fstab
     ```
     
 ### Работа со снапшотами.
-37. Генерируем файлы в каталог **/home**.
+36. Генерируем файлы в каталог **/home**.
     ```
     touch /home/file{1..20}
     ```
-38. Делаем снапшот каталога **/home**.
+37. Делаем снапшот каталога **/home**.
     ```
     lvcreate -L 100MB -s -n home_snap \
      /dev/ubuntu-vg/LogVol_Home
     ```
-39. Удаляем часть данных из **/home**.
+38. Удаляем часть данных из **/home**.
     ```
     rm -f /home/file{17..20}
     ```
       
-40. Процесс восстановления данных:
+39. Процесс восстановления данных:
     a. *размонтирование каталога **/home***
     ```
     umount /home
