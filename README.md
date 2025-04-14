@@ -216,7 +216,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
     >*root@ubuntu24:~# lvs*
     <pre> 
-      LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+     LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
      ubuntu-lv ubuntu-vg -wi-ao---- <11.50g
      logvol    volgroup  -wi-ao---- <11.20g
      </pre>
@@ -225,8 +225,8 @@ Writing superblocks and filesystem accounting information: done*
      ```
      >*root@ubuntu24:~# df -Th /data/*   
      <pre>
-      Filesystem                  Type  Size  Used Avail Use% Mounted on
-      /dev/mapper/volgroup-logvol ext4  7.8G  7.8G     0 100% /data
+     Filesystem                  Type  Size  Used Avail Use% Mounted on
+     /dev/mapper/volgroup-logvol ext4  7.8G  7.8G     0 100% /data
      </pre>
      ***Со стороны файловой системы изменения не отображаются.***
      ***Выполняем resize***
