@@ -184,8 +184,7 @@ Writing superblocks and filesystem accounting information: done*
  
 15. Для наглядности имитируем занятое пространство на Logical Volume
     ```
-    dd if=/dev/zero of=/data/test.log bs=1M \
-     count=10000 status=progress
+    dd if=/dev/zero of=/data/test.log bs=1M count=10000 status=progress
     ```
     >*root@ubuntu24:~# dd if=/dev/zero of=/data/test.log bs=1M \   
  count=10000 status=progress   
