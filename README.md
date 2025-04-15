@@ -307,7 +307,7 @@ Writing superblocks and filesystem accounting information: done*
       sbin -> usr/sbin   
       swap.img   
       2,413,821,952 100%  223.02MB/s    0:00:10 (xfr#1, ir-chk=1032/1038)*   
-      ----------------------------
+      ***< вывод только начала процесса>***
 22. Изменяем корневую директорию и выполняем конфигурацию загрузчика GRUB.
     ```
     for i in /proc/ /sys/ /dev/ /run/ /boot/; \
