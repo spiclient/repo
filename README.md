@@ -333,7 +333,7 @@ Writing superblocks and filesystem accounting information: done*
     ```   
 
 
-23. Удаляем Logical Volume на котором был корневой каталог **/**
+23. Удаляем Logical Volume на котором изначально был корневой каталог **/**
     ```
     lvremove /dev/ubuntu-vg/ubuntu-lv
     ```
