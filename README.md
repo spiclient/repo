@@ -544,4 +544,32 @@ Writing superblocks and filesystem accounting information: done*
     ```
     ls -al /home
     ```
+    >root@Ubuntu24:~# ls -al /home
+    <pre>
+          total 28
+      drwxr-xr-x  4 root root  4096 Apr 15 20:49 .
+      drwxr-xr-x 24 root root  4096 Apr 15 20:22 ..
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file1
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file10
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file11
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file12
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file13
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file14
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file15
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file16
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file17
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file18
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file19
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file2
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file20
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file3
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file4
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file5
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file6
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file7
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file8
+      -rw-r--r--  1 root root     0 Apr 15 20:49 file9
+      drwx------  2 root root 16384 Apr 15 20:48 lost+found
+      drwxr-x---  5 user user  4096 Apr 15 20:46 user
+    </pre>
 
