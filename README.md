@@ -284,7 +284,7 @@ Writing superblocks and filesystem accounting information: done*
       sde                         8:64   0    1G  0 disk
       sr0                        11:0    1 1024M  0 rom
     </pre>
-21. Создаём Physical Volume, Volume Group, Logical Volume.
+20. Создаём Physical Volume, Volume Group, Logical Volume.
     ```
     pvcreate /dev/sdb
     ```
@@ -294,7 +294,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
     lvcreate -n lv_root -l +100%FREE /dev/vg_root
     ```
-22. Создаём файловую систему **ext4** и монтируем каталог */mnt*
+21. Создаём файловую систему **ext4** и монтируем каталог */mnt*
     ```
     mkfs.ext4 /dev/vg_root/lv_root
     ```
@@ -312,7 +312,7 @@ Writing superblocks and filesystem accounting information: done*
     mount /dev/vg_root/lv_root /mnt
     ```
    
-23. Копируем все данные из корневого каталога **/** в наш смонтированный каталог.
+22. Копируем все данные из корневого каталога **/** в наш смонтированный каталог.
     ```
     rsync -avxHAX --progress / /mnt/
     ```
@@ -326,7 +326,7 @@ Writing superblocks and filesystem accounting information: done*
       swap.img   
       2,413,821,952 100%  223.02MB/s    0:00:10 (xfr#1, ir-chk=1032/1038)*   
       ***< вывод только из начала процесса>***
-24. Изменяем корневую директорию и выполняем конфигурацию загрузчика GRUB.
+23. Изменяем корневую директорию и выполняем конфигурацию загрузчика GRUB.
     ```
     for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done   
     ```   
@@ -366,6 +366,10 @@ Writing superblocks and filesystem accounting information: done*
     </pre>
 
 
+24. Запускаем запись лога команд в существующий файл **lvm.log** с добавлением данных к текущему содержимому.
+    ```
+    script -a lvm.log
+    ```    
 25. Удаляем Logical Volume на котором изначально был корневой каталог **/**
     ```
     lvremove /dev/ubuntu-vg/ubuntu-lv
@@ -417,7 +421,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
 ### Выделить том под */var*. Cделать в mirror. Установить автоматическое монтирование в fstab.    
     
-26. Создаём Physical Volume на 2х дисках: sdc, sdd.
+28. Создаём Physical Volume на 2х дисках: sdc, sdd.
     ```
     pvcreate /dev/sdc /dev/sdd
     ```
@@ -425,14 +429,14 @@ Writing superblocks and filesystem accounting information: done*
       Physical volume "/dev/sdc" successfully created.   
       Physical volume "/dev/sdd" successfully created.*
 
-27. Создаём Volume Group и Logical Volume.
+29. Создаём Volume Group и Logical Volume.
     ```
     vgcreate vg_var /dev/sdc /dev/sdd
     ```
     ```
     lvcreate -L 950M -m1 -n lv_var vg_var
     ```
-28. Создаём на Logical Volume файловую систему **ext4**, монтируем и копируем в неё все данные из каталога **/var**.
+30. Создаём на Logical Volume файловую систему **ext4**, монтируем и копируем в неё все данные из каталога **/var**.
     ```
     mkfs.ext4 /dev/vg_var/lv_var
     ```
@@ -452,7 +456,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
     cp -aR /var/* /mnt/
     ```
-29. Выполняем монтирование **/var**. 
+31. Выполняем монтирование **/var**. 
     ```
     umount /mnt
     ```
@@ -460,7 +464,7 @@ Writing superblocks and filesystem accounting information: done*
     mount /dev/vg_var/lv_var /var
     ```
     
-30. Изменяем параметры автоматического монтирования **/var** в fstab.
+32. Изменяем параметры автоматического монтирования **/var** в fstab.
     ```
     echo "`blkid | grep var: | awk '{print $2}'` /var ext4 defaults 0 0" >> /etc/fstab
     ```
@@ -469,7 +473,7 @@ Writing superblocks and filesystem accounting information: done*
     reboot
     ```
 
-31. Разбираем временную LVM созданную для корневого каталога.
+33. Разбираем временную LVM созданную для корневого каталога.
     ```
     lvremove /dev/vg_root/lv_root
     ```
@@ -481,7 +485,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
 ### Выделить том под */home*. Установить автоматическое монтирование в fstab.  
 
-32. Создаём Logical Volume и файловую систему **ext4** для каталога **/home**. Монтируем.  
+34. Создаём Logical Volume и файловую систему **ext4** для каталога **/home**. Монтируем.  
     ```
     lvcreate -n lv_home -L 2G /dev/ubuntu-vg
     ```
@@ -491,7 +495,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
     mount /dev/ubuntu-vg/lv_home /mnt/
     ```
-33. Копируем содержимое каталога **/home**, а потом его удаляем.
+35. Копируем содержимое каталога **/home**, а потом его удаляем.
 
     ```
     cp -aR /home/* /mnt/
@@ -499,20 +503,20 @@ Writing superblocks and filesystem accounting information: done*
     ```
     rm -rf /home/*
     ```
-34. Монтируем новый **/home**.
+36. Монтируем новый **/home**.
     ```
     umount /mnt
     ```
     ```
     mount /dev/ubuntu-vg/lv_home /home/
     ```
-35. Изменяем параметры автоматического монтирования **/home** в fstab.
+37. Изменяем параметры автоматического монтирования **/home** в fstab.
     ```
     echo "`blkid | grep Home | awk '{print $2}'` /home ext4 defaults 0 0" >> /etc/fstab
     ```
     
 ### Работа со снапшотами.
-36. Генерируем файлы в каталог **/home**  и убеждаемся в том, что они сгенерироаны.   
+38. Генерируем файлы в каталог **/home**  и убеждаемся в том, что они сгенерироаны.   
 
     ```
     touch /home/file{1..20}
@@ -547,16 +551,16 @@ Writing superblocks and filesystem accounting information: done*
       drwx------  2 root root 16384 Apr 15 20:48 lost+found
       drwxr-x---  5 user user  4096 Apr 15 20:46 user
     </pre>
-37. Делаем снапшот каталога **/home**.
+39. Делаем снапшот каталога **/home**.
     ```
     lvcreate -L 100MB -s -n home_snap /dev/ubuntu-vg/LogVol_Home
     ```
-38. Удаляем часть данных из **/home**.
+40. Удаляем часть данных из **/home**.
     ```
     rm -f /home/file{17..20}
     ```
       
-39. Процесс восстановления данных:   
+41. Процесс восстановления данных:   
     **a.** *размонтирование каталога **/home***
     ```
     umount /home
@@ -605,4 +609,4 @@ Writing superblocks and filesystem accounting information: done*
       drwx------  2 root root 16384 Apr 15 20:48 lost+found
       drwxr-x---  5 user user  4096 Apr 15 20:46 user
     </pre>
-40. Завершаем запись файла логов lvm.log командой **exit**
+42. Завершаем запись файла логов lvm.log командой **exit**
