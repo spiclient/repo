@@ -30,7 +30,7 @@
 1. Создаём виртуальную машину под управлением ОС Ubuntu 24.04 в Virtual Box с LVM.
 2. Проверяем версию ОС и ядра. 
    ```
-   ***inxi -S***     
+   inxi -S    
    ```
    >*user@ubuntu24:~$ inxi -S  
 System:  
