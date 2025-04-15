@@ -36,7 +36,7 @@
 System:  
   Host: ubuntu24 Kernel: 6.8.0-57-generic arch: x86_64 bits: 64  
   Desktop: N/A Distro: Ubuntu 24.04.2 LTS (Noble Numbat)<*
-4. Выводим информацию о всех блочных устройствах в системе.
+3. Выводим информацию о всех блочных устройствах в системе.
    ```
    lsblk     
    ```
@@ -54,15 +54,15 @@ System:
       sde                         8:64   0    1G  0 disk  
       sr0                        11:0    1 1024M  0 rom  
    </pre>
-5. Переключаемся в режим суперпользователя.
+4. Переключаемся в режим суперпользователя.
    ```
    sudo -i
    ```   
-6. Запускаем запись листинга команда в файл **lvm.log**  
+5. Запускаем запись листинга команда в файл **lvm.log**  
    ```
    script lvm.log
    ```
-7. Проверяем наличие Physical Volume, Volume Group, Logical Volume.
+6. Проверяем наличие Physical Volume, Volume Group, Logical Volume.
    ```
    pvs
    ```
@@ -89,28 +89,28 @@ System:
     ubuntu-lv ubuntu-vg -wi-ao---- <11.50g
    </pre>
 
-8. Создаём Physical Volume
+7. Создаём Physical Volume
     ```
     pvcreate /dev/sdb
     ```
     >*root@ubuntu24:~# pvcreate /dev/sdb   
   Physical volume "/dev/sdb" successfully created.*
    
-9. Создаём Volume Group
+8. Создаём Volume Group
    ```
    vgcreate volgroup /dev/sdb
    ```
    >*root@ubuntu24:~# vgcreate volgroup /dev/sdb   
   Volume group "volgroup" successfully created*
 
-10. Создаём Logical Volume, который использует 80% свободного пространства группы томов.
+9. Создаём Logical Volume, который использует 80% свободного пространства группы томов.
     ```
     lvcreate -l+80%FREE -n logvol volgroup
     ```
     >*root@ubuntu24:~# lvcreate -l+80%FREE -n logvol volgroup   
   Logical volume "logvol" created.*
 
-11. Проверяем информацию о созданной Logical Volume
+10. Проверяем информацию о созданной Logical Volume
     ```
     lvdisplay /dev/volgroup/logvol
     ```
@@ -133,7 +133,7 @@ System:
      - currently set to     256
      Block device           252:1
     </pre>
-12. Создаём файловую систему **ext4** на созданной Logical Volume **logvol**
+11. Создаём файловую систему **ext4** на созданной Logical Volume **logvol**
     ```
     mkfs.ext4 /dev/volgroup/logvol
     ```
@@ -148,7 +148,7 @@ Writing inode tables: done
 Creating journal (16384 blocks): done   
 Writing superblocks and filesystem accounting information: done*   
     
-13. Создаём каталог **data** и монтируем его  
+12. Создаём каталог **data** и монтируем его  
     ```
     mkdir /data
     ```
@@ -266,7 +266,25 @@ Writing superblocks and filesystem accounting information: done*
     pvremove /dev/sdb /dev/sdc
     ```
 ### Уменьшаем том под **/** до **8G**.    
-19. Создаём Physical Volume, Volume Group, Logical Volume.
+19. Смотрим текущее расположение корневого каталога **/**
+    ```
+    lsblk
+    ```
+    >*user@Ubuntu24:~$ lsblk
+    <pre>
+          NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+      sda                         8:0    0   25G  0 disk
+      ├─sda1                      8:1    0    1M  0 part
+      ├─sda2                      8:2    0    2G  0 part /boot
+      └─sda3                      8:3    0   23G  0 part
+        └─ubuntu--vg-ubuntu--lv 252:0    0 11.5G  0 lvm  /
+      sdb                         8:16   0   10G  0 disk
+      sdc                         8:32   0    2G  0 disk
+      sdd                         8:48   0    1G  0 disk
+      sde                         8:64   0    1G  0 disk
+      sr0                        11:0    1 1024M  0 rom
+    </pre>
+21. Создаём Physical Volume, Volume Group, Logical Volume.
     ```
     pvcreate /dev/sdb
     ```
@@ -276,7 +294,7 @@ Writing superblocks and filesystem accounting information: done*
     ```
     lvcreate -n lv_root -l +100%FREE /dev/vg_root
     ```
-20. Создаём файловую систему **ext4** и монтируем каталог */mnt*
+22. Создаём файловую систему **ext4** и монтируем каталог */mnt*
     ```
     mkfs.ext4 /dev/vg_root/lv_root
     ```
@@ -294,7 +312,7 @@ Writing superblocks and filesystem accounting information: done*
     mount /dev/vg_root/lv_root /mnt
     ```
    
-21. Копируем все данные из корневого каталога **/** в наш смонтированный каталог.
+23. Копируем все данные из корневого каталога **/** в наш смонтированный каталог.
     ```
     rsync -avxHAX --progress / /mnt/
     ```
@@ -308,7 +326,7 @@ Writing superblocks and filesystem accounting information: done*
       swap.img   
       2,413,821,952 100%  223.02MB/s    0:00:10 (xfr#1, ir-chk=1032/1038)*   
       ***< вывод только начала процесса>***
-22. Изменяем корневую директорию и выполняем конфигурацию загрузчика GRUB.
+24. Изменяем корневую директорию и выполняем конфигурацию загрузчика GRUB.
     ```
     for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done   
     ```   
@@ -333,7 +351,7 @@ Writing superblocks and filesystem accounting information: done*
     ```   
 
 
-23. Удаляем Logical Volume на котором изначально был корневой каталог **/**
+25. Удаляем Logical Volume на котором изначально был корневой каталог **/**
     ```
     lvremove /dev/ubuntu-vg/ubuntu-lv
     ```
@@ -341,7 +359,7 @@ Writing superblocks and filesystem accounting information: done*
       Do you really want to remove and DISCARD active logical volume ubuntu-vg/ubuntu-lv? [y/n]: y   
       Logical volume "ubuntu-lv" successfully removed.*
     
-24. Создаём новый Logical Volume на 8ГБ.
+26. Создаём новый Logical Volume на 8ГБ.
     ```
     lvcreate -n ubuntu-vg/ubuntu-lv -L 8G /dev/ubuntu-vg
     ```
@@ -359,7 +377,7 @@ Writing superblocks and filesystem accounting information: done*
        lv_root   vg_root   -wi-ao---- <10.00g   
     </pre>
 
-25. Возвращаем корневой каталог на целевое место. Выполняем *пункты 20. 21. 22*
+27. Возвращаем корневой каталог на целевое место. Выполняем *пункты 20. 21. 22*
     ```
     mkfs.ext4 /dev/ubuntu-vg/ubuntu-lv
     ```
