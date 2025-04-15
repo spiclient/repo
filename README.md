@@ -243,8 +243,8 @@ Writing superblocks and filesystem accounting information: done*
      ```
      >*root@ubuntu24:~# df -Th /data/*
      <pre>
-      Filesystem                  Type  Size  Used Avail Use% Mounted on
-      /dev/mapper/volgroup-logvol ext4   11G  7.8G  2.7G  75% /data
+     Filesystem                  Type  Size  Used Avail Use% Mounted on
+     /dev/mapper/volgroup-logvol ext4   11G  7.8G  2.7G  75% /data
      </pre>
 
 ### Разбираем LVM. 
