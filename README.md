@@ -28,11 +28,7 @@
 ## Выполнение
 ### Настраиваем LVM и монтируем каталог. 
 1. Создаём виртуальную машину под управлением ОС Ubuntu 24.04 в Virtual Box с LVM.
-2. Запускаем запись листинга команда в файл **lvm.log**  
-   ```
-   script lvm.log
-   ```
-3. Проверяем версию ОС и ядра. 
+2. Проверяем версию ОС и ядра. 
    ```
    inxi -S     
    ```
@@ -62,7 +58,11 @@ System:
    ```
    sudo -i
    ```   
-6. Проверяем наличие Physical Volume, Volume Group, Logical Volume.
+6. Запускаем запись листинга команда в файл **lvm.log**  
+   ```
+   script lvm.log
+   ```
+7. Проверяем наличие Physical Volume, Volume Group, Logical Volume.
    ```
    pvs
    ```
@@ -89,28 +89,28 @@ System:
     ubuntu-lv ubuntu-vg -wi-ao---- <11.50g
    </pre>
 
-7. Создаём Physical Volume
+8. Создаём Physical Volume
     ```
     pvcreate /dev/sdb
     ```
     >*root@ubuntu24:~# pvcreate /dev/sdb   
   Physical volume "/dev/sdb" successfully created.*
    
-8. Создаём Volume Group
+9. Создаём Volume Group
    ```
    vgcreate volgroup /dev/sdb
    ```
    >*root@ubuntu24:~# vgcreate volgroup /dev/sdb   
   Volume group "volgroup" successfully created*
 
-9. Создаём Logical Volume
+10. Создаём Logical Volume, который использует 80% дискового пространства группы томов.
     ```
     lvcreate -l+80%FREE -n logvol volgroup
     ```
     >*root@ubuntu24:~# lvcreate -l+80%FREE -n logvol volgroup   
   Logical volume "logvol" created.*
 
-10. Проверяем информацию о созданной Logical Volume
+11. Проверяем информацию о созданной Logical Volume
     ```
     lvdisplay /dev/volgroup/logvol
     ```
@@ -133,7 +133,7 @@ System:
      - currently set to     256
      Block device           252:1
     </pre>
-11. Создаём файловую систему на созданной Logical Volume **logvol**
+12. Создаём файловую систему на созданной Logical Volume **logvol**
     ```
     mkfs.ext4 /dev/volgroup/logvol
     ```
@@ -148,7 +148,7 @@ Writing inode tables: done
 Creating journal (16384 blocks): done   
 Writing superblocks and filesystem accounting information: done*   
     
-12. Создаём каталог **data** и монтируем его  
+13. Создаём каталог **data** и монтируем его  
     ```
     mkdir /data
     ```
