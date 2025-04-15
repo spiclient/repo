@@ -572,4 +572,4 @@ Writing superblocks and filesystem accounting information: done*
       drwx------  2 root root 16384 Apr 15 20:48 lost+found
       drwxr-x---  5 user user  4096 Apr 15 20:46 user
     </pre>
-
+40. Завершаем запись файла логов lvm.log командой **exit**
