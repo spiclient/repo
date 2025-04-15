@@ -103,7 +103,7 @@ System:
    >*root@ubuntu24:~# vgcreate volgroup /dev/sdb   
   Volume group "volgroup" successfully created*
 
-10. Создаём Logical Volume, который использует 80% дискового пространства группы томов.
+10. Создаём Logical Volume, который использует 80% свободного пространства группы томов.
     ```
     lvcreate -l+80%FREE -n logvol volgroup
     ```
