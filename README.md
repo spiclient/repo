@@ -58,3 +58,8 @@ System:
    ```
    sudo -i
    ```   
+5. Устанавливаем утилиты для работы с **zfs**
+   ```
+   apt install zfsutils-linux
+   ```
+7. hji
