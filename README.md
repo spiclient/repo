@@ -76,4 +76,6 @@ The following NEW packages will be installed:
 Need to get 2,355 kB of archives.   
 After this operation, 7,399 kB of additional disk space will be used.   
 Do you want to continue? [Y/n] y*   
-6. hji
+6. Создаём 4 пула из 2х дисков в режиме зеркального RAID.
+   
+8. ggggg
