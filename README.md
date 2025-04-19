@@ -105,10 +105,30 @@ Do you want to continue? [Y/n] y*
       poollzib   480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
       poolzle    480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
    </pre>
-
-
-
-
-
    
-9. ggggg
+8. На каждый пул устанавливаем определенный алгоритм сжатия - **lzjb, lz4, gzip-9, zle**.
+   ```
+   zfs set compression=lzjb poolzjb
+   ```
+   >*root@Ubuntu24:~# zfs set compression=lzjb poolzjb*
+   ```
+   zfs set compression=zle poolzle
+   ```
+   >*root@Ubuntu24:~# zfs set compression=zle poolzle*
+   ```
+   zfs set compression=lz4 poollz4
+   ```
+   >*root@Ubuntu24:~# zfs set compression=lz4 poollz4*
+   ```
+   zfs set compression=gzip-9 poolgzip
+   ```
+   >*root@Ubuntu24:~# zfs set compression=gzip-9 poolgzip*
+
+
+
+
+
+
+
+
+10. ывпывп 
