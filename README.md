@@ -93,10 +93,22 @@ Do you want to continue? [Y/n] y*
    zpool create poolzle mirror /dev/sdh /dev/sdi
    ```
    >*root@Ubuntu24:~# zpool create poolzle mirror /dev/sdh /dev/sdi*
+7. Проверяем созданные пулы.
+   ```
+   zpool list
+   ```
+   >*root@Ubuntu24:~# zpool list*
+   <pre>
+      NAME       SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+      poolgzip   480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
+      poollz4    480M   112K   480M        -         -     0%     0%  1.00x    ONLINE  -
+      poollzib   480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
+      poolzle    480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
+   </pre>
 
 
 
 
 
    
-8. ggggg
+9. ggggg
