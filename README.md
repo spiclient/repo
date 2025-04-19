@@ -124,11 +124,16 @@ Do you want to continue? [Y/n] y*
    ```
    >*root@Ubuntu24:~# zfs set compression=gzip-9 poolgzip*
 
+09. Проверяем установленные настройки сжатия на наших пулах.
+    ```
+    zfs get all | grep compression
+    ```
+    >*root@Ubuntu24:~# zfs get all | grep compression*
+     <pre>
+        poolgzip  compression           gzip-9                 local
+        poollz4   compression           lz4                    local
+        poolzjb   compression           lzjb                   local
+        poolzle   compression           zle                    local
+     </pre>
 
-
-
-
-
-
-
-10. ывпывп 
+11. дрдр
