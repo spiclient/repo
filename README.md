@@ -77,5 +77,26 @@ Need to get 2,355 kB of archives.
 After this operation, 7,399 kB of additional disk space will be used.   
 Do you want to continue? [Y/n] y*   
 6. Создаём 4 пула из 2х дисков в режиме зеркального RAID.
+   ```
+   zpool create poollzib mirror /dev/sdb /dev/sdc
+   ```
+   >*root@Ubuntu24:~# zpool create poollzib mirror /dev/sdb /dev/sdc*
+   ```
+   zpool create poollz4 mirror /dev/sdd /dev/sde
+   ```
+   >*root@Ubuntu24:~# zpool create poollz4 mirror /dev/sdd /dev/sde*
+   ```
+   zpool create poolgzip mirror /dev/sdf /dev/sdg
+   ```
+   >*root@Ubuntu24:~# zpool create poolgzip mirror /dev/sdf /dev/sdg*
+   ```
+   zpool create poolzle mirror /dev/sdh /dev/sdi
+   ```
+   >*root@Ubuntu24:~# zpool create poolzle mirror /dev/sdh /dev/sdi*
+
+
+
+
+
    
 8. ggggg
