@@ -22,6 +22,39 @@
      + найти зашифрованное сообщение в файле **secret_message**
 
 ## Выполнение
-### Настраиваем . 
-1. Создаём виртуальную машину под управлением ОС Ubuntu 24.04 в Virtual Box с LVM.
+### Определить алгоритм с наилучшим сжатием. 
+1. Создаём виртуальную машину под управлением ОС Ubuntu 24.04 с 8 дополнительными дисками по 512МБ.
 2. Проверяем версию ОС и ядра. 
+   ```
+   inxi -S    
+   ```
+   >*user@Ubuntu24:~$ inxi -S  
+System:  
+  Host: Ubuntu24 Kernel: 6.8.0-57-generic arch: x86_64 bits: 64  
+  Desktop: N/A Distro: Ubuntu 24.04.2 LTS (Noble Numbat)<*
+3. Выводим информацию о всех блочных устройствах в системе.
+   ```
+   lsblk     
+   ```
+   >*user@Ubuntu24:~$ lsblk*  
+   <pre>
+      NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+      sda                         8:0    0   25G  0 disk
+      ├─sda1                      8:1    0    1M  0 part
+      ├─sda2                      8:2    0    2G  0 part /boot
+      └─sda3                      8:3    0   23G  0 part
+        └─ubuntu--vg-ubuntu--lv 252:0    0 11.5G  0 lvm  /
+      sdb                         8:16   0  512M  0 disk
+      sdc                         8:32   0  512M  0 disk
+      sdd                         8:48   0  512M  0 disk
+      sde                         8:64   0  512M  0 disk
+      sdf                         8:80   0  512M  0 disk
+      sdg                         8:96   0  512M  0 disk
+      sdh                         8:112  0  512M  0 disk
+      sdi                         8:128  0  512M  0 disk
+      sr0                        11:0    1 1024M  0 rom
+   </pre>
+4. Переключаемся в режим суперпользователя.
+   ```
+   sudo -i
+   ```   
