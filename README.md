@@ -62,18 +62,18 @@ System:
    ```
    apt install zfsutils-linux
    ```
-   >*root@Ubuntu24:~# apt install zfsutils-linux
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-The following additional packages will be installed:
-  libnvpair3linux libuutil3linux libzfs4linux libzpool5linux zfs-zed
-Suggested packages:
-  nfs-kernel-server samba-common-bin zfs-initramfs | zfs-dracut
-The following NEW packages will be installed:
-  libnvpair3linux libuutil3linux libzfs4linux libzpool5linux zfs-zed zfsutils-linux
-0 upgraded, 6 newly installed, 0 to remove and 60 not upgraded.
-Need to get 2,355 kB of archives.
-After this operation, 7,399 kB of additional disk space will be used.
-Do you want to continue? [Y/n] y*
+   >*root@Ubuntu24:~# apt install zfsutils-linux   
+Reading package lists... Done   
+Building dependency tree... Done   
+Reading state information... Done   
+The following additional packages will be installed:   
+  libnvpair3linux libuutil3linux libzfs4linux libzpool5linux zfs-zed   
+Suggested packages:   
+  nfs-kernel-server samba-common-bin zfs-initramfs | zfs-dracut   
+The following NEW packages will be installed:   
+  libnvpair3linux libuutil3linux libzfs4linux libzpool5linux zfs-zed zfsutils-linux   
+0 upgraded, 6 newly installed, 0 to remove and 60 not upgraded.   
+Need to get 2,355 kB of archives.   
+After this operation, 7,399 kB of additional disk space will be used.   
+Do you want to continue? [Y/n] y*   
 6. hji
