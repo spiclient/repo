@@ -210,7 +210,7 @@ total 40202
     ```
     >*root@Ubuntu24:~# zfs list*
     <pre>  NAME       USED  AVAIL  REFER  MOUNTPOINT
-      poolgzip  10.9M   341M  10.7M  /poolgzip
+      <b>poolgzip  10.9M   341M  10.7M  /poolgzip<b>
       poollz4   17.7M   334M  17.6M  /poollz4
       poolzjb   21.8M   330M  21.6M  /poolzjb
       poolzle   39.4M   313M  39.3M  /poolzle
