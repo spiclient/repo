@@ -230,7 +230,7 @@ total 40202
 
 ###  Определить основные настройки пула. 
     
-13. Скачиваем архив пула по ссылке https://drive.usercontent.google.com/download?id=1MvrcEp-WgAQe57aDEzxSRalPAwbNN1Bb&export=download.
+13. Скачиваем архив пула по ссылке https://drive.usercontent.google.com/download?id=1MvrcEp-WgAQe57aDEzxSRalPAwbNN1Bb&export=download, а потом разархивируем его.
     ```
     wget -O archive.tar.gz --no-check-certificate 'https://drive.usercontent.google.com/download?id=1MvrcEp-WgAQe57aDEzxSRalPAwbNN1Bb&export=download'
     ```
@@ -251,4 +251,22 @@ archive.tar.gz               100%[==============================================
       zpoolexport/filea   
       zpoolexport/fileb*   
 
-14. 
+14. Проверяем разархивированный каталог на возможность его импорта в пул.
+    ```
+    zpool import -d zpoolexport/
+    ```
+    >*root@Ubuntu24:~# zpool import -d zpoolexport/   
+   pool: otus   
+     id: 6554193320433390805   
+  state: ONLINE   
+status: Some supported features are not enabled on the pool.   
+        (Note that they may be intentionally disabled if the   
+        'compatibility' property is set.)   
+ action: The pool can be imported using its name or numeric identifier, though   
+        some features will not be available without an explicit 'zpool upgrade'.   
+ config:   
+        otus                         ONLINE   
+          mirror-0                   ONLINE   
+            /root/zpoolexport/filea  ONLINE   
+            /root/zpoolexport/fileb  ONLINE   
+
