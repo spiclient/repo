@@ -136,7 +136,7 @@ Do you want to continue? [Y/n] y*
         poolzle   compression           zle                    local
      </pre>
 
-10. Скачиваем один и тот же текстовый файл во все пулы.
+10. Скачиваем один и тот же текстовый файл во все созданные пулы.
     ```
     wget -P /poolgzip https://gutenberg.org/cache/epub/2600/pg2600.converter.log
     ```
@@ -148,7 +148,47 @@ HTTP request sent, awaiting response... 200 OK
 Length: 41136901 (39M) [text/plain]   
 Saving to: ‘/poolgzip/pg2600.converter.log’   
 pg2600.converter.log         100%[==============================================>]  39.23M   899KB/s     in 30s   
-2025-04-19 22:55:43 (1.30 MB/s) - ‘/poolgzip/pg2600.converter.log’ saved [41136901/41136901]*   
+2025-04-19 22:55:43 (1.30 MB/s) - ‘/poolgzip/pg2600.converter.log’ saved [41136901/41136901]*
+    ```
+    wget -P /poollz4 https://gutenberg.org/cache/epub/2600/pg2600.converter.log
+    ```
+    >*root@Ubuntu24:~# wget -P /poollz4 https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
+--2025-04-19 22:56:22--  https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
+Resolving gutenberg.org (gutenberg.org)... 152.19.134.47, 2610:28:3090:3000:0:bad:cafe:47   
+Connecting to gutenberg.org (gutenberg.org)|152.19.134.47|:443... connected.   
+HTTP request sent, awaiting response... 200 OK   
+Length: 41136901 (39M) [text/plain]   
+Saving to: ‘/poollz4/pg2600.converter.log’   
+pg2600.converter.log         100%[==============================================>]  39.23M  2.07MB/s    in 24s   
+2025-04-19 22:56:47 (1.65 MB/s) - ‘/poollz4/pg2600.converter.log’ saved [41136901/41136901]
+    ```
+    wget -P /poolzjb https://gutenberg.org/cache/epub/2600/pg2600.converter.log
+    ```
+    >*root@Ubuntu24:~# wget -P /poolzjb https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
+--2025-04-19 22:57:23--  https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
+Resolving gutenberg.org (gutenberg.org)... 152.19.134.47, 2610:28:3090:3000:0:bad:cafe:47   
+Connecting to gutenberg.org (gutenberg.org)|152.19.134.47|:443... connected.   
+HTTP request sent, awaiting response... 200 OK   
+Length: 41136901 (39M) [text/plain]   
+Saving to: ‘/poolzjb/pg2600.converter.log’   
+pg2600.converter.log         100%[==============================================>]  39.23M  2.12MB/s    in 24s   
+2025-04-19 22:57:49 (1.62 MB/s) - ‘/poolzjb/pg2600.converter.log’ saved [41136901/41136901]
+    ```
+    wget -P /poolzle https://gutenberg.org/cache/epub/2600/pg2600.converter.log
+    ```
+    >*root@Ubuntu24:~# wget -P /poolzle https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
+--2025-04-19 22:58:31--  https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
+Resolving gutenberg.org (gutenberg.org)... 152.19.134.47, 2610:28:3090:3000:0:bad:cafe:47   
+Connecting to gutenberg.org (gutenberg.org)|152.19.134.47|:443... connected.   
+HTTP request sent, awaiting response... 200 OK   
+Length: 41136901 (39M) [text/plain]   
+Saving to: ‘/poolzle/pg2600.converter.log’   
+pg2600.converter.log         100%[==============================================>]  39.23M  1.97MB/s    in 25s   
+2025-04-19 22:58:56 (1.59 MB/s) - ‘/poolzle/pg2600.converter.log’ saved [41136901/41136901]*   
+
+   
+
+   
 
 
 13. дд
