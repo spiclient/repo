@@ -136,4 +136,19 @@ Do you want to continue? [Y/n] y*
         poolzle   compression           zle                    local
      </pre>
 
-11. дрдр
+10. Скачиваем один и тот же текстовый файл во все пулы.
+    ```
+    wget -P /poolgzip https://gutenberg.org/cache/epub/2600/pg2600.converter.log
+    ```
+    >*root@Ubuntu24:~# wget -P /poolgzip https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
+--2025-04-19 22:55:11--  https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
+Resolving gutenberg.org (gutenberg.org)... 152.19.134.47, 2610:28:3090:3000:0:bad:cafe:47   
+Connecting to gutenberg.org (gutenberg.org)|152.19.134.47|:443... connected.   
+HTTP request sent, awaiting response... 200 OK   
+Length: 41136901 (39M) [text/plain]   
+Saving to: ‘/poolgzip/pg2600.converter.log’   
+pg2600.converter.log         100%[==============================================>]  39.23M   899KB/s     in 30s   
+2025-04-19 22:55:43 (1.30 MB/s) - ‘/poolgzip/pg2600.converter.log’ saved [41136901/41136901]*   
+
+
+13. дд
