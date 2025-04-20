@@ -256,18 +256,47 @@ archive.tar.gz               100%[==============================================
     zpool import -d zpoolexport/
     ```
     >*root@Ubuntu24:~# zpool import -d zpoolexport/*   
-   <pre>pool: otus   
-     id: 6554193320433390805   
-  state: ONLINE   
-status: Some supported features are not enabled on the pool.   
-        (Note that they may be intentionally disabled if the   
-        'compatibility' property is set.)   
- action: The pool can be imported using its name or numeric identifier, though   
-        some features will not be available without an explicit 'zpool upgrade'.   
- config:   
-        otus                         ONLINE   
-          mirror-0                   ONLINE   
-            /root/zpoolexport/filea  ONLINE   
-            /root/zpoolexport/fileb  ONLINE
+    <pre>pool: otus   
+       id: 6554193320433390805   
+    state: ONLINE   
+  status: Some supported features are not enabled on the pool.   
+          (Note that they may be intentionally disabled if the   
+          'compatibility' property is set.)   
+   action: The pool can be imported using its name or numeric identifier, though   
+          some features will not be available without an explicit 'zpool upgrade'.   
+   config:   
+          otus                         ONLINE   
+            mirror-0                   ONLINE   
+              /root/zpoolexport/filea  ONLINE   
+              /root/zpoolexport/fileb  ONLINE
     </pre>   
-#### Полученный вывод сообщает, что данный каталог является экспортируемым пулом Otus
+#### Полученный вывод сообщает, что данный каталог является экспортируемым пулом Otus.
+15. Делаем импорт пула Otus к нам в ОС.
+    ```
+    zpool import -d zpoolexport/ otus
+    ```
+    >*root@Ubuntu24:~# zpool import -d zpoolexport/ otus*
+
+    Проверяем статус
+    ```
+    zpool status otus
+    ```
+    >*root@Ubuntu24:~# zpool status otus*
+    <pre>pool: otus
+    state: ONLINE
+      status: Some supported and requested features are not enabled on the pool.
+              The pool can still be used, but some features are unavailable.
+      action: Enable all features using 'zpool upgrade'. Once this is done,
+              the pool may no longer be accessible by software that does not support
+              the features. See zpool-features(7) for details.
+      config:
+              NAME                         STATE     READ WRITE CKSUM
+              otus                         ONLINE       0     0     0
+                mirror-0                   ONLINE       0     0     0
+                  /root/zpoolexport/filea  ONLINE       0     0     0
+                  /root/zpoolexport/fileb  ONLINE       0     0     0
+      errors: No known data errors
+    </pre>
+
+17. апап
+
