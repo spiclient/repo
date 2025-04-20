@@ -186,9 +186,22 @@ Saving to: ‘/poolzle/pg2600.converter.log’
 pg2600.converter.log         100%[==============================================>]  39.23M  1.97MB/s    in 25s   
 2025-04-19 22:58:56 (1.59 MB/s) - ‘/poolzle/pg2600.converter.log’ saved [41136901/41136901]*   
 
-   
+11. Проверяем наличие файла во всех пулах.
+    ```
+    ls -l /pool*
+    ```
+    >*root@Ubuntu24:~# ls -l /pool**
+/poolgzip:   
+total 10966   
+-rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
+/poollz4:   
+total 18008   
+-rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
+/poolzjb:   
+total 22100   
+-rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
+/poolzle:   
+total 40202   
+-rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
 
-   
-
-
-13. дд
+13. ё
