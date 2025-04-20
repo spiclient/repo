@@ -212,7 +212,7 @@ total 40202
     <pre>NAME       USED  AVAIL  REFER  MOUNTPOINT   
     <mark>poolgzip  10.9M   341M  10.7M  /poolgzip</mark>        
     poollz4   17.7M   334M  17.6M  /poollz4   
-    poolzjb   21.8M   330M  21.6M  /poolzjb   
+    poollzjb  21.8M   330M  21.6M  /poollzjb   
     poolzle   39.4M   313M  39.3M  /poolzle   
     </pre>
     ```
@@ -222,7 +222,7 @@ total 40202
     <pre>NAME      PROPERTY       VALUE  SOURCE
     <mark>poolgzip  compressratio  3.65x  -</mark>
     poollz4   compressratio  2.23x  -
-    poollzjb   compressratio  1.81x  -
+    poollzjb  compressratio  1.81x  -
     poolzle   compressratio  1.00x  -
     </pre>
 
