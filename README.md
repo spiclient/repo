@@ -373,14 +373,14 @@ otus_task2.file              100%[==============================================
     ```
     >*root@Ubuntu24:~# zfs receive otus/test@today < otus_task2.file*
     
-20. В каталоге **/otus/test** ищем файл с именем **secret_message**
+19. В каталоге **/otus/test** ищем файл с именем **secret_message**
     ```
     find /otus/test -name "secret_message"
     ```
     >*root@Ubuntu24:~# find /otus/test -name "secret_message"   
 /otus/test/task1/file_mess/secret_message*
 
-22. Смотрим содержимое файла.
+20. Смотрим содержимое файла.
     ```
     cat /otus/test/task1/file_mess/secret_message
     ```
@@ -389,7 +389,7 @@ https://otus.ru/lessons/linux-hl/*
 
 В файле ссылка на страницу курса "Инфраструктура высоконагруженных систем". 
 
-23. Удаляем созданные пулы разделов ZFS.
+21. Удаляем созданные пулы разделов ZFS.
     ```
     zpool destroy poolgzip
     ```
