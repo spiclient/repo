@@ -284,18 +284,18 @@ archive.tar.gz               100%[==============================================
     >*root@Ubuntu24:~# zpool status otus*
     <pre>pool: otus
     state: ONLINE
-      status: Some supported and requested features are not enabled on the pool.
+    status: Some supported and requested features are not enabled on the pool.
               The pool can still be used, but some features are unavailable.
-      action: Enable all features using 'zpool upgrade'. Once this is done,
+    action: Enable all features using 'zpool upgrade'. Once this is done,
               the pool may no longer be accessible by software that does not support
               the features. See zpool-features(7) for details.
-      config:
-              NAME                         STATE     READ WRITE CKSUM
-              otus                         ONLINE       0     0     0
-                mirror-0                   ONLINE       0     0     0
-                  /root/zpoolexport/filea  ONLINE       0     0     0
-                  /root/zpoolexport/fileb  ONLINE       0     0     0
-      errors: No known data errors
+    config:
+        NAME                         STATE     READ WRITE CKSUM
+        otus                         ONLINE       0     0     0
+          mirror-0                   ONLINE       0     0     0
+            /root/zpoolexport/filea  ONLINE       0     0     0
+            /root/zpoolexport/fileb  ONLINE       0     0     0
+    errors: No known data errors
     </pre>
 
 17. апап
