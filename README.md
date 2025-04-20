@@ -353,9 +353,41 @@ archive.tar.gz               100%[==============================================
 
     ###  Работа со снапшотами.
 
-17. Скачиваем файл по ссылке https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
+17. Скачиваем файл по ссылке https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download и переименовываем его сразу в **otus_task2.file**
     ```
     wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
     ```
-    >*
-19. ошшшшд
+    >*root@Ubuntu24:/home# wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download   
+    --2025-04-20 14:10:51--  https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI   
+Resolving drive.usercontent.google.com (drive.usercontent.google.com)... 142.250.201.161, 2a00:1450:4010:c01::84   
+Connecting to drive.usercontent.google.com (drive.usercontent.google.com)|142.250.201.161|:443... connected.   
+HTTP request sent, awaiting response... 200 OK   
+Length: 5432736 (5.2M) [application/octet-stream]   
+Saving to: ‘otus_task2.file’   
+otus_task2.file              100%[==============================================>]   5.18M  6.47MB/s    in 0.8s   
+2025-04-20 14:10:58 (6.47 MB/s) - ‘otus_task2.file’ saved [5432736/5432736]*
+
+18. Восстанавливаем файловую систему из полученнного снапшота.
+    ```
+    zfs receive otus/test@today < otus_task2.file
+    ```
+    >*root@Ubuntu24:~# zfs receive otus/test@today < otus_task2.file*
+    
+20. В каталоге **/otus/test** ищем файл с именем **secret_message**
+    ```
+    find /otus/test -name "secret_message"
+    ```
+    >*root@Ubuntu24:~# find /otus/test -name "secret_message"   
+/otus/test/task1/file_mess/secret_message*
+
+22. Смотрим содержимое файла.
+    ```
+    cat /otus/test/task1/file_mess/secret_message
+    ```
+    >*root@Ubuntu24:~# cat /otus/test/task1/file_mess/secret_message   
+https://otus.ru/lessons/linux-hl/*
+
+В файле ссылка на страницу курса "Инфраструктура высоконагруженных систем". 
+
+
+
