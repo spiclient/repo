@@ -389,5 +389,19 @@ https://otus.ru/lessons/linux-hl/*
 
 В файле ссылка на страницу курса "Инфраструктура высоконагруженных систем". 
 
+23. Удаляем созданные пулы разделов ZFS.
+    ```
+    zpool destroy poolgzip
+    ```
+    ```
+    destroy poolzjb
+    ```
+    ```
+    destroy poolzle
+    ```
+    ```
+    destroy poollz4
+    ```
+
 
 
