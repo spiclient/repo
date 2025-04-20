@@ -255,16 +255,16 @@ archive.tar.gz               100%[==============================================
     ```
     zpool import -d zpoolexport/
     ```
-    >*root@Ubuntu24:~# zpool import -d zpoolexport/*   
+    >*root@Ubuntu24:~# zpool import -d zpoolexport/*      
     <pre>pool: otus   
        id: 6554193320433390805   
     state: ONLINE   
-  status: Some supported features are not enabled on the pool.   
+    status: Some supported features are not enabled on the pool.   
           (Note that they may be intentionally disabled if the   
           'compatibility' property is set.)   
-   action: The pool can be imported using its name or numeric identifier, though   
+    action: The pool can be imported using its name or numeric identifier, though   
           some features will not be available without an explicit 'zpool upgrade'.   
-   config:   
+    config:   
           otus                         ONLINE   
             mirror-0                   ONLINE   
               /root/zpoolexport/filea  ONLINE   
