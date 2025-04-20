@@ -268,5 +268,5 @@ status: Some supported features are not enabled on the pool.
         otus                         ONLINE   
           mirror-0                   ONLINE   
             /root/zpoolexport/filea  ONLINE   
-            /root/zpoolexport/fileb  ONLINE   
+            /root/zpoolexport/fileb  ONLINE*   
 
