@@ -271,7 +271,7 @@ archive.tar.gz               100%[==============================================
               /root/zpoolexport/fileb  ONLINE
     </pre>   
 #### Полученный вывод сообщает, что данный каталог является экспортируемым пулом Otus.
-15. Делаем импорт пула Otus к нам в ОС.
+15. Делаем импорт пула **Otus** к нам в ОС.
     ```
     zpool import -d zpoolexport/ otus
     ```
@@ -307,18 +307,18 @@ archive.tar.gz               100%[==============================================
     ```
     zfs get available otus
     ```
-    >*root@Ubuntu24:~# zfs get available otus   
+    >*root@Ubuntu24:~# zfs get available otus*   
     <pre>NAME  PROPERTY   VALUE  SOURCE      
-    otus  available  350M   -*   
+    otus  available  350M   -   
     </pre>
     ##### Тип пула обозначается параметром "type"   
     
     ```
     zfs get type otus
     ```
-    >*root@Ubuntu24:~# zfs get type otus    
+    >*root@Ubuntu24:~# zfs get type otus*    
     <pre>NAME  PROPERTY  VALUE       SOURCE   
-    otus  type      filesystem  -*
+    otus  type      filesystem  -
     </pre>
     ##### Значение размера блока данных в файловой системе обозначается параметром "recordsize"
     
