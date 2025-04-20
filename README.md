@@ -191,7 +191,7 @@ pg2600.converter.log         100%[==============================================
     ls -l /pool*
     ```
     >*root@Ubuntu24:~# ls -l /pool**   
-/poolgzip:   
+*/poolgzip:   
 total 10966   
 -rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
 /poollz4:   
@@ -202,7 +202,7 @@ total 22100
 -rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
 /poolzle:   
 total 40202   
--rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
+-rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log*   
 
 12. Сравниваем размер файла и степень его сжатия в файловых системам с различными методами сжатия.
     ```
@@ -215,5 +215,18 @@ total 40202
       poolzjb   21.8M   330M  21.6M  /poolzjb
       poolzle   39.4M   313M  39.3M  /poolzle
     </pre>
+    ```
+    zfs get compressratio
+    ```
+    >*root@Ubuntu24:~# zfs get compressratio*
+    <pre>NAME      PROPERTY       VALUE  SOURCE
+    poolgzip  compressratio  3.65x  -
+    poollz4   compressratio  2.23x  -
+    poolzjb   compressratio  1.81x  -
+    poolzle   compressratio  1.00x  -
+    </pre>
+    #Наименьший размер и соответственно наибольший коэффициент сжатия имеет файл расположенный в пуле с методом сжатия **gzip-9**
 
+
+    
 14. ыпыкуп
