@@ -309,7 +309,7 @@ archive.tar.gz               100%[==============================================
     ```
     >*root@Ubuntu24:~# zfs get available otus   
     NAME  PROPERTY   VALUE  SOURCE      
-    otus  available  350M   -   
+    otus  available  350M   -*   
     
     ##### Тип пула обозначается параметром "type"   
     
@@ -335,7 +335,7 @@ archive.tar.gz               100%[==============================================
     ```
     zfs get compressratio otus
     ```
-    >*root@Ubuntu24:~# zfs get compressratio otus
+    >*root@Ubuntu24:~# zfs get compressratio otus*
     <pre>NAME  PROPERTY       VALUE  SOURCE
     otus  compressratio  1.00x  -
     </pre>
@@ -345,7 +345,7 @@ archive.tar.gz               100%[==============================================
     ```
     zfs get checksum otus
     ```
-    >*root@Ubuntu24:~# zfs get checksum otus
-    NAME  PROPERTY  VALUE      SOURCE
+    >*root@Ubuntu24:~# zfs get checksum otus*
+    <pre>NAME  PROPERTY  VALUE      SOURCE
     otus  checksum  sha256     local
     </pre>
