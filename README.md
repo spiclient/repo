@@ -325,5 +325,20 @@ zfs get recordsize otus
 otus  recordsize  128K     local
 </pre>
 
+##### Коэффициент сжатия обозначается параметром *"compressratio"*
+```
+zfs get compressratio otus
+```
+>*root@Ubuntu24:~# zfs get compressratio otus
+<pre>NAME  PROPERTY       VALUE  SOURCE
+otus  compressratio  1.00x  -
+</pre>
 
-
+##### Тип контрольной суммы обозначается параметром *"type"*
+```
+zfs get checksum otus
+```
+>*root@Ubuntu24:~# zfs get checksum otus
+NAME  PROPERTY  VALUE      SOURCE
+otus  checksum  sha256     local
+</pre>
