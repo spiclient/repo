@@ -209,17 +209,17 @@ total 40202
     zfs list
     ```
     >*root@Ubuntu24:~# zfs list*
-    <pre>  NAME       USED  AVAIL  REFER  MOUNTPOINT
+      NAME       USED  AVAIL  REFER  MOUNTPOINT
       <mark>poolgzip  10.9M   341M  10.7M  /poolgzip<mark>   
       poollz4   17.7M   334M  17.6M  /poollz4
       poolzjb   21.8M   330M  21.6M  /poolzjb
       poolzle   39.4M   313M  39.3M  /poolzle
-    </pre>
+    
     ```
     zfs get compressratio
     ```
     >*root@Ubuntu24:~# zfs get compressratio*
-    <pre>NAME      PROPERTY       VALUE  SOURCE
+    NAME      PROPERTY       VALUE  SOURCE
     poolgzip  compressratio  3.65x  -
     poollz4   compressratio  2.23x  -
     poolzjb   compressratio  1.81x  -
