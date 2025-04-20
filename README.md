@@ -337,8 +337,8 @@ archive.tar.gz               100%[==============================================
     ```
     >*root@Ubuntu24:~# zfs get compression otus*
     <pre>
-       NAME  PROPERTY     VALUE           SOURCE
-       otus  compression  zle             local
+    NAME  PROPERTY     VALUE           SOURCE
+    otus  compression  zle             local
 
     </pre>
 
