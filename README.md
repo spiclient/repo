@@ -300,7 +300,7 @@ archive.tar.gz               100%[==============================================
 
 16. Смотрим настройки пула и параметры файловой системы.   
 
-    С помощью команд ***zpool get all*** и ***zfs get all*** можно посмотреть сразу все параметры, но нас интересуют следующие: размер хранилища, тип пула, размер блока в файловой системе, коэффициент сжатия и контрольная сумма.
+    С помощью команд ***zpool get all*** и ***zfs get all*** можно посмотреть сразу все параметры, но нас интересуют следующие: размер хранилища, тип пула, размер блока в файловой системе, какой метод сжатия и контрольная сумма.
 
     ##### Размер хранилища обозначается параметром "available"   
     
@@ -330,14 +330,15 @@ archive.tar.gz               100%[==============================================
     otus  recordsize  128K     local
     </pre>
 
-    ##### Коэффициент сжатия обозначается параметром "compressratio"
+    ##### Тип сжатия обозначается параметром "compression"
     
     ```
-    zfs get compressratio otus
+    zfs get compression otus
     ```
-    >*root@Ubuntu24:~# zfs get compressratio otus*
-    <pre>NAME  PROPERTY       VALUE  SOURCE
-    otus  compressratio  1.00x  -
+    >*root@Ubuntu24:~# zfs get compression otus*
+    <pre>NAME  PROPERTY     VALUE           SOURCE
+         otus  compression  zle             local
+
     </pre>
 
     ##### Тип контрольной суммы обозначается параметром "type"
