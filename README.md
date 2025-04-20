@@ -190,7 +190,7 @@ pg2600.converter.log         100%[==============================================
     ```
     ls -l /pool*
     ```
-    >*root@Ubuntu24:~# ls -l /pool**
+    >*root@Ubuntu24:~# ls -l /pool**   
 /poolgzip:   
 total 10966   
 -rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
