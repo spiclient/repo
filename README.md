@@ -230,4 +230,25 @@ total 40202
 
 ###  Определить основные настройки пула. 
     
-13. ыпыкуп
+13. Скачиваем архив пула по ссылке https://drive.usercontent.google.com/download?id=1MvrcEp-WgAQe57aDEzxSRalPAwbNN1Bb&export=download.
+    ```
+    wget -O archive.tar.gz --no-check-certificate 'https://drive.usercontent.google.com/download?id=1MvrcEp-WgAQe57aDEzxSRalPAwbNN1Bb&export=download'
+    ```
+    >*root@Ubuntu24:~# wget -O archive.tar.gz --no-check-certificate 'https://drive.usercontent.google.com/download?id=1MvrcEp-WgAQe57aDEzxSRalPAwbNN1Bb&export=download'   
+--2025-04-20 09:54:13--  https://drive.usercontent.google.com/download?id=1MvrcEp-WgAQe57aDEzxSRalPAwbNN1Bb&export=download   
+Resolving drive.usercontent.google.com (drive.usercontent.google.com)... 173.194.73.132, 2a00:1450:4010:c1e::84   
+Connecting to drive.usercontent.google.com (drive.usercontent.google.com)|173.194.73.132|:443... connected.   
+HTTP request sent, awaiting response... 200 OK   
+Length: 7275140 (6.9M) [application/octet-stream]   
+Saving to: ‘archive.tar.gz’   
+archive.tar.gz               100%[==============================================>]   6.94M  8.95MB/s    in 0.8s   
+2025-04-20 09:54:22 (8.95 MB/s) - ‘archive.tar.gz’ saved [7275140/7275140]   
+    ```
+    tar -xzvf archive.tar.gz
+    ```
+    >*root@Ubuntu24:~# tar -xzvf archive.tar.gz   
+      zpoolexport/   
+      zpoolexport/filea   
+      zpoolexport/fileb*   
+
+14. 
