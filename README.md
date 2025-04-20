@@ -204,4 +204,16 @@ total 22100
 total 40202   
 -rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
 
-13. ё
+12. Сравниваем размер файла и степень его сжатия в файловых системам с различными методами сжатия.
+    ```
+    zfs list
+    ```
+    >*root@Ubuntu24:~# zfs list*
+    <pre>  NAME       USED  AVAIL  REFER  MOUNTPOINT
+      poolgzip  10.9M   341M  10.7M  /poolgzip
+      poollz4   17.7M   334M  17.6M  /poollz4
+      poolzjb   21.8M   330M  21.6M  /poolzjb
+      poolzle   39.4M   313M  39.3M  /poolzle
+    </pre>
+
+14. ыпыкуп
