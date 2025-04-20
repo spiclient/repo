@@ -10,7 +10,7 @@
      + определить какие алгоритмы сжатия поддерживает **zfs (gzip, zle, lzjb, lz4)**
      + создать 4 файловых системы на каждой применить свой алгоритм сжатия
      + для сжатия использовать либо текстовый файл, либо группу файлов
-   + Определить настройки пула. С помощью команды *zfs import* собрать pool **ZFS**. Командами определить настройки:
+   + Определить настройки пула. С помощью команды ***zfs import*** собрать pool **ZFS**. Командами определить настройки:
      + размер хранилища
      + тип **pool**
      + значение **recordsize**
@@ -351,4 +351,11 @@ archive.tar.gz               100%[==============================================
     otus  checksum  sha256     local
     </pre>
 
-    ###  Работа со снапшотами. 
+    ###  Работа со снапшотами.
+
+17. Скачиваем файл по ссылке https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
+    ```
+    wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
+    ```
+    >*
+19. ошшшшд
