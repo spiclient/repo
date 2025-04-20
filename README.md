@@ -303,42 +303,42 @@ archive.tar.gz               100%[==============================================
 С помощью команд *zpool get all* и *zfs get all* можно посмотреть сразу все параметры, но нас интересуют только размер хранилища, тип пула, размер блока в файловой системе, коэффициент сжатия и контрольная сумма.
 
 ##### Размер хранилища обозначается параметром *"available"*
-```
-zfs get available otus
-```
->*root@Ubuntu24:~# zfs get available otus   
-NAME  PROPERTY   VALUE  SOURCE   
-otus  available  350M   -*
+    ```
+    zfs get available otus
+    ```
+    >*root@Ubuntu24:~# zfs get available otus   
+    NAME  PROPERTY   VALUE  SOURCE   
+    otus  available  350M   -*
 ##### Тип пула обозначается параметром *"type"*
-```
-zfs get type otus
-```
->*root@Ubuntu24:~# zfs get type otus    
-NAME  PROPERTY  VALUE       SOURCE   
-otus  type      filesystem  -*
-##### Значение размера блока данных в файловой системе обозначается параметром *"recordsize"*
-```
-zfs get recordsize otus
-```
->*root@Ubuntu24:~# zfs get recordsize otus*
-<pre>NAME  PROPERTY    VALUE    SOURCE
-otus  recordsize  128K     local
-</pre>
+    ```
+    zfs get type otus
+    ```
+    >*root@Ubuntu24:~# zfs get type otus    
+    NAME  PROPERTY  VALUE       SOURCE   
+    otus  type      filesystem  -*
+    ##### Значение размера блока данных в файловой системе обозначается параметром *"recordsize"*
+    ```
+    zfs get recordsize otus
+    ```
+    >*root@Ubuntu24:~# zfs get recordsize otus*
+    <pre>NAME  PROPERTY    VALUE    SOURCE
+    otus  recordsize  128K     local
+    </pre>
 
 ##### Коэффициент сжатия обозначается параметром *"compressratio"*
-```
-zfs get compressratio otus
-```
->*root@Ubuntu24:~# zfs get compressratio otus
-<pre>NAME  PROPERTY       VALUE  SOURCE
-otus  compressratio  1.00x  -
-</pre>
+    ```
+    zfs get compressratio otus
+    ```
+    >*root@Ubuntu24:~# zfs get compressratio otus
+    <pre>NAME  PROPERTY       VALUE  SOURCE
+    otus  compressratio  1.00x  -
+    </pre>
 
 ##### Тип контрольной суммы обозначается параметром *"type"*
-```
-zfs get checksum otus
-```
->*root@Ubuntu24:~# zfs get checksum otus
-NAME  PROPERTY  VALUE      SOURCE
-otus  checksum  sha256     local
-</pre>
+    ```
+    zfs get checksum otus
+    ```
+    >*root@Ubuntu24:~# zfs get checksum otus
+    NAME  PROPERTY  VALUE      SOURCE
+    otus  checksum  sha256     local
+    </pre>
