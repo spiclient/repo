@@ -132,7 +132,7 @@ Do you want to continue? [Y/n] y*
      <pre>
         poolgzip  compression           gzip-9                 local
         poollz4   compression           lz4                    local
-        poollzjb   compression          lzjb                   local
+        poollzjb  compression           lzjb                   local
         poolzle   compression           zle                    local
      </pre>
 
