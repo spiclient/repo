@@ -394,13 +394,13 @@ https://otus.ru/lessons/linux-hl/*
     zpool destroy poolgzip
     ```
     ```
-    destroy poolzjb
+    zpool destroy poolzjb
     ```
     ```
-    destroy poolzle
+    zpool destroy poolzle
     ```
     ```
-    destroy poollz4
+    zpool destroy poollz4
     ```
 
 
