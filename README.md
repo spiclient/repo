@@ -255,8 +255,8 @@ archive.tar.gz               100%[==============================================
     ```
     zpool import -d zpoolexport/
     ```
-    >*root@Ubuntu24:~# zpool import -d zpoolexport/   
-   pool: otus   
+    >*root@Ubuntu24:~# zpool import -d zpoolexport/*   
+   <pre>pool: otus   
      id: 6554193320433390805   
   state: ONLINE   
 status: Some supported features are not enabled on the pool.   
@@ -268,5 +268,6 @@ status: Some supported features are not enabled on the pool.
         otus                         ONLINE   
           mirror-0                   ONLINE   
             /root/zpoolexport/filea  ONLINE   
-            /root/zpoolexport/fileb  ONLINE*   
-
+            /root/zpoolexport/fileb  ONLINE
+    </pre>   
+#### Полученный вывод сообщает, что данный каталог является экспортируемым пулом Otus
