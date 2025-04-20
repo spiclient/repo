@@ -78,7 +78,7 @@ After this operation, 7,399 kB of additional disk space will be used.
 Do you want to continue? [Y/n] y*   
 6. Создаём 4 пула из 2х дисков в режиме зеркального RAID.
    ```
-   zpool create poollzib mirror /dev/sdb /dev/sdc
+   zpool create poollzjb mirror /dev/sdb /dev/sdc
    ```
    >*root@Ubuntu24:~# zpool create poollzib mirror /dev/sdb /dev/sdc*
    ```
@@ -102,7 +102,7 @@ Do you want to continue? [Y/n] y*
       NAME       SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
       poolgzip   480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
       poollz4    480M   112K   480M        -         -     0%     0%  1.00x    ONLINE  -
-      poollzib   480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
+      poollzjb   480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
       poolzle    480M   114K   480M        -         -     0%     0%  1.00x    ONLINE  -
    </pre>
    
