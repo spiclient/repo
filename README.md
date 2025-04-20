@@ -108,9 +108,9 @@ Do you want to continue? [Y/n] y*
    
 8. На каждый пул устанавливаем определенный алгоритм сжатия - **lzjb, lz4, gzip-9, zle**.
    ```
-   zfs set compression=lzjb poolzjb
+   zfs set compression=lzjb poollzjb
    ```
-   >*root@Ubuntu24:~# zfs set compression=lzjb poolzjb*
+   >*root@Ubuntu24:~# zfs set compression=lzjb poollzjb*
    ```
    zfs set compression=zle poolzle
    ```
@@ -132,7 +132,7 @@ Do you want to continue? [Y/n] y*
      <pre>
         poolgzip  compression           gzip-9                 local
         poollz4   compression           lz4                    local
-        poolzjb   compression           lzjb                   local
+        poollzjb   compression          lzjb                   local
         poolzle   compression           zle                    local
      </pre>
 
@@ -162,7 +162,7 @@ Saving to: ‘/poollz4/pg2600.converter.log’
 pg2600.converter.log         100%[==============================================>]  39.23M  2.07MB/s    in 24s   
 2025-04-19 22:56:47 (1.65 MB/s) - ‘/poollz4/pg2600.converter.log’ saved [41136901/41136901]
     ```
-    wget -P /poolzjb https://gutenberg.org/cache/epub/2600/pg2600.converter.log
+    wget -P /poollzjb https://gutenberg.org/cache/epub/2600/pg2600.converter.log
     ```
     >*root@Ubuntu24:~# wget -P /poolzjb https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
 --2025-04-19 22:57:23--  https://gutenberg.org/cache/epub/2600/pg2600.converter.log   
@@ -197,7 +197,7 @@ total 10966
 /poollz4:   
 total 18008   
 -rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
-/poolzjb:   
+/poollzjb:   
 total 22100   
 -rw-r--r-- 1 root root 41136901 Apr  2 07:31 pg2600.converter.log   
 /poolzle:   
@@ -222,7 +222,7 @@ total 40202
     <pre>NAME      PROPERTY       VALUE  SOURCE
     <mark>poolgzip  compressratio  3.65x  -</mark>
     poollz4   compressratio  2.23x  -
-    poolzjb   compressratio  1.81x  -
+    poollzjb   compressratio  1.81x  -
     poolzle   compressratio  1.00x  -
     </pre>
 
@@ -394,7 +394,7 @@ https://otus.ru/lessons/linux-hl/*
     zpool destroy poolgzip
     ```
     ```
-    zpool destroy poolzjb
+    zpool destroy poollzjb
     ```
     ```
     zpool destroy poolzle
