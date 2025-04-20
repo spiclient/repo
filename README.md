@@ -306,15 +306,15 @@ archive.tar.gz               100%[==============================================
 ```
 zfs get available otus
 ```
->*root@Ubuntu24:~# zfs get available otus
-NAME  PROPERTY   VALUE  SOURCE
+>*root@Ubuntu24:~# zfs get available otus   
+NAME  PROPERTY   VALUE  SOURCE   
 otus  available  350M   -*
 ##### Тип пула обозначается параметром *type*
 ```
 zfs get type otus
 ```
->*root@Ubuntu24:~# zfs get type otus
-NAME  PROPERTY  VALUE       SOURCE
+>*root@Ubuntu24:~# zfs get type otus    
+NAME  PROPERTY  VALUE       SOURCE   
 otus  type      filesystem  -*
 
 
