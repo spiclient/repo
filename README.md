@@ -19,6 +19,7 @@
 ## Выполнение
 ### Основная часть. 
 1. Создаём 2 виртуальные машины под управлением ОС Ubuntu 24.04.
+####Производим настройки на сервере NFS
 2. Устанавливаем NFS
    ```
    apt install nfs-kernel-server
@@ -99,15 +100,77 @@ Do you want to continue? [Y/n] y*
    ```
    >*root@servernfs:/etc# chmod 0777 /srv/share/upload*
 
-7. выаыаыа
+7.  Перенаправляем ввод в команду или программу.
     ```
     cat << EOF > /etc/exports 
-    /srv/share 192.168.50.11/32(rw,sync,root_squash)
+    /srv/share 192.168.1.39/32(rw,sync,root_squash)
     EOF
     ```
     >*root@servernfs:/etc# cat << EOF > /etc/exports   
 /srv/share 192.168.1.39/32(rw,sync,root_squash)   
 EOF*
 
-8. sgdgg
+8. Экспортируем библиотеку
+   ```
+   exportfs -r
+   ```
+   >*root@servernfs:/etc# exportfs -r
+exportfs: /etc/exports [1]: Neither 'subtree_check' or 'no_subtree_check' specified for export "192.168.1.39/32:/srv/share".
+  Assuming default behaviour ('no_subtree_check').
+  NOTE: this default has changed since nfs-utils version 1.0.x*
+
+9. Проверяем
+   ```
+   exportfs -s
+   ```
+   >*root@servernfs:/etc# exportfs -s
+/srv/share  192.168.1.39/32(sync,wdelay,hide,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)*
+
+#### Производим на стройки на клиенте NFS
+10. Устанавливаем
+    ```
+    sudo apt install nfs-common
+    ```
+    >*root@clientnfs:~# sudo apt install nfs-common   
+Reading package lists... Done   
+Building dependency tree... Done   
+Reading state information... Done   
+The following additional packages will be installed:   
+  keyutils libnfsidmap1 rpcbind   
+Suggested packages:   
+  watchdog   
+The following NEW packages will be installed:   
+  keyutils libnfsidmap1 nfs-common rpcbind   
+0 upgraded, 4 newly installed, 0 to remove and 59 not upgraded.   
+Need to get 400 kB of archives.   
+After this operation, 1,416 kB of additional disk space will be used.   
+Do you want to continue? [Y/n] y*
+
+11. Добавляем в /etc/fstab строку
+    ```
+    echo "192.168.1.65:/srv/share/ /mnt nfs vers=3,noauto,x-systemd.automount 0 0" >> /etc/fstab
+    ```
+    >*root@clientnfs:~# echo "192.168.1.65:/srv/share/ /mnt nfs vers=3,noauto,x-systemd.automount 0 0" >> /etc/fstab*
+
+12. Перезапускаем сервис монтирования
+    ```
+    systemctl daemon-reload
+    ```
+    >*root@clientnfs:~# systemctl daemon-reload*
+
+    ```
+    systemctl restart remote-fs.target
+    ```
+    >*root@clientnfs:~# systemctl restart remote-fs.target*
+
+13. Проверяем монтирование
+    ```
+    mount | grep mnt 
+    ```
+    >*root@clientnfs:/mnt# mount | grep mnt   
+systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14922)
+192.168.1.65:/srv/share/ on /mnt type nfs (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=41584,mountproto=udp,local_lock=none,addr=192.168.1.65)*
+
+
+15. ввавв
    
