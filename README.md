@@ -19,7 +19,7 @@
 ## Выполнение
 ### Основная часть. 
 1. Создаём 2 виртуальные машины под управлением ОС Ubuntu 24.04.
-####Производим настройки на сервере NFS
+#### Производим настройки на сервере NFS
 2. Устанавливаем NFS
    ```
    apt install nfs-kernel-server
@@ -174,9 +174,9 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 
 14. Проверка работоспособности
     
-    a. Заходим на сервер
-    b. Заходим в каталог */srv/share/upload*.
-    c. Создаём тестовый файл *touch check_file*.   
+    a. Заходим на сервер   
+    b. Заходим в каталог */srv/share/upload*      
+    c. Создаём тестовый файл *touch check_file*        
     
     ```
     cd /srv/share/upload
@@ -195,11 +195,11 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 root root 0 Apr 25 21:47 check_file   
     root@servernfs:/srv/share/upload#*       
 
-    d. Заходим на клиент
-    e. Заходим в каталог **/mnt/upload**.
-    f. Проверяем наличие ранее созданного файла **check_file**.
-    g. Создаём тестовый файл touch **client_file**.
-    j. Проверяем, что файл успешно создан.
+    d. Заходим на клиент   
+    e. Заходим в каталог **/mnt/upload**   
+    f. Проверяем наличие ранее созданного файла **check_file**   
+    g. Создаём тестовый файл touch **client_file**   
+    j. Проверяем, что файл успешно создан   
     
     ```
     cd /mnt/upload
@@ -228,10 +228,10 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     
    #### Предварительно проверяем клиент: 
    
-   a.	Перезагружаем клиент
-   b.	Заходим на клиент
-   c.	Заходим в каталог **/mnt/upload**
-   d.	Проверяем наличие ранее созданных файлов
+   a.	Перезагружаем клиент   
+   b.	Заходим на клиент   
+   c.	Заходим в каталог **/mnt/upload**   
+   d.	Проверяем наличие ранее созданных файлов   
    
    >*user@clientnfs:~$ cd /mnt/upload   
    user@clientnfs:/mnt/upload$ ls -l   
@@ -242,11 +242,11 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 
    #### Проверяем сервер:
    
-   e. Перезагружаем сервер
-   g. Заходим на сервер
-   j. Проверяем наличие файлов в каталоге **/srv/share/upload/**
-   k. Проверяем экспорты **exportfs -s**
-   l. Проверяем работу RPC *showmount -a 192.168.50.10*
+   e. Перезагружаем сервер   
+   g. Заходим на сервер   
+   j. Проверяем наличие файлов в каталоге **/srv/share/upload/**   
+   k. Проверяем экспорты **exportfs -s**   
+   l. Проверяем работу RPC *showmount -a 192.168.50.10*   
    
    >*root@servernfs:~# cd /srv/share/upload/   
    root@servernfs:/srv/share/upload# ls -l    
@@ -261,14 +261,14 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 
    #### Проверяем клиент
    
-   a. Перезагружаем клиент
-   b. Заходим на клиент
-   c. Проверяем работу RPC showmount -a 192.168.1.65
-   d. Заходим в каталог */mnt/upload*
-   e. Проверяем статус монтирования *mount | grep mnt*
-   f. Проверяем наличие ранее созданных файлов
-   g. Создаём тестовый файл **touch final_check**
-   j. Проверяем, что файл успешно создан
+   a. Перезагружаем клиент   
+   b. Заходим на клиент   
+   c. Проверяем работу RPC showmount -a 192.168.1.65   
+   d. Заходим в каталог */mnt/upload*   
+   e. Проверяем статус монтирования *mount | grep mnt*   
+   f. Проверяем наличие ранее созданных файлов   
+   g. Создаём тестовый файл **touch final_check**   
+   j. Проверяем, что файл успешно создан   
    
    >*root@clientnfs:~# showmount -a 192.168.1.65   
 All mount points on 192.168.1.65:   
