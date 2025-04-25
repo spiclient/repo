@@ -81,4 +81,33 @@ Do you want to continue? [Y/n] y*
    tcp        LISTEN      0            4096                              [::]:37429                     [::]:*                       users:(("rpc.mountd",pid=1943,fd=7))
    tcp        LISTEN      0            4096                              [::]:40753                     [::]:*                       users:(("rpc.statd",pid=1930,fd=11))
    </pre>
-5. фуафва
+4. Создаём папку
+   ```
+   mkdir -p /srv/share/upload
+   ```
+   >*root@servernfs:/etc# mkdir -p /srv/share/upload*
+
+5. Устанавливаем права доступа 0775 (пользователь nobody («никто») и группа nogroup («никакая»).
+   ```
+   chown -R nobody:nogroup /srv/share
+   ```
+   >*root@servernfs:/etc# chown -R nobody:nogroup /srv/share*
+
+6. Настраиваем доступ к файлу или каталогу
+   ```
+   chmod 0777 /srv/share/upload
+   ```
+   >*root@servernfs:/etc# chmod 0777 /srv/share/upload*
+
+7. выаыаыа
+    ```
+    cat << EOF > /etc/exports 
+/srv/share 192.168.50.11/32(rw,sync,root_squash)
+EOF
+    ```
+    >*root@servernfs:/etc# cat << EOF > /etc/exports
+/srv/share 192.168.1.39/32(rw,sync,root_squash)
+EOF
+
+8. sgdgg
+   
