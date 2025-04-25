@@ -172,5 +172,111 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 192.168.1.65:/srv/share/ on /mnt type nfs (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=41584,mountproto=udp,local_lock=none,addr=192.168.1.65)*
 
 
-15. ввавв
+14. Проверка работоспособности
+    a. Заходим на сервер
+    b. Заходим в каталог */srv/share/upload*.
+    c. Создаём тестовый файл *touch check_file*.
+   ```
+   cd /srv/share/upload
+   ```
+   ```
+   touch check_file
+   ```
+   ```
+   ls -l
+   ```
+   >*root@servernfs:/etc# cd /srv/share/upload   
+   root@servernfs:/srv/share/upload# touch check_file   
+   root@servernfs:/srv/share/upload# ls -l   
+   total 0   
+   -rw-r--r-- 1 root root 0 Apr 25 21:47 check_file   
+   root@servernfs:/srv/share/upload#*   
+
+    d. Заходим на клиент
+    e. Заходим в каталог **/mnt/upload**.
+    f. Проверяем наличие ранее созданного файла **check_file**.
+    g. Создаём тестовый файл touch **client_file**.
+    j. Проверяем, что файл успешно создан.
+   ```
+   cd /mnt/upload
+   ```
+   ```
+   ls -l
+   ```
+   ```
+   touch client_file
+   ```
+   ```
+   ls -l
+   ```
+   >*root@clientnfs:/mnt# cd /mnt/upload   
+   root@clientnfs:/mnt/upload# ls -l   
+   total 0   
+   -rw-r--r-- 1 root root 0 Apr 25 21:47 check_file   
+   root@clientnfs:/mnt/upload# touch client_file   
+   root@clientnfs:/mnt/upload# ls -l   
+   total 0   
+   -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
+   -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file*   
+
+15. Проверяем после перезагрузки клиента и сервера
+   ####Предварительно проверяем клиент: 
+   a.	Перезагружаем клиент
+   b.	Заходим на клиент
+   c.	Заходим в каталог **/mnt/upload**
+   d.	Проверяем наличие ранее созданных файлов
+   >*user@clientnfs:~$ cd /mnt/upload   
+   user@clientnfs:/mnt/upload$ ls -l   
+   total 0   
+   -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
+   -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file   
+   user@clientnfs:/mnt/upload$*   
+
+   ####Проверяем сервер:
+   e. Перезагружаем сервер
+   g. Заходим на сервер
+   j. Проверяем наличие файлов в каталоге **/srv/share/upload/**
+   k. Проверяем экспорты **exportfs -s**
+   l. Проверяем работу RPC *showmount -a 192.168.50.10*
+   
+   >*root@servernfs:~# cd /srv/share/upload/   
+   root@servernfs:/srv/share/upload# ls -l    
+   total 0   
+   -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
+   -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file   
+   root@servernfs:/srv/share/upload# exportfs -s   
+   /srv/share  192.168.1.39/32(sync,wdelay,hide,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)   
+   root@servernfs:/srv/share/upload# showmount -a 192.168.1.65   
+   All mount points on 192.168.1.65:   
+   192.168.1.39:/srv/share*
+   ####Проверяем клиент
+   a. Перезагружаем клиент
+   b. Заходим на клиент
+   c. Проверяем работу RPC showmount -a 192.168.1.65
+   d. Заходим в каталог */mnt/upload*
+   e. Проверяем статус монтирования *mount | grep mnt*
+   f. Проверяем наличие ранее созданных файлов
+   g. Создаём тестовый файл **touch final_check**
+   j. Проверяем, что файл успешно создан
+   >*root@clientnfs:~# showmount -a 192.168.1.65   
+All mount points on 192.168.1.65:   
+root@clientnfs:~# cd /mnt/upload   
+root@clientnfs:/mnt/upload# ls -l   
+total 0   
+-rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
+-rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file   
+root@clientnfs:/mnt/upload# mount | grep mnt   
+systemd-1 on /mnt type autofs (rw,relatime,fd=54,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=4053)   
+192.168.1.65:/srv/share/ on /mnt type nfs     
+(rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=55311,mountproto=udp,local_lock=none,addr=192.168.1.65)   
+root@clientnfs:/mnt/upload# touch final_check   
+root@clientnfs:/mnt/upload# ls -l   
+total 0   
+-rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
+-rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file   
+-rw-r--r-- 1 nobody nogroup 0 Apr 25 22:34 final_check*
+
+
+
+16. кукпкепу
    
