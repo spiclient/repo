@@ -102,12 +102,12 @@ Do you want to continue? [Y/n] y*
 7. выаыаыа
     ```
     cat << EOF > /etc/exports 
-/srv/share 192.168.50.11/32(rw,sync,root_squash)
-EOF
+    /srv/share 192.168.50.11/32(rw,sync,root_squash)
+    EOF
     ```
-    >*root@servernfs:/etc# cat << EOF > /etc/exports
-/srv/share 192.168.1.39/32(rw,sync,root_squash)
-EOF
+    >*root@servernfs:/etc# cat << EOF > /etc/exports   
+/srv/share 192.168.1.39/32(rw,sync,root_squash)   
+EOF*
 
 8. sgdgg
    
