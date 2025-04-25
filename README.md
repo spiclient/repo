@@ -270,9 +270,9 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     g. Создаём тестовый файл **touch final_check**   
     j. Проверяем, что файл успешно создан   
    
-    >*root@clientnfs:~# showmount -a 192.168.1.65      
+    >*root@clientnfs: # showmount -a 192.168.1.65      
     All mount points on 192.168.1.65:   
-    root@clientnfs:~# cd /mnt/upload   
+    root@clientnfs: # cd /mnt/upload   
     root@clientnfs:/mnt/upload# ls -l   
     total 0   
     -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
