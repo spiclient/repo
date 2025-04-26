@@ -253,7 +253,8 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 
     #### Повторно перезагружаем клиент
    
-    a. Смотрим что экспортируется с ВМ **servernfs** с помощью команды *showmount -a 192.168.1.65*         b. Переходим в каталог **/mnt/upload**           
+    a. Смотрим что экспортируется с ВМ **servernfs** с помощью команды *showmount -a 192.168.1.65*    
+    b. Переходим в каталог **/mnt/upload**           
     c. Проверяем статус монтирования *mount | grep mnt*     
     d. Проверяем наличие ранее созданных файлов    
     e. Создаём тестовый файл **touch final_check**    
