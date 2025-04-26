@@ -18,7 +18,7 @@
 
 ## Выполнение
 ### Основная часть. 
-1. Создаём 2 виртуальные машины под управлением ОС Ubuntu 24.04 с именами **severnfs** и **clientnfs**.
+1. Создаём 2 виртуальные машины под управлением ОС Ubuntu 24.04 с именами **severnfs**(192.168.1.65) и **clientnfs**(192.168.1.39).
    #### Производим настройки на сервере NFS
 2. Устанавливаем компонент для сервера NFS
    ```
@@ -39,7 +39,7 @@ Need to get 569 kB of archives.
 After this operation, 2,022 kB of additional disk space will be used.   
 Do you want to continue? [Y/n] y*
 
-3. Проверяем слушащие порты 2049 и 111
+3. Проверяем слушащие порты **2049** и **111**
    ```
    ss -tnplu
    ```
@@ -89,7 +89,7 @@ Do you want to continue? [Y/n] y*
    ```
    >*root@servernfs:/etc# mkdir -p /srv/share/upload*
 
-5. Устанавливаем владельца. Выбираем права доступа 0775 для пользователя nobody(«никто») и группы nogroup(«никакая»).
+5. Устанавливаем владельца. Выбираем права доступа **0775** для пользователя *nobody*(«никто») и группы *nogroup*(«никакая»).
    ```
    chown -R nobody:nogroup /srv/share
    ```
@@ -170,11 +170,10 @@ Do you want to continue? [Y/n] y*
     >*root@clientnfs:/mnt# mount | grep mnt   
 systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14922)
 192.168.1.65:/srv/share/ on /mnt type nfs (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=41584,mountproto=udp,local_lock=none,addr=192.168.1.65)*
-14. Проверка работоспособности
-    
-    a. Заходим на сервер   
-    b. Заходим в каталог */srv/share/upload*      
-    c. Создаём тестовый файл *touch check_file*        
+14. Проверка работоспособности настроенного NFS.
+    #### На сервере NFS(192.168.1.65)
+    a. Переходим в каталог */srv/share/upload*
+    b. Создаём тестовый файл *touch check_file*   
     
     ```
     cd /srv/share/upload
@@ -191,13 +190,14 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     root@servernfs:/srv/share/upload# ls -l   
     total 0   
     -rw-r--r-- 1 root root 0 Apr 25 21:47 check_file   
-    root@servernfs:/srv/share/upload#*       
+    root@servernfs:/srv/share/upload#*
 
-    d. Заходим на клиент   
-    e. Заходим в каталог **/mnt/upload**   
-    f. Проверяем наличие ранее созданного файла **check_file**   
-    g. Создаём тестовый файл touch **client_file**   
-    j. Проверяем, что файл успешно создан   
+    #### На клиенте NFS(192.168.1.39)     
+
+    a. Переходим в каталог **/mnt/upload**   
+    b. Проверяем наличие созданного на сервере файла **check_file**   
+    c. Создаём тестовый файл touch **client_file**   
+    d. Проверяем, что файл успешно создан   
     
     ```
     cd /mnt/upload
@@ -222,15 +222,13 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file*   
 
-15. Проверяем после перезагрузки клиента и сервера
+15. Перезагружаем клиент и сервер. Проверяем.
     
-    #### Предварительно проверяем клиент: 
+    #### Сначала проверяем клиент: 
    
-    a.	Перезагружаем клиент   
-    b.	Заходим на клиент   
-    c.	Заходим в каталог **/mnt/upload**   
-    d.	Проверяем наличие ранее созданных файлов   
-   
+    a.	Переходим в каталог **/mnt/upload**  
+    b.	Проверяем наличие ранее созданных файлов    
+  
     >*user@clientnfs:~$ cd /mnt/upload   
     user@clientnfs:/mnt/upload$ ls -l   
     total 0   
@@ -240,12 +238,10 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 
     #### Проверяем сервер:
    
-    e. Перезагружаем сервер   
-    g. Заходим на сервер   
-    j. Проверяем наличие файлов в каталоге **/srv/share/upload/**   
-    k. Проверяем экспорты **exportfs -s**   
-    l. Проверяем работу RPC *showmount -a 192.168.50.10*   
-   
+    a. Переходим в каталоге **/srv/share/upload/**    
+    b. Проверяем экспорты **exportfs -s**  
+    с. Смотрим что экспортируется с **servernfs**, *showmount -a 192.168.1.65*   
+    
     >*root@servernfs:~# cd /srv/share/upload/   
     root@servernfs:/srv/share/upload# ls -l    
     total 0   
@@ -257,17 +253,14 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     All mount points on 192.168.1.65:   
     192.168.1.39:/srv/share*
 
-    #### Проверяем клиент
+    #### Повторно перезагружаем клиент
    
-    a. Перезагружаем клиент   
-    b. Заходим на клиент   
-    c. Проверяем работу RPC showmount -a 192.168.1.65   
-    d. Заходим в каталог */mnt/upload*   
-    e. Проверяем статус монтирования *mount | grep mnt*   
-    f. Проверяем наличие ранее созданных файлов   
-    g. Создаём тестовый файл **touch final_check**   
-    j. Проверяем, что файл успешно создан   
-   
+    a. Смотрим что экспортируется с **servernfs**, *showmount -a 192.168.1.65* 
+    b. Переходим в каталог */mnt/upload*    
+    c. Проверяем статус монтирования *mount | grep mnt* 
+    d. Проверяем наличие ранее созданных файлов 
+    e. Создаём тестовый файл **touch final_check**
+      
     >*root@clientnfs: #~showmount -a 192.168.1.65      
     All mount points on 192.168.1.65:   
     root@clientnfs: # cd /mnt/upload   
