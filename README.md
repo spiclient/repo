@@ -39,7 +39,7 @@ Need to get 569 kB of archives.
 After this operation, 2,022 kB of additional disk space will be used.   
 Do you want to continue? [Y/n] y*
 
-3. Проверяем слушащие порты **2049** и **111**
+3. Проверяем есть ли среди слушащих портов **2049** и **111**
    ```
    ss -tnplu
    ```
