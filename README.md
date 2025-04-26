@@ -101,7 +101,7 @@ Do you want to continue? [Y/n] y*
    ```
    >*root@servernfs:/etc# chmod 0777 /srv/share/upload*
 
-7.  Добавляем точку монтирования для экспортируемого каталога **upload** в файл **exports**.
+7.  Добавляем точку монтирования для экспортируемого каталога **upload** в файле **exports**.
     ```
     nano /etc/exports
     ```
