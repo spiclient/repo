@@ -18,16 +18,16 @@
 
 ## Выполнение
 ### Основная часть. 
-1. Создаём 2 виртуальные машины под управлением ОС Ubuntu 24.04.
-#### Производим настройки на сервере NFS
-2. Устанавливаем NFS
+1. Создаём 2 виртуальные машины под управлением ОС Ubuntu 24.04 с именами **severnfs** и **clientnfs**.
+   #### Производим настройки на сервере NFS
+2. Устанавливаем компонент для сервера NFS
    ```
    apt install nfs-kernel-server
    ```
    >*root@servernfs:~# apt install nfs-kernel-server   
 Reading package lists... Done   
 Building dependency tree... Done   
-Reading state information... Done   
+Reading state information... Done       
 The following additional packages will be installed:   
   keyutils libnfsidmap1 nfs-common rpcbind   
 Suggested packages:   
@@ -39,7 +39,7 @@ Need to get 569 kB of archives.
 After this operation, 2,022 kB of additional disk space will be used.   
 Do you want to continue? [Y/n] y*
 
-3. Проверяем слушащие порты
+3. Проверяем слушащие порты 2049 и 111
    ```
    ss -tnplu
    ```
@@ -82,29 +82,37 @@ Do you want to continue? [Y/n] y*
    tcp        LISTEN      0            4096                              [::]:37429                     [::]:*                       users:(("rpc.mountd",pid=1943,fd=7))
    tcp        LISTEN      0            4096                              [::]:40753                     [::]:*                       users:(("rpc.statd",pid=1930,fd=11))
    </pre>
-4. Создаём папку
+   
+4. Создаём папку **upload**
    ```
    mkdir -p /srv/share/upload
    ```
    >*root@servernfs:/etc# mkdir -p /srv/share/upload*
 
-5. Устанавливаем права доступа 0775 (пользователь nobody («никто») и группа nogroup («никакая»).
+5. Устанавливаем владельца, права доступа 0775 для пользователя nobody(«никто») и группы nogroup(«никакая»).
    ```
    chown -R nobody:nogroup /srv/share
    ```
    >*root@servernfs:/etc# chown -R nobody:nogroup /srv/share*
 
-6. Настраиваем доступ к файлу или каталогу
+6. Настраиваем доступ к каталогу **upload**
    ```
    chmod 0777 /srv/share/upload
    ```
    >*root@servernfs:/etc# chmod 0777 /srv/share/upload*
 
-7.  Перенаправляем ввод в команду или программу.
+7.  Добавляем точку монтирования для экспортируемого каталога **upload** в файл **exports**.
     ```
-    cat << EOF > /etc/exports 
-    /srv/share 192.168.1.39/32(rw,sync,root_squash)
-    EOF
+    nano /etc/exports
+    ```
+    добавляем строку
+    >GNU nano 7.2                                               /etc/exports   
+/srv/share 192.168.1.39(rw,sync,root_squash)
+
+
+
+
+    cat << EOF > /etc/exports /srv/share 192.168.1.39/32(rw,sync,root_squash) EOF
     ```
     >*root@servernfs:/etc# cat << EOF > /etc/exports   
 /srv/share 192.168.1.39/32(rw,sync,root_squash)   
