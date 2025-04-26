@@ -222,7 +222,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file*   
 
-15. Перезагружаем клиент и сервер. Проверяем.
+15. Перезагружаем клиент и сервер.
     
     #### Сначала проверяем клиент: 
    
