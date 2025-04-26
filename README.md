@@ -89,7 +89,7 @@ Do you want to continue? [Y/n] y*
    ```
    >*root@servernfs:/etc# mkdir -p /srv/share/upload*
 
-5. Устанавливаем владельца, права доступа 0775 для пользователя nobody(«никто») и группы nogroup(«никакая»).
+5. Устанавливаем владельца. Выбираем права доступа 0775 для пользователя nobody(«никто») и группы nogroup(«никакая»).
    ```
    chown -R nobody:nogroup /srv/share
    ```
