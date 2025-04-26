@@ -171,9 +171,9 @@ Do you want to continue? [Y/n] y*
 systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14922)
 192.168.1.65:/srv/share/ on /mnt type nfs (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=41584,mountproto=udp,local_lock=none,addr=192.168.1.65)*
 14. Проверка работоспособности настроенного NFS.
-    #### На сервере NFS(192.168.1.65)
-    a. Переходим в каталог **/srv/share/upload** 
-    b. Создаём тестовый файл **touch check_file**      
+    #### На сервере NFS(192.168.1.65)    
+    a. Переходим в каталог **/srv/share/upload**     
+    b. Создаём тестовый файл **touch check_file**          
     
     ```
     cd /srv/share/upload
