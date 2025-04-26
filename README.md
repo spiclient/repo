@@ -196,7 +196,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 
     a. Переходим в каталог **/mnt/upload**      
     b. Проверяем наличие созданного на сервере файла **check_file**       
-    c. Создаём тестовый файл touch **client_file**       
+    c. Создаём тестовый файл **touch client_file**       
     d. Проверяем, что файл успешно создан       
     
     ```
