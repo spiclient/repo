@@ -237,7 +237,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 
     #### Проверяем сервер:
    
-    a. Переходим в каталоге **/srv/share/upload/**        
+    a. Переходим в каталог **/srv/share/upload/**        
     b. Проверяем экспорты **exportfs -s**      
     с. Смотрим что экспортируется с ВМ **servernfs** с помощью команды *showmount -a 192.168.1.65*           
     >*root@servernfs:~# cd /srv/share/upload/   
