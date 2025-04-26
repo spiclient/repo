@@ -107,35 +107,27 @@ Do you want to continue? [Y/n] y*
     ```
     добавляем строку
     >GNU nano 7.2                                               /etc/exports   
-/srv/share 192.168.1.39(rw,sync,root_squash)
+*/srv/share 192.168.1.39(rw,sync,root_squash)*
 
-
-
-
-    cat << EOF > /etc/exports /srv/share 192.168.1.39/32(rw,sync,root_squash) EOF
-    ```
-    >*root@servernfs:/etc# cat << EOF > /etc/exports   
-/srv/share 192.168.1.39/32(rw,sync,root_squash)   
-EOF*
-
-8. Экспортируем библиотеку
+8. Обновляем список экспортируемых каталогов внесённых в файл **/etc/exports**.  
    ```
    exportfs -r
    ```
-   >*root@servernfs:/etc# exportfs -r
-exportfs: /etc/exports [1]: Neither 'subtree_check' or 'no_subtree_check' specified for export "192.168.1.39/32:/srv/share".
+   >*root@servernfs:/# exportfs -r
+exportfs: /etc/exports [1]: Neither 'subtree_check' or 'no_subtree_check' specified for export "192.168.1.39:/srv/share".
   Assuming default behaviour ('no_subtree_check').
   NOTE: this default has changed since nfs-utils version 1.0.x*
 
-9. Проверяем
+9. Проверяем текущий список экспорта. 
    ```
    exportfs -s
    ```
-   >*root@servernfs:/etc# exportfs -s
-/srv/share  192.168.1.39/32(sync,wdelay,hide,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)*
+   >*root@servernfs:/# exportfs -s
+/srv/share  192.168.1.39(sync,wdelay,hide,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)
+root@servernfs:/#*
 
-#### Производим на стройки на клиенте NFS
-10. Устанавливаем
+   #### Производим настройки на клиенте NFS
+10. Устанавливаем компоненты для работы с сетевой файловой системой(NFS) без включения серверных компонентов.
     ```
     sudo apt install nfs-common
     ```
@@ -154,13 +146,13 @@ Need to get 400 kB of archives.
 After this operation, 1,416 kB of additional disk space will be used.   
 Do you want to continue? [Y/n] y*
 
-11. Добавляем в /etc/fstab строку
+11. Добавляем в конфигурационный файл **/etc/fstab** точку монтирования, для автоматического монтирования каталога NFS при запуске системы.
     ```
     echo "192.168.1.65:/srv/share/ /mnt nfs vers=3,noauto,x-systemd.automount 0 0" >> /etc/fstab
     ```
     >*root@clientnfs:~# echo "192.168.1.65:/srv/share/ /mnt nfs vers=3,noauto,x-systemd.automount 0 0" >> /etc/fstab*
 
-12. Перезапускаем сервис монтирования
+12. Перезапускаем все файлы служб, обновляем их внутреннюю конфигурацию и перезапускаем севис монтирования.
     ```
     systemctl daemon-reload
     ```
@@ -171,15 +163,13 @@ Do you want to continue? [Y/n] y*
     ```
     >*root@clientnfs:~# systemctl restart remote-fs.target*
 
-13. Проверяем монтирование
+13. Проверяем монтирование.
     ```
     mount | grep mnt 
     ```
     >*root@clientnfs:/mnt# mount | grep mnt   
 systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14922)
 192.168.1.65:/srv/share/ on /mnt type nfs (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=41584,mountproto=udp,local_lock=none,addr=192.168.1.65)*
-
-
 14. Проверка работоспособности
     
     a. Заходим на сервер   
