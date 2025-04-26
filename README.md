@@ -51,7 +51,7 @@ Do you want to continue? [Y/n] y*
    udp        UNCONN      0            0                           127.0.0.54:53                     0.0.0.0:*                       users:(("systemd-resolve",pid=517,fd=16))
    udp        UNCONN      0            0                        127.0.0.53%lo:53                     0.0.0.0:*                       users:(("systemd-resolve",pid=517,fd=14))
    udp        UNCONN      0            0                  192.168.1.65%enp0s3:68                     0.0.0.0:*                       users:(("systemd-network",pid=508,fd=11))
-   udp        UNCONN      0            0                              0.0.0.0:111                    0.0.0.0:*                       users:(("rpcbind",pid=1370,fd=5),("systemd",pid=1,fd=125))
+   <mark>udp        UNCONN      0            0                              0.0.0.0:111                    0.0.0.0:*                       users:(("rpcbind",pid=1370,fd=5),("systemd",pid=1,fd=125))</mark>
    udp        UNCONN      0            0                              0.0.0.0:35380                  0.0.0.0:*                      
    udp        UNCONN      0            0                              0.0.0.0:41584                  0.0.0.0:*                       users:(("rpc.mountd",pid=1943,fd=12))
    udp        UNCONN      0            0                              0.0.0.0:35446                  0.0.0.0:*                       users:(("rpc.mountd",pid=1943,fd=8))
@@ -63,7 +63,7 @@ Do you want to continue? [Y/n] y*
    udp        UNCONN      0            0                                 [::]:40561                     [::]:*                       users:(("rpc.mountd",pid=1943,fd=14))
    udp        UNCONN      0            0                                 [::]:54014                     [::]:*                       users:(("rpc.statd",pid=1930,fd=10))
    tcp        LISTEN      0            4096                     127.0.0.53%lo:53                     0.0.0.0:*                       users:(("systemd-resolve",pid=517,fd=15))
-   tcp        LISTEN      0            64                             0.0.0.0:2049                   0.0.0.0:*                      
+   <mark>tcp        LISTEN      0            64                             0.0.0.0:2049                   0.0.0.0:*</mark>                      
    tcp        LISTEN      0            4096                           0.0.0.0:111                    0.0.0.0:*                       users:(("rpcbind",pid=1370,fd=4),("systemd",pid=1,fd=124))
    tcp        LISTEN      0            4096                           0.0.0.0:53607                  0.0.0.0:*                       users:(("rpc.mountd",pid=1943,fd=5))
    tcp        LISTEN      0            4096                        127.0.0.54:53                     0.0.0.0:*                       users:(("systemd-resolve",pid=517,fd=17))
