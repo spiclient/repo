@@ -240,23 +240,21 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
    
     a. Переходим в каталоге **/srv/share/upload/**        
     b. Проверяем экспорты **exportfs -s**      
-    с. Смотрим что экспортируется с **servernfs**, *showmount -a 192.168.1.65*       
-    
+    с. Смотрим что экспортируется с ВМ **servernfs** с помощью команды *showmount -a 192.168.1.65*           
     >*root@servernfs:~# cd /srv/share/upload/   
     root@servernfs:/srv/share/upload# ls -l    
     total 0   
     -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file   
     root@servernfs:/srv/share/upload# exportfs -s   
-    /srv/share  192.168.1.39/32(sync,wdelay,hide,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)   
+    /srv/share  192.168.1.39(sync,wdelay,hide,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)   
     root@servernfs:/srv/share/upload# showmount -a 192.168.1.65   
     All mount points on 192.168.1.65:   
     192.168.1.39:/srv/share*
 
     #### Повторно перезагружаем клиент
    
-    a. Смотрим что экспортируется с **servernfs**, *showmount -a 192.168.1.65*     
-    b. Переходим в каталог */mnt/upload*        
+    a. Смотрим что экспортируется с ВМ **servernfs** с помощью команды *showmount -a 192.168.1.65*         b. Переходим в каталог **/mnt/upload**       
     c. Проверяем статус монтирования *mount | grep mnt*     
     d. Проверяем наличие ранее созданных файлов    
     e. Создаём тестовый файл **touch final_check**    
@@ -270,8 +268,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file   
     root@clientnfs:/mnt/upload# mount | grep mnt   
     systemd-1 on /mnt type autofs (rw,relatime,fd=54,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=4053)   
-    192.168.1.65:/srv/share/ on /mnt type nfs    (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers    =3,mountport=55311,mountproto=udp,local_lock=none,addr=192.168.1.65)   
-    root@clientnfs:/mnt/upload# touch final_check   
+    192.168.1.65:/srv/share/ on /mnt type nfs    (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers    =3,mountport=55311,mountproto=udp,local_lock=none,addr=192.168.1.65)      root@clientnfs:/mnt/upload# touch final_check   
     root@clientnfs:/mnt/upload# ls -l   
     total 0   
     -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
@@ -279,6 +276,4 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 22:34 final_check*
 
 
-
-16. кукпкепу
    
