@@ -107,7 +107,7 @@ Do you want to continue? [Y/n] y*
     ```
     добавляем строку
     >GNU nano 7.2                                               /etc/exports   
-*/srv/share 192.168.1.39(rw,sync,root_squash)*
+***/srv/share 192.168.1.39(rw,sync,root_squash)***
 
 8. Обновляем список экспортируемых каталогов внесённых в файл **/etc/exports**.  
    ```
