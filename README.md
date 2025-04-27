@@ -175,6 +175,9 @@ Do you want to continue? [Y/n] y*
     >*root@clientnfs:/mnt# mount | grep mnt   
 systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14922)
 192.168.1.65:/srv/share/ on /mnt type nfs (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=41584,mountproto=udp,local_lock=none,addr=192.168.1.65)*
+
+    Параметр **vers=3** означает, что используется версия протокола **NFSv3**
+    
 14. Проверка работоспособности настроенного NFS.
     #### На сервере NFS    
     a. Переходим в каталог **/srv/share/upload**     
@@ -333,7 +336,7 @@ root@servernfs:/usr/local/bin#*
 
       >*root@nUbunta2204:/# script.sh*
       
-18. Разворачиваем повторно ВМ и с помощью скриптов конфигурируем их.
+17. Разворачиваем повторно ВМ и с помощью скриптов конфигурируем их.
     Выполняем проверку работоспособности по п.14-15. и убеждаемся что скрипты работают.
     
 
