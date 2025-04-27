@@ -12,7 +12,7 @@
      + в экспортированной директории создать поддиректорию с именем **upload** с правами на запись в неё
      + на экспортированной директории настроить автоматическое монтирование на клиенте при старте виртуальной машины (systemd, autofs или fstab — одним из способов)
      + монтирование и работу с NFS на клиенте организовать с использованием **NFSv3**
-     + создаём bash-скрипты для автоматизированного развёртывания сервера и клиента NFS
+     + создаём bash-скрипты для автоматизации развёртывания сервера и клиента NFS
    + Дополнительно задание:
      + настроить аутентификацию через **KERBEROS** с использованием **NFSv4**.
      
@@ -288,7 +288,47 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file   
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 22:34 final_check*
 16. Создаём bask-скрипты.
+    <u>для сервера</u>
+      >**##!/bin/bash
+      apt install nfs-kernel-server
+      mkdir -p /srv/share/upload
+      chown -R nobody:nogroup /srv/share
+      chmod 0777 /srv/share/upload
+      cat << EOF > /etc/exports 
+      /srv/share 192.168.1.39(rw,sync,root_squash)
+      EOF
+      exportfs -r**   
+
+22.   Настройка в системе для выполнения скрипта.
     
+      **a. в каталоге переменной среды PATH */usr/local/bin* создаём пустой файл.**
+      ```
+      cd /usr/local/bin
+      ```
+      ```
+      touch script.sh
+      ```
+      >*root@nUbunta2204:/# cd /usr/local/bin   
+        root@nUbunta2204:/usr/local/bin#   
+        root@nUbunta2204:/usr/local/bin# touch script.sh   
+        root@nUbunta2204:/usr/local/bin#*   
+      
+      **b. открываем созданный файл редактором nano и копируем в него текст скрипта**.
+      ```
+      nano script.sh
+      ```
+      >*root@nUbunta2204:/usr/local/bin# nano script.sh*
+      
+      **c. делаем файл исполняемым и устанавливаем полные права для владельца, а для остальных пользователей только на чтение и выполнение скрипта.**
+      ```
+      chmod 755 script.sh
+      ```
+      >*root@nUbunta2204:/usr/local/bin# chmod 755 script.sh   
+        root@nUbunta2204:/usr/local/bin#*
+      
+      **d. так как скрипт находится в каталоге переменной среды PATH, то его можно запускать по имени из любого места.**
+
+      >*root@nUbunta2204:/# script.sh*
 17. лоллпо
 
    
