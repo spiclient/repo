@@ -307,11 +307,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
       systemctl daemon-reload   
       systemctl restart remote-fs.target**   
 
-
-
-
-    
-22.   Настройка в системе для выполнения скрипта.
+Настройка в системе для выполнения скрипта.
     
       **a. в каталоге переменной среды PATH */usr/local/bin* создаём пустой файл.**
       ```
@@ -320,16 +316,15 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
       ```
       touch script.sh
       ```
-      >*root@nUbunta2204:/# cd /usr/local/bin   
-        root@nUbunta2204:/usr/local/bin#   
-        root@nUbunta2204:/usr/local/bin# touch script.sh   
-        root@nUbunta2204:/usr/local/bin#*   
-      
+      >*root@servernfs:~# cd /usr/local/bin
+root@servernfs:/usr/local/bin# touch script.sh
+root@servernfs:/usr/local/bin#*
+   
       **b. открываем созданный файл редактором nano и копируем в него текст скрипта**.
       ```
       nano script.sh
       ```
-      >*root@nUbunta2204:/usr/local/bin# nano script.sh*
+      >*root@servernfs:/usr/local/bin# nano script.sh*
       
       **c. делаем файл исполняемым и устанавливаем полные права для владельца, а для остальных пользователей только на чтение и выполнение скрипта.**
       ```
