@@ -289,7 +289,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 22:34 final_check*
 16. Создаём bash-скрипты.
     
-    <u>для сервера</u>
+    <ins>для сервера</ins>
       >**##!/bin/bash   
       apt install nfs-kernel-server   
       mkdir -p /srv/share/upload   
