@@ -289,15 +289,15 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 22:34 final_check*
 16. Создаём bask-скрипты.
     <u>для сервера</u>
-      >**##!/bin/bash
-      apt install nfs-kernel-server
-      mkdir -p /srv/share/upload
-      chown -R nobody:nogroup /srv/share
-      chmod 0777 /srv/share/upload
-      cat << EOF > /etc/exports 
-      /srv/share 192.168.1.39(rw,sync,root_squash)
-      EOF
-      exportfs -r**   
+      >**##!/bin/bash   
+      apt install nfs-kernel-server   
+      mkdir -p /srv/share/upload   
+      chown -R nobody:nogroup /srv/share   
+      chmod 0777 /srv/share/upload   
+      cat << EOF > /etc/exports    
+      /srv/share 192.168.1.39(rw,sync,root_squash)   
+      EOF   
+      exportfs -r**      
 
 22.   Настройка в системе для выполнения скрипта.
     
