@@ -18,9 +18,21 @@
 
 ## Выполнение
 ### Основная часть. 
-1. Создаём 2 виртуальные машины под управлением ОС Ubuntu 24.04 с именами **severnfs**(192.168.1.65) и **clientnfs**(192.168.1.39).
+1. Создаём 2 виртуальные машины(ВМ) под управлением ОС Ubuntu 24.04 с именами **severnfs**(IP192.168.1.65) и **clientnfs**(IP192.168.1.39).
+   
+   При необходимости меняем IP-адреса согласно условию в задании.
+   ```
+   sudo ip addr add 192.168.1.65/24 dev enp3s0
+   ```
+   ```
+   sudo ip addr add 192.168.1.39/24 dev enp0s3
+   ```
+   Удаляем старый IP-адрес с помощью команды:
+   ```
+   sudo ip addr del [IP-address] dev [interface]
+   ```
    #### Производим настройки на сервере NFS
-2. Устанавливаем компонент для сервера NFS
+3. Устанавливаем компонент для сервера NFS
    ```
    apt install nfs-kernel-server
    ```
@@ -39,7 +51,7 @@ Need to get 569 kB of archives.
 After this operation, 2,022 kB of additional disk space will be used.   
 Do you want to continue? [Y/n] y*
 
-3. Проверяем есть ли среди слушащих портов **2049** и **111**
+4. Проверяем есть ли среди слушащих портов **2049** и **111**
    ```
    ss -tnplu
    ```
@@ -83,32 +95,32 @@ Do you want to continue? [Y/n] y*
    tcp        LISTEN      0            4096                              [::]:40753                     [::]:*                       users:(("rpc.statd",pid=1930,fd=11))
    </pre>
    
-4. Создаём папку **upload**
+5. Создаём папку **upload**
    ```
    mkdir -p /srv/share/upload
    ```
    >*root@servernfs:/etc# mkdir -p /srv/share/upload*
 
-5. Устанавливаем владельца. Выбираем права доступа **0775** для пользователя *nobody*(«никто») и группы *nogroup*(«никакая»).
+6. Устанавливаем владельца. Выбираем права доступа **0775** для пользователя *nobody*(«никто») и группы *nogroup*(«никакая»).
    ```
    chown -R nobody:nogroup /srv/share
    ```
    >*root@servernfs:/etc# chown -R nobody:nogroup /srv/share*
 
-6. Настраиваем доступ к каталогу **upload**
+7. Настраиваем доступ к каталогу **upload**
    ```
    chmod 0777 /srv/share/upload
    ```
    >*root@servernfs:/etc# chmod 0777 /srv/share/upload*
 
-7.  Добавляем точку монтирования для экспортируемого каталога **upload** в файле **exports**.
+8.  Добавляем точку монтирования для экспортируемого каталога **upload** в файле **exports**.
     ```
     nano /etc/exports
     ```
     >GNU nano 7.2                                               /etc/exports   
 ***/srv/share 192.168.1.39(rw,sync,root_squash)***
 
-8. Обновляем список экспортируемых каталогов внесённых в файл **/etc/exports**.  
+9. Обновляем список экспортируемых каталогов внесённых в файл **/etc/exports**.  
    ```
    exportfs -r
    ```
@@ -117,7 +129,7 @@ exportfs: /etc/exports [1]: Neither 'subtree_check' or 'no_subtree_check' specif
   Assuming default behaviour ('no_subtree_check').
   NOTE: this default has changed since nfs-utils version 1.0.x*
 
-9. Проверяем текущий список экспорта. 
+10. Проверяем текущий список экспорта. 
    ```
    exportfs -s
    ```
@@ -126,7 +138,7 @@ exportfs: /etc/exports [1]: Neither 'subtree_check' or 'no_subtree_check' specif
 root@servernfs:/#*
 
    #### Производим настройки на клиенте NFS
-10. Устанавливаем компоненты для работы с сетевой файловой системой(NFS) без включения серверных компонентов.
+11. Устанавливаем компоненты для работы с сетевой файловой системой(NFS) без включения серверных компонентов.
     ```
     sudo apt install nfs-common
     ```
@@ -145,13 +157,13 @@ Need to get 400 kB of archives.
 After this operation, 1,416 kB of additional disk space will be used.   
 Do you want to continue? [Y/n] y*
 
-11. Добавляем в конфигурационный файл **/etc/fstab** точку монтирования, для автоматического монтирования каталога NFS при запуске системы.
+12. Добавляем в конфигурационный файл **/etc/fstab** точку монтирования, для автоматического монтирования каталога NFS при запуске системы.
     ```
     echo "192.168.1.65:/srv/share/ /mnt nfs vers=3,noauto,x-systemd.automount 0 0" >> /etc/fstab
     ```
     >*root@clientnfs:~# echo "192.168.1.65:/srv/share/ /mnt nfs vers=3,noauto,x-systemd.automount 0 0" >> /etc/fstab*
 
-12. Перезапускаем все файлы служб, обновляем их внутреннюю конфигурацию и перезапускаем сервис монтирования.
+13. Перезапускаем все файлы служб, обновляем их внутреннюю конфигурацию и перезапускаем сервис монтирования.
     ```
     systemctl daemon-reload
     ```
@@ -162,14 +174,14 @@ Do you want to continue? [Y/n] y*
     ```
     >*root@clientnfs:~# systemctl restart remote-fs.target*
 
-13. Проверяем монтирование.
+14. Проверяем монтирование.
     ```
     mount | grep mnt 
     ```
     >*root@clientnfs:/mnt# mount | grep mnt   
 systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14922)
 192.168.1.65:/srv/share/ on /mnt type nfs (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=41584,mountproto=udp,local_lock=none,addr=192.168.1.65)*
-14. Проверка работоспособности настроенного NFS.
+15. Проверка работоспособности настроенного NFS.
     #### На сервере NFS(192.168.1.65)    
     a. Переходим в каталог **/srv/share/upload**     
     b. Создаём тестовый файл **touch check_file**          
@@ -221,7 +233,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file*   
 
-15. Перезагружаем клиент и сервер.
+16. Перезагружаем клиент и сервер.
     
     #### Сначала проверяем клиент: 
    
