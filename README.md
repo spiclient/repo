@@ -175,7 +175,7 @@ Do you want to continue? [Y/n] y*
     ```
     >*root@clientnfs:~# systemctl restart remote-fs.target*
 
-13. Проверяем монтирование.
+13. Проверяем монтирование в каталоге */mnt*.
     ```
     mount | grep mnt 
     ```
