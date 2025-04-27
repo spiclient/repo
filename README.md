@@ -290,6 +290,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 16. Создаём bash-скрипты.
     
     <ins>**Для сервера**</ins>
+    
       >**##!/bin/bash   
       apt install nfs-kernel-server   
       mkdir -p /srv/share/upload   
@@ -300,16 +301,18 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
       EOF   
       exportfs -r**
           
-    <ins>**Для клиента**</ins>   
+    <ins>**Для клиента**</ins>
+    
       >**#!/bin/bash   
       sudo apt install nfs-common   
       echo "192.168.1.65:/srv/share/ /mnt nfs vers=3,noauto,x-systemd.automount 0 0" >> /etc/fstab    
       systemctl daemon-reload   
       systemctl restart remote-fs.target**   
 
-Настройка в системе для выполнения скрипта.
+Настройка в системе для выполнения скрипта.   
     
-      **a. в каталоге переменной среды PATH */usr/local/bin* создаём пустой файл.**
+   **a. в каталоге переменной среды PATH */usr/local/bin* создаём пустой файл.**
+      
       ```
       cd /usr/local/bin
       ```
@@ -320,20 +323,19 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
 root@servernfs:/usr/local/bin# touch script.sh
 root@servernfs:/usr/local/bin#*
    
-      **b. открываем созданный файл редактором nano и копируем в него текст скрипта**.
+   **b. открываем созданный файл редактором nano и копируем в него текст скрипта**.
       ```
       nano script.sh
       ```
       >*root@servernfs:/usr/local/bin# nano script.sh*
       
-      **c. делаем файл исполняемым и устанавливаем полные права для владельца, а для остальных пользователей только на чтение и выполнение скрипта.**
+   **c. делаем файл исполняемым и устанавливаем полные права для владельца, а для остальных пользователей только на чтение и выполнение скрипта.**
       ```
       chmod 755 script.sh
       ```
-      >*root@nUbunta2204:/usr/local/bin# chmod 755 script.sh   
-        root@nUbunta2204:/usr/local/bin#*
+      >*root@servernfs:/usr/local/bin# chmod 755 script.sh*
       
-      **d. так как скрипт находится в каталоге переменной среды PATH, то его можно запускать по имени из любого места.**
+   **d. так как скрипт находится в каталоге переменной среды PATH, то его можно запускать по имени из любого места.**
 
       >*root@nUbunta2204:/# script.sh*
 17. лоллпо
