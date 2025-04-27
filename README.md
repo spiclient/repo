@@ -19,18 +19,10 @@
 
 ## Выполнение
 ### Основная часть. 
-1. Создаём 2 виртуальные машины(ВМ) под управлением ОС Ubuntu 24.04 с именами **severnfs**(IP192.168.1.65) и **clientnfs**(IP192.168.1.39).
-   
-   При необходимости меняем IP-адреса согласно условию в задании.
+1. Создаём 2 виртуальные машины(ВМ) под управлением ОС Ubuntu 24.04 с именами **severnfs** и **clientnfs**.
+   Смотрим IP-адреса у ВМ.
    ```
-   sudo ip addr add 192.168.1.65/24 dev enp3s0
-   ```
-   ```
-   sudo ip addr add 192.168.1.39/24 dev enp0s3
-   ```
-   Удаляем старый IP-адрес с помощью команды:
-   ```
-   sudo ip addr del [IP-address] dev [interface]
+   ip a
    ```
    #### Производим настройки на сервере NFS
 2. Устанавливаем компонент для сервера NFS
@@ -115,6 +107,7 @@ Do you want to continue? [Y/n] y*
    >*root@servernfs:/etc# chmod 0777 /srv/share/upload*
 
 7.  Добавляем точку монтирования для экспортируемого каталога **upload** в файле **exports**.
+    Устанавливаем доступ только для одного нашего клиента - указываем его IP-адрес. Для предоставления доступа всем ставим *
     ```
     nano /etc/exports
     ```
@@ -183,7 +176,7 @@ Do you want to continue? [Y/n] y*
 systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14922)
 192.168.1.65:/srv/share/ on /mnt type nfs (rw,relatime,vers=3,rsize=262144,wsize=262144,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.1.65,mountvers=3,mountport=41584,mountproto=udp,local_lock=none,addr=192.168.1.65)*
 14. Проверка работоспособности настроенного NFS.
-    #### На сервере NFS(192.168.1.65)    
+    #### На сервере NFS    
     a. Переходим в каталог **/srv/share/upload**     
     b. Создаём тестовый файл **touch check_file**          
     
@@ -204,7 +197,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 root root 0 Apr 25 21:47 check_file   
     root@servernfs:/srv/share/upload#*
 
-    #### На клиенте NFS(192.168.1.39)     
+    #### На клиенте NFS     
 
     a. Переходим в каталог **/mnt/upload**      
     b. Проверяем наличие созданного на сервере файла **check_file**       
@@ -252,7 +245,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
    
     a. Переходим в каталог **/srv/share/upload/**        
     b. Проверяем экспорты **exportfs -s**      
-    с. Смотрим что экспортируется с ВМ **servernfs** с помощью команды *showmount -a 192.168.1.65*           
+    с. Смотрим что экспортируется с ВМ **servernfs** и точки монтирования.           
     >*root@servernfs:~# cd /srv/share/upload/   
     root@servernfs:/srv/share/upload# ls -l    
     total 0   
@@ -272,8 +265,9 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     d. Проверяем наличие ранее созданных файлов    
     e. Создаём тестовый файл **touch final_check**    
       
-    >*root@clientnfs: #~showmount -a 192.168.1.65      
-    All mount points on 192.168.1.65:   
+    >*root@clientnfs:/# showmount -a 192.168.1.65
+All mount points on 192.168.1.65:
+192.168.1.39:/srv/share
     root@clientnfs: # cd /mnt/upload   
     root@clientnfs:/mnt/upload# ls -l   
     total 0   
@@ -291,7 +285,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     
     <ins>**Для сервера**</ins>
     
-      >**##!/bin/bash   
+      >**#!/bin/bash   
       apt install nfs-kernel-server   
       mkdir -p /srv/share/upload   
       chown -R nobody:nogroup /srv/share   
@@ -309,7 +303,7 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
       systemctl daemon-reload   
       systemctl restart remote-fs.target**   
 
-      Настройка в системе для выполнения скрипта.   
+      Выполняем предварительную настройкау в системе для выполнения скрипта.   
     
       **a. в каталоге переменной среды PATH */usr/local/bin* создаём пустой файл.**
       
@@ -338,6 +332,9 @@ root@servernfs:/usr/local/bin#*
       **d. так как скрипт находится в каталоге переменной среды PATH, то его можно запускать по имени из любого места.**
 
       >*root@nUbunta2204:/# script.sh*
-17. лоллпо
+      
+18. Разворачиваем повторно ВМ и с помощью скриптов конфигурируем их.
+    Выполняем проверку работоспособности по п.14-15. и убеждаемся что скрипты работают.
+    
 
    
