@@ -298,8 +298,19 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
       cat << EOF > /etc/exports    
       /srv/share 192.168.1.39(rw,sync,root_squash)   
       EOF   
-      exportfs -r**      
+      exportfs -r**
+          
+    <ins>**Для клиента**</ins>
+      >**#!/bin/bash
+      sudo apt install nfs-common
+      echo "192.168.1.65:/srv/share/ /mnt nfs vers=3,noauto,x-systemd.automount 0 0" >> /etc/fstab 
+      systemctl daemon-reload
+      systemctl restart remote-fs.target**
 
+
+
+
+    
 22.   Настройка в системе для выполнения скрипта.
     
       **a. в каталоге переменной среды PATH */usr/local/bin* создаём пустой файл.**
