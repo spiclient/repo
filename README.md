@@ -287,7 +287,8 @@ systemd-1 on /mnt type autofs (rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,max
     -rw-r--r-- 1 root   root    0 Apr 25 21:47 check_file   
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 21:57 client_file   
     -rw-r--r-- 1 nobody nogroup 0 Apr 25 22:34 final_check*
-16. Создаём bask-скрипты.
+16. Создаём bash-скрипты.
+    
     <u>для сервера</u>
       >**##!/bin/bash   
       apt install nfs-kernel-server   
