@@ -26,4 +26,23 @@
    ```
    sudo systemctl enable sshd
    ```
-4. 
+3. Включаем на виртуальной машине **Almalinux** вложенную виртуализацию Nested Virtualization в VirtualBox.
+   **Первый способ:**
+   a. открываем VirtualBox и находим целевую ВМ
+   b. ПКМ - Настроить - Система - Процессор - *включаем чекбокс* Включить Nested VT-x/AMD
+   если параметр неактивен переходим ко **Второму способу**:
+   a. добавляем путь *C:\Program Files\Oracle\VirtualBox* в системные переменные среды(Windows)
+   b. запускаем PowerShell от имени администратора
+   с. выводим список ВМ
+      ```
+      VBoxManage list vms
+      ```
+      >*PS C:\WINDOWS\system32> VBoxManage list vms
+      "Almalinux" {8f118b90-d0ef-46b6-949a-91a663846a2b}*
+   d. включаем вложенную виртуализацию(ВМ должна быть выключена)
+      ```
+      VBoxManage.exe modifyvm "Almalinux" --nested-hw-virt on
+      ```
+      >*PS C:\WINDOWS\system32> VBoxManage.exe modifyvm "Almalinux" --nested-hw-virt on*
+
+5. ропаоо
