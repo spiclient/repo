@@ -86,7 +86,7 @@ Dependencies resolved.*
     fonts-srpm-macros                    noarch               1:2.0.5-7.el9.1                         appstream                27 k
     gcc-plugin-annobin                   x86_64               11.5.0-5.el9_5.alma.1                   appstream                39 k
     gdb-minimal                          x86_64               14.2-3.el9                              appstream               4.2 M
-    ---и т.д---
+    ---и т.д---   
    <pre/>
 
 
