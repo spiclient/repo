@@ -168,8 +168,34 @@ Dependencies resolved.*
        libSM                                     x86_64               1.2.3-10.el9                       appstream                41 k
        libX11                                    x86_64               1.7.0-9.el9                        appstream               645 k
   </pre>
-    
+     
+   
+9. Скачиваем исходный код модуля **ngx_brotli**, через создание полной копии удаленного репозитория на локальном устройстве.
+   ```
+   cd /root
+   ```
+   ```
+   git clone --recurse-submodules -j8 https://github.com/google/ngx_brotli
+   ```
+   >*[root@Almalinux ~]# git clone --recurse-submodules -j8 https://github.com/google/ngx_brotli   
+Cloning into 'ngx_brotli'...   
+remote: Enumerating objects: 237, done.   
+remote: Counting objects: 100% (37/37), done.   
+remote: Compressing objects: 100% (16/16), done.   
+remote: Total 237 (delta 24), reused 21 (delta 21), pack-reused 200 (from 1)   
+Receiving objects: 100% (237/237), 79.51 KiB | 768.00 KiB/s, done.   
+Resolving deltas: 100% (114/114), done.   
+Submodule 'deps/brotli' (https://github.com/google/brotli.git) registered for path 'deps/brotli'   
+Cloning into '/root/ngx_brotli/deps/brotli'...   
+remote: Enumerating objects: 7810, done.   
+remote: Counting objects: 100% (27/27), done.   
+remote: Compressing objects: 100% (26/26), done.   
+remote: Total 7810 (delta 10), reused 1 (delta 1), pack-reused 7783 (from 2)   
+Receiving objects: 100% (7810/7810), 40.62 MiB | 2.25 MiB/s, done.   
+Resolving deltas: 100% (5069/5069), done.   
+Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2f5d'*   
+
+
 
    
-   
-10. опрпропропро
+10. sfgsfg
