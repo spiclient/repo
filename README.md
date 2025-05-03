@@ -91,4 +91,28 @@ Dependencies resolved.*
 
 
 
-5. kgjkgk
+5. Будем работать с пакетом **Nginx** для разворачивания веб-сервера и дополнительно установим модуль для сжатия данных **ngx_broli**.
+6. Создаём директорию **RPM** и скачиваем в неё исходники пакета **Nginx**
+   ```
+   mkdir rpm && cd rpm
+   ```
+   >*[user@Almalinux ~]$ mkdir rpm && cd rpm*
+
+   ```
+   yumdownloader --source nginx
+   ```
+   >*[user@Almalinux rpm]$ yumdownloader --source nginx
+enabling appstream-source repository
+enabling baseos-source repository
+enabling extras-source repository
+AlmaLinux 9 - AppStream                                                                          3.5 MB/s |  16 MB     00:04
+AlmaLinux 9 - AppStream - Source                                                                 275 kB/s | 866 kB     00:03
+AlmaLinux 9 - BaseOS                                                                             2.9 MB/s |  19 MB     00:06
+AlmaLinux 9 - BaseOS - Source                                                                    130 kB/s | 315 kB     00:02
+AlmaLinux 9 - Extras                                                                              22 kB/s |  13 kB     00:00
+AlmaLinux 9 - Extras - Source                                                                    6.5 kB/s | 8.2 kB     00:01
+nginx-1.20.1-20.el9.alma.1.src.rpm                                                               432 kB/s | 1.1 MB     00:02*
+
+
+
+8. ghkjghkgk
