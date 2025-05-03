@@ -113,6 +113,63 @@ AlmaLinux 9 - Extras                                                            
 AlmaLinux 9 - Extras - Source                                                                    6.5 kB/s | 8.2 kB     00:01   
 nginx-1.20.1-20.el9.alma.1.src.rpm                                                               432 kB/s | 1.1 MB     00:02*   
 
+7. Устанавливаем скачанный пакет.
+   ```
+   sudo rpm -Uvh nginx*.src.rpm 
+   ```
+   >_[user@Almalinux rpm]$ rpm -Uvh nginx*.src.rpm   
+     Updating / installing...
+     1:nginx-2:1.20.1-20.el9.alma.1     warning: user mockbuild does not exist - using root_   
+8. Устанавливаем зависимости, необходимые для сборки пакета **Nginx**
+   ```
+   yum-builddep nginx
+   ```
+   >*[root@Almalinux rpm]# yum-builddep nginx   
+enabling appstream-source repository   
+enabling baseos-source repository   
+enabling extras-source repository   
+Last metadata expiration check: 0:00:44 ago on Sun May  4 01:17:39 2025.   
+Package make-1:4.3-8.el9.x86_64 is already installed.   
+Package gcc-11.5.0-5.el9_5.alma.1.x86_64 is already installed.   
+Package systemd-252-46.el9_5.3.alma.1.x86_64 is already installed.   
+Package gnupg2-2.3.3-4.el9.x86_64 is already installed.   
+Dependencies resolved.*
+  <pre>
+     =================================================================================================================================
+     Package                                   Architecture         Version                            Repository               Size
+     =================================================================================================================================
+      Installing:
+       gd-devel                                  x86_64               2.3.2-3.el9                        appstream                37 k
+       libxslt-devel                             x86_64               1.1.34-9.el9_5.3                   appstream               287 k
+       openssl-devel                             x86_64               1:3.2.2-6.el9_5.1                  appstream               3.2 M
+       pcre-devel                                x86_64               8.44-4.el9                         appstream               469 k
+       perl-ExtUtils-Embed                       noarch               1.35-481.el9                       appstream                16 k
+       perl-devel                                x86_64               4:5.32.1-481.el9                   appstream               659 k
+       perl-generators                           noarch               1.11-12.el9                        appstream                15 k
+       zlib-devel                                x86_64               1.2.11-40.el9                      appstream                44 k
+      Installing dependencies:
+       brotli                                    x86_64               1.0.9-7.el9_5                      appstream               311 k
+       brotli-devel                              x86_64               1.0.9-7.el9_5                      appstream                30 k
+       bzip2-devel                               x86_64               1.0.8-10.el9_5                     appstream               213 k
+       cairo                                     x86_64               1.17.4-7.el9                       appstream               659 k
+       dejavu-sans-fonts                         noarch               2.37-18.el9                        baseos                  1.3 M
+       fontconfig                                x86_64               2.14.0-2.el9_1                     appstream               274 k
+       fontconfig-devel                          x86_64               2.14.0-2.el9_1                     appstream               127 k
+       fonts-filesystem                          noarch               1:2.0.5-7.el9.1                    baseos                  9.0 k
+       freetype-devel                            x86_64               2.10.4-10.el9_5                    appstream               1.1 M
+       gd                                        x86_64               2.3.2-3.el9                        appstream               131 k
+       glib2-devel                               x86_64               2.68.4-14.el9_4.1                  appstream               471 k
+       graphite2-devel                           x86_64               1.3.14-9.el9                       appstream                21 k
+       harfbuzz-devel                            x86_64               2.7.4-10.el9                       appstream               304 k
+       harfbuzz-icu                              x86_64               2.7.4-10.el9                       appstream                13 k
+       jbigkit-libs                              x86_64               2.1-23.el9                         appstream                52 k
+       langpacks-core-font-en                    noarch               3.0-16.el9                         appstream               9.4 k
+       libICE                                    x86_64               1.0.10-8.el9                       appstream                70 k
+       libSM                                     x86_64               1.2.3-10.el9                       appstream                41 k
+       libX11                                    x86_64               1.7.0-9.el9                        appstream               645 k
+  </pre>
+    
 
-
-8. ghkjghkgk
+   
+   
+10. опрпропропро
