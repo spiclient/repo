@@ -39,7 +39,8 @@
       VBoxManage list vms
       ```
       >*PS C:\WINDOWS\system32> VBoxManage list vms
-      "Almalinux" {8f118b90-d0ef-46b6-949a-91a663846a2b}*
+      "Almalinux" {8f118b90-d0ef-46b6-949a-91a663846a2b}*   
+      
    **d.** включаем вложенную виртуализацию(ВМ должна быть выключена)    
       ```
       VBoxManage.exe modifyvm "Almalinux" --nested-hw-virt on
