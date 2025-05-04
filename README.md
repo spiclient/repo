@@ -316,7 +316,7 @@ gpgv: Good signature from "Maxim Dounin <mdounin@mdounin.ru>"
 \+ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch   
 \+ /usr/bin/cat /root/rpmbuild/SOURCES/0002-fix-PIDFile-handling.patch   
 \+ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch*   
------------------------------------------------------------   
+----------------------------и т.д.------------------------------   
 *Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.bemlYS   
 \+ umask 022   
 \+ cd /root/rpmbuild/BUILD   
