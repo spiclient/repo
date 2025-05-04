@@ -513,7 +513,8 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 	baseurl=http://localhost/repo   
 	gpgcheck=0   
 	enabled=1*
-    b. Смотрим подключенный репозиторий.
+    
+    b. Смотрим подключенный репозиторий.   
      ```
      yum repolist enabled | grep otus
      ```
