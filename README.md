@@ -498,7 +498,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 
 22. Тестируем
     
-    Создаём файл  **/etc/yum.repos.d/otus.repo** и добавляем в него следующий текст:   
+    a. Создаём файл  **/etc/yum.repos.d/otus.repo** и добавляем в него следующий текст:   
     	***[otus]   
 	name=otus-linux   
 	baseurl=http://localhost/repo   
@@ -512,7 +512,23 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 	name=otus-linux   
 	baseurl=http://localhost/repo   
 	gpgcheck=0   
-	enabled=1*   
+	enabled=1*
+    b. Смотрим подключенный репозиторий.
+     ```
+     yum list --showduplicates | grep otus
+     ```
+     >*[root@Almalinux yum.repos.d]# yum list --showduplicates | grep otus
+nginx.x86_64                                         2:1.20.1-20.el9.alma.1              otus
+nginx-all-modules.noarch                             2:1.20.1-20.el9.alma.1              otus
+nginx-core.x86_64                                    2:1.20.1-20.el9.alma.1              otus
+nginx-filesystem.noarch                              2:1.20.1-20.el9.alma.1              otus
+nginx-mod-devel.x86_64                               2:1.20.1-20.el9.alma.1              otus
+nginx-mod-http-image-filter.x86_64                   2:1.20.1-20.el9.alma.1              otus
+nginx-mod-http-perl.x86_64                           2:1.20.1-20.el9.alma.1              otus
+nginx-mod-http-xslt-filter.x86_64                    2:1.20.1-20.el9.alma.1              otus
+nginx-mod-mail.x86_64                                2:1.20.1-20.el9.alma.1              otus
+nginx-mod-stream.x86_64                              2:1.20.1-20.el9.alma.1              otus*
+  
 
 
     
