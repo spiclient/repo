@@ -331,16 +331,16 @@ gpgv: Good signature from "Maxim Dounin <mdounin@mdounin.ru>"
     ```
     ll /root/rpmbuild/RPMS/x86_64
     ```
-    >*[root@Almalinux SPECS]# *ll /root/rpmbuild/RPMS/x86_64
-total 1992
--rw-r--r--. 1 root root   36242 May  4 12:02 nginx-1.20.1-20.el9.alma.1.x86_64.rpm
--rw-r--r--. 1 root root 1025551 May  4 12:02 nginx-core-1.20.1-20.el9.alma.1.x86_64.rpm
--rw-r--r--. 1 root root  759818 May  4 12:02 nginx-mod-devel-1.20.1-20.el9.alma.1.x86_64.rpm
--rw-r--r--. 1 root root   19367 May  4 12:02 nginx-mod-http-image-filter-1.20.1-20.el9.alma.1.x86_64.rpm
--rw-r--r--. 1 root root   31015 May  4 12:02 nginx-mod-http-perl-1.20.1-20.el9.alma.1.x86_64.rpm
--rw-r--r--. 1 root root   18174 May  4 12:02 nginx-mod-http-xslt-filter-1.20.1-20.el9.alma.1.x86_64.rpm
--rw-r--r--. 1 root root   53822 May  4 12:02 nginx-mod-mail-1.20.1-20.el9.alma.1.x86_64.rpm
--rw-r--r--. 1 root root   80437 May  4 12:02 nginx-mod-stream-1.20.1-20.el9.alma.1.x86_64.rpm*
+    >*[root@Almalinux SPECS]# *ll /root/rpmbuild/RPMS/x86_64   
+total 1992   
+-rw-r--r--. 1 root root   36242 May  4 12:02 nginx-1.20.1-20.el9.alma.1.x86_64.rpm   
+-rw-r--r--. 1 root root 1025551 May  4 12:02 nginx-core-1.20.1-20.el9.alma.1.x86_64.rpm   
+-rw-r--r--. 1 root root  759818 May  4 12:02 nginx-mod-devel-1.20.1-20.el9.alma.1.x86_64.rpm   
+-rw-r--r--. 1 root root   19367 May  4 12:02 nginx-mod-http-image-filter-1.20.1-20.el9.alma.1.x86_64.rpm   
+-rw-r--r--. 1 root root   31015 May  4 12:02 nginx-mod-http-perl-1.20.1-20.el9.alma.1.x86_64.rpm   
+-rw-r--r--. 1 root root   18174 May  4 12:02 nginx-mod-http-xslt-filter-1.20.1-20.el9.alma.1.x86_64.rpm   
+-rw-r--r--. 1 root root   53822 May  4 12:02 nginx-mod-mail-1.20.1-20.el9.alma.1.x86_64.rpm   
+-rw-r--r--. 1 root root   80437 May  4 12:02 nginx-mod-stream-1.20.1-20.el9.alma.1.x86_64.rpm*   
 
 15. 
 
