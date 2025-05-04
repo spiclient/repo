@@ -261,7 +261,7 @@ Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2
 [100%] Built target brotlienc*   
 
   
-12. Для того, чтобы Nginx собирался с необходимыми нам опциями, правим **spec**-файл. Изменение вносим в секцию с параметрами **configure**(до условий *if*), добавляем указание на модуль и в конце ставим обратный слэш *(--add-module=/root/ngx_brotli \).*
+12. Для того, чтобы Nginx собирался с необходимыми нам опциями, правим **spec**-файл. Изменение вносим в секцию с параметрами **configure**(до условий *if*), добавляем указание на модуль и в конце ставим обратный слэш *(--add-module=/root/ngx_brotli\).*
     ```
     cd ~/rpmbuild/SPECS/ && nano nginx.spec
     ```
@@ -283,7 +283,7 @@ Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2
     --group=%{nginx_user} \    
     --with-compat \   
     --with-debug \   
-    <mark>--add-module=/root/ngx_brotli \</mark>*   
+    <mark>--add-module=/root/ngx_brotli\</mark>*   
     %if 0%{?with_aio}   
 
     
