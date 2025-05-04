@@ -432,13 +432,13 @@ Dependencies resolved.*
     ```
     createrepo /usr/share/nginx/html/repo/
     ```
-    >*[root@Almalinux repo]# createrepo /usr/share/nginx/html/repo/
-Directory walk started
-Directory walk done - 10 packages
-Temporary output repo path: /usr/share/nginx/html/repo/.repodata/
-Preparing sqlite DBs
-Pool started (with 5 workers)
-Pool finished*
+    >*[root@Almalinux repo]# createrepo /usr/share/nginx/html/repo/   
+Directory walk started   
+Directory walk done - 10 packages   
+Temporary output repo path: /usr/share/nginx/html/repo/.repodata/   
+Preparing sqlite DBs   
+Pool started (with 5 workers)    
+Pool finished*    
 
 18. Настраиваем в Nginx доступ к листингу каталога. В файле */etc/nginx/nginx.conf* в блоке **server** добавляем:**index index.html index.htm;
 	autoindex on.**
