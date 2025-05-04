@@ -223,7 +223,75 @@ Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2
 -- Looking for log2   
 -- Looking for log2 - found   
 -- Configuring done (1.6s)   
--- Generating done (0.1s)*   
+-- Generating done (0.1s)*
+    ```
+    cmake --build . --config Release -j 2 --target brotlienc
+    ```
+    >*[root@Almalinux out]# cmake --build . --config Release -j 2 --target brotlienc   
+[  6%] Building C object CMakeFiles/brotlicommon.dir/c/common/constants.c.o   
+[  6%] Building C object CMakeFiles/brotlicommon.dir/c/common/context.c.o   
+[ 10%] Building C object CMakeFiles/brotlicommon.dir/c/common/dictionary.c.o   
+[ 13%] Building C object CMakeFiles/brotlicommon.dir/c/common/platform.c.o   
+[ 17%] Building C object CMakeFiles/brotlicommon.dir/c/common/shared_dictionary.c.o   
+[ 20%] Building C object CMakeFiles/brotlicommon.dir/c/common/transform.c.o    
+[ 24%] Linking C static library libbrotlicommon.a    
+[ 24%] Built target brotlicommon   
+[ 31%] Building C object CMakeFiles/brotlienc.dir/c/enc/backward_references_hq.c.o   
+[ 31%] Building C object CMakeFiles/brotlienc.dir/c/enc/backward_references.c.o   
+[ 34%] Building C object CMakeFiles/brotlienc.dir/c/enc/bit_cost.c.o   
+[ 37%] Building C object CMakeFiles/brotlienc.dir/c/enc/block_splitter.c.o   
+[ 41%] Building C object CMakeFiles/brotlienc.dir/c/enc/brotli_bit_stream.c.o   
+[ 44%] Building C object CMakeFiles/brotlienc.dir/c/enc/cluster.c.o   
+[ 48%] Building C object CMakeFiles/brotlienc.dir/c/enc/command.c.o   
+[ 51%] Building C object CMakeFiles/brotlienc.dir/c/enc/compound_dictionary.c.o   
+[ 55%] Building C object CMakeFiles/brotlienc.dir/c/enc/compress_fragment.c.o   
+[ 58%] Building C object CMakeFiles/brotlienc.dir/c/enc/compress_fragment_two_pass.c.o   
+[ 62%] Building C object CMakeFiles/brotlienc.dir/c/enc/dictionary_hash.c.o   
+[ 65%] Building C object CMakeFiles/brotlienc.dir/c/enc/encode.c.o   
+[ 68%] Building C object CMakeFiles/brotlienc.dir/c/enc/encoder_dict.c.o   
+[ 72%] Building C object CMakeFiles/brotlienc.dir/c/enc/entropy_encode.c.o   
+[ 75%] Building C object CMakeFiles/brotlienc.dir/c/enc/fast_log.c.o   
+[ 79%] Building C object CMakeFiles/brotlienc.dir/c/enc/histogram.c.o   
+[ 82%] Building C object CMakeFiles/brotlienc.dir/c/enc/literal_cost.c.o   
+[ 86%] Building C object CMakeFiles/brotlienc.dir/c/enc/memory.c.o   
+[ 89%] Building C object CMakeFiles/brotlienc.dir/c/enc/metablock.c.o   
+[ 93%] Building C object CMakeFiles/brotlienc.dir/c/enc/static_dict.c.o   
+[ 96%] Building C object CMakeFiles/brotlienc.dir/c/enc/utf8_util.c.o   
+[100%] Linking C static library libbrotlienc.a   
+[100%] Built target brotlienc*   
+
+  
+12. Для того, чтобы Nginx собирался с необходимыми нам опциями, правим **spec**-файл. Изменение вносим в секцию с параметрами **configure**(до условий *if*), добавляем указание на модуль и в конце ставим обратный слэш *(--add-module=/root/ngx_brotli \).*
+    ```
+    cd ~/rpmbuild/SPECS/ && nano nginx.spec
+    ```
+    >*if ! ./configure \   
+    --prefix=%{_datadir}/nginx \   
+    --sbin-path=%{_sbindir}/nginx \   
+    --modules-path=%{nginx_moduledir} \   
+    --conf-path=%{_sysconfdir}/nginx/nginx.conf \   
+    --error-log-path=%{_localstatedir}/log/nginx/error.log \   
+    --http-log-path=%{_localstatedir}/log/nginx/access.log \   
+    --http-client-body-temp-path=%{_localstatedir}/lib/nginx/tmp/client_body \   
+    --http-proxy-temp-path=%{_localstatedir}/lib/nginx/tmp/proxy \   
+    --http-fastcgi-temp-path=%{_localstatedir}/lib/nginx/tmp/fastcgi \   
+    --http-uwsgi-temp-path=%{_localstatedir}/lib/nginx/tmp/uwsgi \   
+    --http-scgi-temp-path=%{_localstatedir}/lib/nginx/tmp/scgi \   
+    --pid-path=/run/nginx.pid \   
+    --lock-path=/run/lock/subsys/nginx \   
+    --user=%{nginx_user} \   
+    --group=%{nginx_user} \    
+    --with-compat \   
+    --with-debug \   
+    <mark>--add-module=/root/ngx_brotli \</mark>   
+%if 0%{?with_aio}*   
 
     
-12. jkjk
+
+    
+14. егле
+
+
+
+
+
