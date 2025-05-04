@@ -355,36 +355,34 @@ total 1992
     >*[root@Almalinux x86_64]# yum localinstall *.rpm
 Last metadata expiration check: 1:34:28 ago on Sun May  4 11:06:48 2025.
 Dependencies resolved.*
-    <pre>
-==========================================================================================================================
- Package                                Architecture      Version                           Repository               Size
-==========================================================================================================================
-Installing:
- nginx                                  x86_64            2:1.20.1-20.el9.alma.1            @commandline             35 k
- nginx-all-modules                      noarch            2:1.20.1-20.el9.alma.1            @commandline            7.2 k
- nginx-core                             x86_64            2:1.20.1-20.el9.alma.1            @commandline            1.0 M
- nginx-filesystem                       noarch            2:1.20.1-20.el9.alma.1            @commandline            8.2 k
- nginx-mod-devel                        x86_64            2:1.20.1-20.el9.alma.1            @commandline            742 k
- nginx-mod-http-image-filter            x86_64            2:1.20.1-20.el9.alma.1            @commandline             19 k
- nginx-mod-http-perl                    x86_64            2:1.20.1-20.el9.alma.1            @commandline             30 k
- nginx-mod-http-xslt-filter             x86_64            2:1.20.1-20.el9.alma.1            @commandline             18 k
- nginx-mod-mail                         x86_64            2:1.20.1-20.el9.alma.1            @commandline             53 k
- nginx-mod-stream                       x86_64            2:1.20.1-20.el9.alma.1            @commandline             79 k
-Installing dependencies:
- almalinux-logos-httpd                  noarch            90.5.1-1.1.el9                    appstream                18 k
+    <pre>---=======================================================================================================================
+          Package                                Architecture      Version                           Repository               Size
+         ==========================================================================================================================
+         Installing:
+          nginx                                  x86_64            2:1.20.1-20.el9.alma.1            @commandline             35 k
+          nginx-all-modules                      noarch            2:1.20.1-20.el9.alma.1            @commandline            7.2 k
+          nginx-core                             x86_64            2:1.20.1-20.el9.alma.1            @commandline            1.0 M
+          nginx-filesystem                       noarch            2:1.20.1-20.el9.alma.1            @commandline            8.2 k
+          nginx-mod-devel                        x86_64            2:1.20.1-20.el9.alma.1            @commandline            742 k
+          nginx-mod-http-image-filter            x86_64            2:1.20.1-20.el9.alma.1            @commandline             19 k
+          nginx-mod-http-perl                    x86_64            2:1.20.1-20.el9.alma.1            @commandline             30 k
+          nginx-mod-http-xslt-filter             x86_64            2:1.20.1-20.el9.alma.1            @commandline             18 k
+          nginx-mod-mail                         x86_64            2:1.20.1-20.el9.alma.1            @commandline             53 k
+          nginx-mod-stream                       x86_64            2:1.20.1-20.el9.alma.1            @commandline             79 k
+         Installing dependencies:
+          almalinux-logos-httpd                  noarch            90.5.1-1.1.el9                    appstream                18 k
     </pre>
-==========================================================================================================================
-Install  11 Packages
----------и т.д.-----------
-*Installed:
-  almalinux-logos-httpd-90.5.1-1.1.el9.noarch                     nginx-2:1.20.1-20.el9.alma.1.x86_64
-  nginx-all-modules-2:1.20.1-20.el9.alma.1.noarch                 nginx-core-2:1.20.1-20.el9.alma.1.x86_64
-  nginx-filesystem-2:1.20.1-20.el9.alma.1.noarch                  nginx-mod-devel-2:1.20.1-20.el9.alma.1.x86_64
-  nginx-mod-http-image-filter-2:1.20.1-20.el9.alma.1.x86_64       nginx-mod-http-perl-2:1.20.1-20.el9.alma.1.x86_64
-  nginx-mod-http-xslt-filter-2:1.20.1-20.el9.alma.1.x86_64        nginx-mod-mail-2:1.20.1-20.el9.alma.1.x86_64
-  nginx-mod-stream-2:1.20.1-20.el9.alma.1.x86_64*
-
-Complete!
+         ==========================================================================================================================
+         Install  11 Packages
+         ---------и т.д.-----------
+         Installed:
+           almalinux-logos-httpd-90.5.1-1.1.el9.noarch                     nginx-2:1.20.1-20.el9.alma.1.x86_64
+           nginx-all-modules-2:1.20.1-20.el9.alma.1.noarch                 nginx-core-2:1.20.1-20.el9.alma.1.x86_64
+           nginx-filesystem-2:1.20.1-20.el9.alma.1.noarch                  nginx-mod-devel-2:1.20.1-20.el9.alma.1.x86_64
+           nginx-mod-http-image-filter-2:1.20.1-20.el9.alma.1.x86_64       nginx-mod-http-perl-2:1.20.1-20.el9.alma.1.x86_64
+           nginx-mod-http-xslt-filter-2:1.20.1-20.el9.alma.1.x86_64        nginx-mod-mail-2:1.20.1-20.el9.alma.1.x86_64
+           nginx-mod-stream-2:1.20.1-20.el9.alma.1.x86_64
+         Complete!
 
 17. lilyiul
 
