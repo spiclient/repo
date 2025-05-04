@@ -134,7 +134,7 @@ Package gcc-11.5.0-5.el9_5.alma.1.x86_64 is already installed.
 Package systemd-252-46.el9_5.3.alma.1.x86_64 is already installed.   
 Package gnupg2-2.3.3-4.el9.x86_64 is already installed.   
 Dependencies resolved.*
-  <pre>
+   <pre>
      =================================================================================================================================
      Package                                   Architecture         Version                            Repository               Size
      =================================================================================================================================
@@ -167,7 +167,7 @@ Dependencies resolved.*
        libICE                                    x86_64               1.0.10-8.el9                       appstream                70 k
        libSM                                     x86_64               1.2.3-10.el9                       appstream                41 k
        libX11                                    x86_64               1.7.0-9.el9                        appstream               645 k
-  </pre>
+   </pre>
      
    
 9. Скачиваем исходный код модуля **ngx_brotli**, через создание полной копии удаленного репозитория на локальном устройстве.
@@ -384,33 +384,33 @@ Dependencies resolved.*
          Complete!
     </pre>
 
-   Запускаем службу Nginx и проверяем её статус.
-   ```
-   systemctl start nginx
-   ```
-   >*[root@Almalinux x86_64]# systemctl start nginx*
-   ```
-   systemctl status nginx
-   ```
-   >*[root@Almalinux x86_64]# systemctl status nginx   
-● nginx.service - The nginx HTTP and reverse proxy server   
-     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)   
-     Active: active (running) since Sun 2025-05-04 13:22:01 MSK; 9s ago   
-    Process: 33917 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)   
-    Process: 33918 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)   
-    Process: 33920 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)   
-   Main PID: 33921 (nginx)   
-      Tasks: 3 (limit: 11096)   
-     Memory: 4.9M   
-        CPU: 111ms   
-     CGroup: /system.slice/nginx.service   
-             ├─33921 "nginx: master process /usr/sbin/nginx"   
-             ├─33922 "nginx: worker process"   
-             └─33923 "nginx: worker process"   
-May 04 13:22:01 Almalinux systemd[1]: Starting The nginx HTTP and reverse proxy server...   
-May 04 13:22:01 Almalinux nginx[33918]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok   
-May 04 13:22:01 Almalinux nginx[33918]: nginx: configuration file /etc/nginx/nginx.conf test is successful   
-May 04 13:22:01 Almalinux systemd[1]: Started The nginx HTTP and reverse proxy server.*
+   	Запускаем службу Nginx и проверяем её статус.
+     ```
+     systemctl start nginx
+     ```
+     >*[root@Almalinux x86_64]# systemctl start nginx*
+     ```
+     systemctl status nginx
+     ```
+     >*[root@Almalinux x86_64]# systemctl status nginx   
+  ● nginx.service - The nginx HTTP and reverse proxy server   
+      Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)   
+      Active: active (running) since Sun 2025-05-04 13:22:01 MSK; 9s ago   
+     Process: 33917 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)   
+     Process: 33918 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)   
+     Process: 33920 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)   
+    Main PID: 33921 (nginx)   
+       Tasks: 3 (limit: 11096)   
+      Memory: 4.9M   
+         CPU: 111ms   
+      CGroup: /system.slice/nginx.service   
+              ├─33921 "nginx: master process /usr/sbin/nginx"   
+              ├─33922 "nginx: worker process"   
+              └─33923 "nginx: worker process"   
+ May 04 13:22:01 Almalinux systemd[1]: Starting The nginx HTTP and reverse proxy server...   
+ May 04 13:22:01 Almalinux nginx[33918]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok   
+ May 04 13:22:01 Almalinux nginx[33918]: nginx: configuration file /etc/nginx/nginx.conf test is successful   
+ May 04 13:22:01 Almalinux systemd[1]: Started The nginx HTTP and reverse proxy server.*
 
 ### Создаём свой репозиторий. 
     
