@@ -496,7 +496,33 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
      ________________________________________________________________________________________________________
     </pre>
 
-22. dgsgg
+22. Тестируем
+    Создаём файл  **/etc/yum.repos.d/otus.repo** и добавляем следующий текст:
+    	[otus]
+	name=otus-linux
+	baseurl=http://localhost/repo
+	gpgcheck=0
+	enabled=1
+    ```
+    touch /etc/yum.repos.d/otus.repo
+    ```
+    ```
+    nano otus.repo
+    ```
+    >*GNU nano 5.6.1                                         otus.repo
+	[otus]
+	name=otus-linux
+	baseurl=http://localhost/repo
+	gpgcheck=0
+	enabled=1*
+
+
+    
+
+    
+
+
+24. 
 
   
 
