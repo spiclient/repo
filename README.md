@@ -92,8 +92,8 @@ Dependencies resolved.*
 
 
 
-5. Будем работать с пакетом **Nginx** для разворачивания веб-сервера и дополнительно установим модуль для сжатия данных **ngx_broli**.
-6. Создаём директорию **RPM** и скачиваем в неё исходники пакета **Nginx**
+Будем работать с пакетом **Nginx** для разворачивания веб-сервера и дополнительно установим модуль для сжатия данных **ngx_broli**.
+5. Создаём директорию **RPM** и скачиваем в неё исходники пакета **Nginx**
    ```
    mkdir rpm && cd rpm
    ```
@@ -114,14 +114,14 @@ AlmaLinux 9 - Extras                                                            
 AlmaLinux 9 - Extras - Source                                                                    6.5 kB/s | 8.2 kB     00:01   
 nginx-1.20.1-20.el9.alma.1.src.rpm                                                               432 kB/s | 1.1 MB     00:02*   
 
-7. Устанавливаем скачанный пакет.
+6. Устанавливаем скачанный пакет.
    ```
    sudo rpm -Uvh nginx*.src.rpm 
    ```
    >_[user@Almalinux rpm]$ rpm -Uvh nginx*.src.rpm   
      Updating / installing...
      1:nginx-2:1.20.1-20.el9.alma.1     warning: user mockbuild does not exist - using root_   
-8. Устанавливаем зависимости, необходимые для сборки пакета **Nginx**
+7. Устанавливаем зависимости, необходимые для сборки пакета **Nginx**
    ```
    yum-builddep nginx
    ```
@@ -171,7 +171,7 @@ Dependencies resolved.*
    </pre>
      
    
-9. Скачиваем исходный код модуля **ngx_brotli**, через создание полной копии удаленного репозитория на локальном устройстве.
+8. Скачиваем исходный код модуля **ngx_brotli**, через создание полной копии удаленного репозитория на локальном устройстве.
    a. переходим в корневой каталог
    ```
    cd /root
@@ -198,13 +198,13 @@ Receiving objects: 100% (7810/7810), 40.62 MiB | 2.25 MiB/s, done.
 Resolving deltas: 100% (5069/5069), done.   
 Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2f5d'*   
  
-10. Создаём папку **out** в каталоге ***root/ngx_brotli/deps/brotli***
+9. Создаём папку **out** в каталоге ***root/ngx_brotli/deps/brotli***
     ```
     cd ngx_brotli/deps/brotli && mkdir out && cd out
     ```
     >*[root@Almalinux ~]# cd ngx_brotli/deps/brotli && mkdir out && cd out*
     
-11. Собираем модуль **ngx_brotli**.
+10. Собираем модуль **ngx_brotli**.
     ```
     cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_CXX_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_INSTALL_PREFIX=./installed ..
     ```
@@ -262,7 +262,7 @@ Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2
 [100%] Built target brotlienc*   
 
   
-12. Для того, чтобы Nginx собирался с необходимыми нам опциями, правим **spec**-файл. Изменение вносим в секцию с параметрами **configure**(до условий *if*), добавляем указание на модуль и в конце ставим обратный слэш(*--add-module=/root/ngx_brotli* \\).
+11. Для того, чтобы Nginx собирался с необходимыми нам опциями, правим **spec**-файл. Изменение вносим в секцию с параметрами **configure**(до условий *if*), добавляем указание на модуль и в конце ставим обратный слэш(*--add-module=/root/ngx_brotli* \\).
     ```
     cd ~/rpmbuild/SPECS/ && nano nginx.spec
     ```
@@ -290,7 +290,7 @@ Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2
     
 
     
-13. Приступаем к сборке RPM-пакета.
+12. Приступаем к сборке RPM-пакета.
     ```
     rpmbuild -ba nginx.spec -D 'debug_package %{nil}'
     ```
@@ -328,7 +328,7 @@ gpgv: Good signature from "Maxim Dounin <mdounin@mdounin.ru>"
 \+ exit 0*   
 
     
-14. Смотрим содержимое каталога */root/rpmbuild/RPMS/x86_64*
+13. Смотрим содержимое каталога */root/rpmbuild/RPMS/x86_64*
     ```
     ll /root/rpmbuild/RPMS/x86_64
     ```
@@ -343,13 +343,13 @@ total 1992
 -rw-r--r--. 1 root root   53822 May  4 12:02 nginx-mod-mail-1.20.1-20.el9.alma.1.x86_64.rpm   
 -rw-r--r--. 1 root root   80437 May  4 12:02 nginx-mod-stream-1.20.1-20.el9.alma.1.x86_64.rpm*   
 
-15. Копируем содержимое */root/rpmbuild/RPMS/noarch* в общий каталог.
+14. Копируем содержимое */root/rpmbuild/RPMS/noarch* в общий каталог.
     ```
     cp ~/rpmbuild/RPMS/noarch/* ~/rpmbuild/RPMS/x86_64/
     ```
     >_[root@Almalinux ~]# cp ~/rpmbuild/RPMS/noarch/* ~/rpmbuild/RPMS/x86_64/_
 
-16. Устанавливаем пакет из каталога */root/rpmbuild/RPMS/x86_64/* и проверяем работу **Nginx**.
+15. Устанавливаем пакет из каталога */root/rpmbuild/RPMS/x86_64/* и проверяем работу **Nginx**.
     ```
     yum localinstall *.rpm
     ```
@@ -415,7 +415,7 @@ Dependencies resolved.*
 
 ### Создаём свой репозиторий. 
     
-17. Создаём свою папку в каталоге **/usr/share/nginx/html** и копируем в неё RPM-пакеты.
+16. Создаём свою папку в каталоге **/usr/share/nginx/html** и копируем в неё RPM-пакеты.
     ```
     mkdir /usr/share/nginx/html/repo
     ```
@@ -426,7 +426,7 @@ Dependencies resolved.*
     >_[root@Almalinux html]# cp ~/rpmbuild/RPMS/x86_64/*.rpm /usr/share/nginx/html/repo/_
 
 
-18. Инициализируем репозиторий.
+17. Инициализируем репозиторий.
     ```
     createrepo /usr/share/nginx/html/repo/
     ```
@@ -438,7 +438,7 @@ Preparing sqlite DBs
 Pool started (with 5 workers)
 Pool finished*
 
-19. Настраиваем в Nginx доступ к листингу каталога. В файле */etc/nginx/nginx.conf* в блоке **server** добавляем:**index index.html index.htm;
+18. Настраиваем в Nginx доступ к листингу каталога. В файле */etc/nginx/nginx.conf* в блоке **server** добавляем:**index index.html index.htm;
 	autoindex on.**
     ```
     nano /etc/nginx/nginx.conf
@@ -460,7 +460,7 @@ server {
         location = /50x.html {   
         }   
     }*
-20. Проверяем синтаксис и перезапускаем Nginx.
+19. Проверяем синтаксис и перезапускаем Nginx.
     ```
     nginx -t
     ```
@@ -472,7 +472,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
     ```
     >*[root@Almalinux nginx]# nginx -s reload?*
 
-21. Смотрим наши пакеты через *http* командой **lynx**.
+20. Смотрим наши пакеты через *http* командой **lynx**.
     ```
     lynx http://localhost/repo/
     ```
@@ -497,7 +497,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
      ________________________________________________________________________________________________________
     </pre>
 
-22. Тестируем
+21. Тестируем
     
     **a.** Создаём файл  **/etc/yum.repos.d/otus.repo** и добавляем в него следующий текст:   
     	***[otus]   
