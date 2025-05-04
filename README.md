@@ -296,26 +296,26 @@ Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2
     >*[root@Almalinux SPECS]# rpmbuild -ba nginx.spec -D 'debug_package %{nil}'   
 setting SOURCE_DATE_EPOCH=1727654400   
 Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.kgos10       
-+ umask 022   
-+ cd /root/rpmbuild/BUILD   
-+ cat /root/rpmbuild/SOURCES/maxim.key /root/rpmbuild/SOURCES/mdounin.key /root/rpmbuild/SOURCES/sb.key   
-+ /usr/lib/rpm/redhat/gpgverify --keyring=/root/rpmbuild/BUILD/nginx.gpg --signature=/root/rpmbuild/SOURCES/nginx-1.20.1.tar.gz.asc --
+\+ umask 022   
+\+ cd /root/rpmbuild/BUILD   
+\+ cat /root/rpmbuild/SOURCES/maxim.key /root/rpmbuild/SOURCES/mdounin.key /root/rpmbuild/SOURCES/sb.key   
+\+ /usr/lib/rpm/redhat/gpgverify --keyring=/root/rpmbuild/BUILD/nginx.gpg --signature=/root/rpmbuild/SOURCES/nginx-1.20.1.tar.gz.asc --
 data=/root/rpmbuild/SOURCES/nginx-1.20.1.tar.gz   
 gpgv: Signature made Tue May 25 15:42:56 2021 MSK   
 gpgv:                using RSA key 520A9993A1C052F8   
 gpgv: Good signature from "Maxim Dounin <mdounin@mdounin.ru>"   
-+ cd /root/rpmbuild/BUILD   
-+ rm -rf nginx-1.20.1   
-+ /usr/bin/gzip -dc /root/rpmbuild/SOURCES/nginx-1.20.1.tar.gz   
-+ /usr/bin/tar -xof -   
-+ STATUS=0    
-+ '[' 0 -ne 0 ']'    
-+ cd nginx-1.20.1    
-+ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .   
-+ /usr/bin/cat /root/rpmbuild/SOURCES/0001-remove-Werror-in-upstream-build-scripts.patch   
-+ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch   
-+ /usr/bin/cat /root/rpmbuild/SOURCES/0002-fix-PIDFile-handling.patch   
-+ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch*   
+\+ cd /root/rpmbuild/BUILD   
+\+ rm -rf nginx-1.20.1   
+\+ /usr/bin/gzip -dc /root/rpmbuild/SOURCES/nginx-1.20.1.tar.gz   
+\+ /usr/bin/tar -xof -   
+\+ STATUS=0    
+\+ '[' 0 -ne 0 ']'    
+\+ cd nginx-1.20.1    
+\+ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .   
+\+ /usr/bin/cat /root/rpmbuild/SOURCES/0001-remove-Werror-in-upstream-build-scripts.patch   
+\+ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch   
+\+ /usr/bin/cat /root/rpmbuild/SOURCES/0002-fix-PIDFile-handling.patch   
+\+ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch*   
 
     
 15. уваууау
