@@ -342,7 +342,13 @@ total 1992
 -rw-r--r--. 1 root root   53822 May  4 12:02 nginx-mod-mail-1.20.1-20.el9.alma.1.x86_64.rpm   
 -rw-r--r--. 1 root root   80437 May  4 12:02 nginx-mod-stream-1.20.1-20.el9.alma.1.x86_64.rpm*   
 
-15. 
+15. Копируем содержимое */root/rpmbuild/RPMS/noarch* в общий каталог.
+    ```
+    cp ~/rpmbuild/RPMS/noarch/* ~/rpmbuild/RPMS/x86_64/
+    ```
+    >_[root@Almalinux ~]# cp ~/rpmbuild/RPMS/noarch/* ~/rpmbuild/RPMS/x86_64/_
+
+17. iliuliuyl
 
 
 
