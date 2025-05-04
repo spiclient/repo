@@ -7,11 +7,11 @@
 + VirtualBox 7.1.6
 + MobaXterm
 ## Описание домашнего задания:
-   + Создать свой RPM пакет(можно взять свое приложение, либо собрать, например, Apache с определенными опциями).
+   + Создать свой RPM пакет Nginx с модулем для сжатия данных **ngx_broli**.
    + Создать свой репозиторий и разместить там ранее собранный RPM.
 
 ## Выполнение
-### Основная часть. 
+### Создаём свой RPM-пакет. 
 1. Создаём виртуальную машину(ВМ) под управлением ОС AlmaLinux 9.5.
 2. Устанавливаем и запускаем сервис **SSH** для подключения через удаленный терминал.      
    **a.** устанавливаем пакет **openssh-server**    
@@ -412,9 +412,32 @@ May 04 13:22:01 Almalinux nginx[33918]: nginx: the configuration file /etc/nginx
 May 04 13:22:01 Almalinux nginx[33918]: nginx: configuration file /etc/nginx/nginx.conf test is successful   
 May 04 13:22:01 Almalinux systemd[1]: Started The nginx HTTP and reverse proxy server.*
 
-
+### Создаём свой репозиторий. 
     
-17. lilyiul
+17. Создаём свою папку в каталоге **/usr/share/nginx/html** и копируем в неё RPM-пакеты.
+    ```
+    mkdir /usr/share/nginx/html/repo
+    ```
+    >*[root@Almalinux html]# mkdir /usr/share/nginx/html/repo*
+    ```
+    cp ~/rpmbuild/RPMS/x86_64/*.rpm /usr/share/nginx/html/repo/
+    ```
+    >_[root@Almalinux html]# cp ~/rpmbuild/RPMS/x86_64/*.rpm /usr/share/nginx/html/repo/_
+
+
+18. Инициализируем репозиторий.
+    ```
+    createrepo /usr/share/nginx/html/repo/
+    ```
+    >*[root@Almalinux repo]# createrepo /usr/share/nginx/html/repo/
+Directory walk started
+Directory walk done - 10 packages
+Temporary output repo path: /usr/share/nginx/html/repo/.repodata/
+Preparing sqlite DBs
+Pool started (with 5 workers)
+Pool finished*
+
+20. лгнлгл
 
 
 
