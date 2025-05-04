@@ -375,14 +375,14 @@ Installing dependencies:
     </pre>
 ==========================================================================================================================
 Install  11 Packages
-==========================================================================================================================
-Installed:
+---------и т.д.-----------
+*Installed:
   almalinux-logos-httpd-90.5.1-1.1.el9.noarch                     nginx-2:1.20.1-20.el9.alma.1.x86_64
   nginx-all-modules-2:1.20.1-20.el9.alma.1.noarch                 nginx-core-2:1.20.1-20.el9.alma.1.x86_64
   nginx-filesystem-2:1.20.1-20.el9.alma.1.noarch                  nginx-mod-devel-2:1.20.1-20.el9.alma.1.x86_64
   nginx-mod-http-image-filter-2:1.20.1-20.el9.alma.1.x86_64       nginx-mod-http-perl-2:1.20.1-20.el9.alma.1.x86_64
   nginx-mod-http-xslt-filter-2:1.20.1-20.el9.alma.1.x86_64        nginx-mod-mail-2:1.20.1-20.el9.alma.1.x86_64
-  nginx-mod-stream-2:1.20.1-20.el9.alma.1.x86_64
+  nginx-mod-stream-2:1.20.1-20.el9.alma.1.x86_64*
 
 Complete!
 
