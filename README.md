@@ -437,7 +437,7 @@ Preparing sqlite DBs
 Pool started (with 5 workers)
 Pool finished*
 
-20. Настраиваем в Nginx доступ к листингу каталога. В файле */etc/nginx/nginx.conf* в блоке **server** добавляем:**index index.html index.htm;
+19. Настраиваем в Nginx доступ к листингу каталога. В файле */etc/nginx/nginx.conf* в блоке **server** добавляем:**index index.html index.htm;
 	autoindex on.**
     ```
     nano /etc/nginx/nginx.conf
@@ -458,9 +458,47 @@ server {
         error_page 500 502 503 504 /50x.html;   
         location = /50x.html {   
         }   
-    }*   
+    }*
+20. Проверяем синтаксис и перезапускаем Nginx.
+    ```
+    nginx -t
+    ```
+    >*[root@Almalinux nginx]# nginx -t   
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok   
+nginx: configuration file /etc/nginx/nginx.conf test is successful*
+    ```
+    nginx -s reload
+    ```
+    >*[root@Almalinux nginx]# nginx -s reload?*
 
+21. Смотрим наши пакеты через *http* командой **lynx**.
+    ```
+    lynx http://localhost/repo/
+    ```
+    >*[root@Almalinux /]# lynx http://localhost/repo/*
+    <pre>
+	                                                                                                       Index of /repo/
+                                                   Index of /repo/
+     ________________________________________________________________________________________________________
 
+	../
+	repodata/                                          04-May-2025 11:47                   -
+	nginx-1.20.1-20.el9.alma.1.x86_64.rpm              04-May-2025 11:46               36242
+	nginx-all-modules-1.20.1-20.el9.alma.1.noarch.rpm  04-May-2025 11:46                7357
+	nginx-core-1.20.1-20.el9.alma.1.x86_64.rpm         04-May-2025 11:46             1025551
+	nginx-filesystem-1.20.1-20.el9.alma.1.noarch.rpm   04-May-2025 11:46                8441
+	nginx-mod-devel-1.20.1-20.el9.alma.1.x86_64.rpm    04-May-2025 11:46              759818
+	nginx-mod-http-image-filter-1.20.1-20.el9.alma...> 04-May-2025 11:46               19367
+	nginx-mod-http-perl-1.20.1-20.el9.alma.1.x86_64..> 04-May-2025 11:46               31015
+	nginx-mod-http-xslt-filter-1.20.1-20.el9.alma.1..> 04-May-2025 11:46               18174
+	nginx-mod-mail-1.20.1-20.el9.alma.1.x86_64.rpm     04-May-2025 11:46               53822
+	nginx-mod-stream-1.20.1-20.el9.alma.1.x86_64.rpm   04-May-2025 11:46               80437
+     ________________________________________________________________________________________________________
+    </pre>
+
+22. dgsgg
+
+  
 
 
 
