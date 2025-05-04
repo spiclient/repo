@@ -498,7 +498,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 
 22. Тестируем
     
-    a. Создаём файл  **/etc/yum.repos.d/otus.repo** и добавляем в него следующий текст:   
+    **a.** Создаём файл  **/etc/yum.repos.d/otus.repo** и добавляем в него следующий текст:   
     	***[otus]   
 	name=otus-linux   
 	baseurl=http://localhost/repo   
@@ -514,7 +514,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 	gpgcheck=0   
 	enabled=1*
     
-    b. Смотрим подключенный репозиторий.   
+    **b.** Смотрим подключенный репозиторий.   
      ```
      yum repolist enabled | grep otus
      ```
@@ -538,7 +538,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 	nginx-mod-stream.x86_64                              2:1.20.1-20.el9.alma.1              otus 
      </pre>
 
-    c. Добавим новый пакет(например: *percona-release-latest.noarch.rpm*) в наш репозиторий. 
+    **c.** Добавим новый пакет(например: *percona-release-latest.noarch.rpm*) в наш репозиторий. 
      ```
      cd /usr/share/nginx/html/repo/
      ```
@@ -555,7 +555,7 @@ Saving to: ‘percona-release-latest.noarch.rpm’
 percona-release-latest.noarch 100%[===============================================>]  27.64K  --.-KB/s    in 0s   
 2025-05-04 16:44:49 (182 MB/s) - ‘percona-release-latest.noarch.rpm’ saved [28300/28300]*
      
-     d. Обновляем список пакетов в репозитории.
+    **d.** Обновляем список пакетов в репозитории.
       ```
       createrepo /usr/share/nginx/html/repo/
       ```
@@ -581,8 +581,9 @@ otus-linux                                                                      
 Metadata cache created.   
 [root@Almalinux repo]# yum list | grep otus   
 percona-release.noarch                               1.0-30                              otus   
-[root@Almalinux repo]#*   
-     e. Устанавливаем новый пакет.   
+[root@Almalinux repo]#*
+         
+    **e.** Устанавливаем новый пакет.   
       ```
       yum install -y percona-release.noarch
       ```
