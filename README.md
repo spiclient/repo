@@ -536,15 +536,26 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 	nginx-mod-http-xslt-filter.x86_64                    2:1.20.1-20.el9.alma.1              otus   
 	nginx-mod-mail.x86_64                                2:1.20.1-20.el9.alma.1              otus    
 	nginx-mod-stream.x86_64                              2:1.20.1-20.el9.alma.1              otus 
-      </pre>
+     </pre>
+
+    c. Добавим новый пакет(например:*percona-release-latest.noarch.rpm*) в наш репозиторий. 
+     ```
+     cd /usr/share/nginx/html/repo/
+     ```
+     ```
+     wget https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+     ```
+     >*[root@Almalinux repo]# wget https://repo.percona.com/yum/percona-release-latest.noarch.rpm   
+--2025-05-04 16:44:48--  https://repo.percona.com/yum/percona-release-latest.noarch.rpm   
+Resolving repo.percona.com (repo.percona.com)... 49.12.125.205, 2a01:4f8:242:5792::2   
+Connecting to repo.percona.com (repo.percona.com)|49.12.125.205|:443... connected.   
+HTTP request sent, awaiting response... 200 OK   
+Length: 28300 (28K) [application/x-redhat-package-manager]   
+Saving to: ‘percona-release-latest.noarch.rpm’   
+percona-release-latest.noarch 100%[===============================================>]  27.64K  --.-KB/s    in 0s   
+2025-05-04 16:44:49 (182 MB/s) - ‘percona-release-latest.noarch.rpm’ saved [28300/28300]*   
+
   
-
-
-    
-
-    
-
-
 24. 
 
   
