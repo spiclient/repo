@@ -505,10 +505,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 	gpgcheck=0   
 	enabled=1***   
     ```
-    touch /etc/yum.repos.d/otus.repo
-    ```
-    ```
-    nano otus.repo
+    touch /etc/yum.repos.d/otus.repo && nano otus.repo
     ```
     >*GNU nano 5.6.1                                         otus.repo   
 	[otus]   
