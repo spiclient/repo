@@ -283,8 +283,8 @@ Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2
     --group=%{nginx_user} \    
     --with-compat \   
     --with-debug \   
-    <mark>--add-module=/root/ngx_brotli \</mark>   
-    %if 0%{?with_aio}*   
+    <mark>--add-module=/root/ngx_brotli \</mark>*   
+    %if 0%{?with_aio}   
 
     
 
