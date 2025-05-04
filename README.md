@@ -171,9 +171,11 @@ Dependencies resolved.*
      
    
 9. Скачиваем исходный код модуля **ngx_brotli**, через создание полной копии удаленного репозитория на локальном устройстве.
+   a. переходим в корневой каталог
    ```
    cd /root
    ```
+   b. клонируем репозиторий
    ```
    git clone --recurse-submodules -j8 https://github.com/google/ngx_brotli
    ```
@@ -194,8 +196,34 @@ remote: Total 7810 (delta 10), reused 1 (delta 1), pack-reused 7783 (from 2)
 Receiving objects: 100% (7810/7810), 40.62 MiB | 2.25 MiB/s, done.   
 Resolving deltas: 100% (5069/5069), done.   
 Submodule path 'deps/brotli': checked out 'ed738e842d2fbdf2d6459e39267a633c4a9b2f5d'*   
+ 
+10. Создаём папку **out** в каталоге ***root/ngx_brotli/deps/brotli***
+    ```
+    cd ngx_brotli/deps/brotli && mkdir out && cd out
+    ```
+    >*[root@Almalinux ~]# cd ngx_brotli/deps/brotli && mkdir out && cd out*
+    
+11. Собираем модуль **ngx_brotli**.
+    ```
+    cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_CXX_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_INSTALL_PREFIX=./installed ..
+    ```
+    >*[root@Almalinux out]# cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_CXX_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_INSTALL_PREFIX=./installed ..   
+-- The C compiler identification is GNU 11.5.0   
+-- Detecting C compiler ABI info   
+-- Detecting C compiler ABI info - done   
+-- Check for working C compiler: /usr/bin/cc - skipped   
+-- Detecting C compile features   
+-- Detecting C compile features - done   
+-- Build type is 'Release'   
+-- Performing Test BROTLI_EMSCRIPTEN   
+-- Performing Test BROTLI_EMSCRIPTEN - Failed   
+-- Compiler is not EMSCRIPTEN    
+-- Looking for log2   
+-- Looking for log2 - not found   
+-- Looking for log2   
+-- Looking for log2 - found   
+-- Configuring done (1.6s)   
+-- Generating done (0.1s)*   
 
-
-
-   
-10. sfgsfg
+    
+12. jkjk
