@@ -554,6 +554,7 @@ Length: 28300 (28K) [application/x-redhat-package-manager]
 Saving to: ‘percona-release-latest.noarch.rpm’   
 percona-release-latest.noarch 100%[===============================================>]  27.64K  --.-KB/s    in 0s   
 2025-05-04 16:44:49 (182 MB/s) - ‘percona-release-latest.noarch.rpm’ saved [28300/28300]*
+     
      d. Обновляем список пакетов в репозитории.
       ```
       createrepo /usr/share/nginx/html/repo/
