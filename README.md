@@ -355,7 +355,7 @@ total 1992
     >*[root@Almalinux x86_64]# yum localinstall *.rpm
 Last metadata expiration check: 1:34:28 ago on Sun May  4 11:06:48 2025.
 Dependencies resolved.*
-    <pre>---=======================================================================================================================
+    <pre>==========================================================================================================================
           Package                                Architecture      Version                           Repository               Size
          ==========================================================================================================================
          Installing:
@@ -371,7 +371,6 @@ Dependencies resolved.*
           nginx-mod-stream                       x86_64            2:1.20.1-20.el9.alma.1            @commandline             79 k
          Installing dependencies:
           almalinux-logos-httpd                  noarch            90.5.1-1.1.el9                    appstream                18 k
-    </pre>
          ==========================================================================================================================
          Install  11 Packages
          ---------и т.д.-----------
@@ -383,7 +382,7 @@ Dependencies resolved.*
            nginx-mod-http-xslt-filter-2:1.20.1-20.el9.alma.1.x86_64        nginx-mod-mail-2:1.20.1-20.el9.alma.1.x86_64
            nginx-mod-stream-2:1.20.1-20.el9.alma.1.x86_64
          Complete!
-
+    </pre>
 17. lilyiul
 
 
