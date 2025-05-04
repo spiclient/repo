@@ -437,7 +437,29 @@ Preparing sqlite DBs
 Pool started (with 5 workers)
 Pool finished*
 
-20. лгнлгл
+20. Настраиваем в Nginx доступ к листингу каталога. В файле */etc/nginx/nginx.conf* в блоке **server** добавляем:**index index.html index.htm;
+	autoindex on.**
+    ```
+    jik
+    ```
+    >server {   
+        listen       80;   
+        listen       [::]:80;   
+        server_name  _;   
+        root         /usr/share/nginx/html;   
+        # Load configuration files for the default server block.   
+        include /etc/nginx/default.d/*.conf;   
+        index index.html index.htm;   
+        autoindex on;   
+        error_page 404 /404.html;   
+        location = /404.html {   
+        }   
+        error_page 500 502 503 504 /50x.html;   
+        location = /50x.html {   
+        }   
+    }   
+
+
 
 
 
