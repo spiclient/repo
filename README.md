@@ -496,7 +496,8 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
      ________________________________________________________________________________________________________
     </pre>
 
-22. Тестируем   
+22. Тестируем
+    
     Создаём файл  **/etc/yum.repos.d/otus.repo** и добавляем в него следующий текст:   
     	***[otus]   
 	name=otus-linux   
