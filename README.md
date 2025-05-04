@@ -517,7 +517,8 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
      ```
      yum list --showduplicates | grep otus
      ```
-     >*[root@Almalinux yum.repos.d]# yum list --showduplicates | grep otus   
+     >*[root@Almalinux yum.repos.d]# yum list --showduplicates | grep otus*   
+     <pre>
 nginx.x86_64                                         2:1.20.1-20.el9.alma.1              otus   
 nginx-all-modules.noarch                             2:1.20.1-20.el9.alma.1              otus   
 nginx-core.x86_64                                    2:1.20.1-20.el9.alma.1              otus   
@@ -527,7 +528,8 @@ nginx-mod-http-image-filter.x86_64                   2:1.20.1-20.el9.alma.1     
 nginx-mod-http-perl.x86_64                           2:1.20.1-20.el9.alma.1              otus   
 nginx-mod-http-xslt-filter.x86_64                    2:1.20.1-20.el9.alma.1              otus   
 nginx-mod-mail.x86_64                                2:1.20.1-20.el9.alma.1              otus    
-nginx-mod-stream.x86_64                              2:1.20.1-20.el9.alma.1              otus*   
+nginx-mod-stream.x86_64                              2:1.20.1-20.el9.alma.1              otus 
+      </pre>
   
 
 
