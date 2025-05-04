@@ -383,6 +383,37 @@ Dependencies resolved.*
            nginx-mod-stream-2:1.20.1-20.el9.alma.1.x86_64
          Complete!
     </pre>
+
+   Запускаем службу Nginx и проверяем её статус.
+   ```
+   systemctl start nginx
+   ```
+   >*[root@Almalinux x86_64]# systemctl start nginx*
+   ```
+   systemctl status nginx
+   ```
+   >*[root@Almalinux x86_64]# systemctl status nginx   
+● nginx.service - The nginx HTTP and reverse proxy server   
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; preset: disabled)   
+     Active: active (running) since Sun 2025-05-04 13:22:01 MSK; 9s ago   
+    Process: 33917 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)   
+    Process: 33918 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)   
+    Process: 33920 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)   
+   Main PID: 33921 (nginx)   
+      Tasks: 3 (limit: 11096)   
+     Memory: 4.9M   
+        CPU: 111ms   
+     CGroup: /system.slice/nginx.service   
+             ├─33921 "nginx: master process /usr/sbin/nginx"   
+             ├─33922 "nginx: worker process"   
+             └─33923 "nginx: worker process"   
+May 04 13:22:01 Almalinux systemd[1]: Starting The nginx HTTP and reverse proxy server...   
+May 04 13:22:01 Almalinux nginx[33918]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok   
+May 04 13:22:01 Almalinux nginx[33918]: nginx: configuration file /etc/nginx/nginx.conf test is successful   
+May 04 13:22:01 Almalinux systemd[1]: Started The nginx HTTP and reverse proxy server.*
+
+
+    
 17. lilyiul
 
 
