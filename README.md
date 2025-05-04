@@ -538,7 +538,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 	nginx-mod-stream.x86_64                              2:1.20.1-20.el9.alma.1              otus 
      </pre>
 
-    c. Добавим новый пакет(например:*percona-release-latest.noarch.rpm*) в наш репозиторий. 
+    c. Добавим новый пакет(например: *percona-release-latest.noarch.rpm*) в наш репозиторий. 
      ```
      cd /usr/share/nginx/html/repo/
      ```
@@ -553,7 +553,36 @@ HTTP request sent, awaiting response... 200 OK
 Length: 28300 (28K) [application/x-redhat-package-manager]   
 Saving to: ‘percona-release-latest.noarch.rpm’   
 percona-release-latest.noarch 100%[===============================================>]  27.64K  --.-KB/s    in 0s   
-2025-05-04 16:44:49 (182 MB/s) - ‘percona-release-latest.noarch.rpm’ saved [28300/28300]*   
+2025-05-04 16:44:49 (182 MB/s) - ‘percona-release-latest.noarch.rpm’ saved [28300/28300]*
+     d. Обновляем список пакетов в репозитории.
+      ```
+      createrepo /usr/share/nginx/html/repo/
+      ```
+      ```
+      yum makecache
+      ```
+      ```
+      yum list | grep otus
+      ```
+      >*[root@Almalinux repo]# createrepo /usr/share/nginx/html/repo/   
+Directory walk started   
+Directory walk done - 11 packages   
+Temporary output repo path: /usr/share/nginx/html/repo/.repodata/   
+Preparing sqlite DBs   
+Pool started (with 5 workers)   
+Pool finished   
+[root@Almalinux repo]# yum makecache   
+AlmaLinux 9 - AppStream                                                               7.0 kB/s | 4.2 kB     00:00   
+AlmaLinux 9 - BaseOS                                                                  7.8 kB/s | 3.8 kB     00:00   
+AlmaLinux 9 - Extras                                                                  6.7 kB/s | 3.3 kB     00:00   
+otus-linux                                                                            1.5 MB/s | 3.0 kB     00:00   
+otus-linux                                                                            610 kB/s | 7.2 kB     00:00   
+Metadata cache created.   
+[root@Almalinux repo]# yum list | grep otus   
+percona-release.noarch                               1.0-30                              otus   
+[root@Almalinux repo]#*   
+
+      
 
   
 24. 
