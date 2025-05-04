@@ -7,11 +7,11 @@
 + VirtualBox 7.1.6
 + MobaXterm
 ## Описание домашнего задания:
+   + Подготовить ВМ с ОС AlmaLinux 9.5 и включенной вложенной виртуализацией.
    + Создать свой RPM пакет Nginx с модулем для сжатия данных **ngx_broli**.
    + Создать свой репозиторий и разместить там ранее собранный RPM.
 
 ## Выполнение
-### Создаём свой RPM-пакет. 
 1. Создаём виртуальную машину(ВМ) под управлением ОС AlmaLinux 9.5.
 2. Устанавливаем и запускаем сервис **SSH** для подключения через удаленный терминал.      
    **a.** устанавливаем пакет **openssh-server**    
@@ -46,7 +46,8 @@
       VBoxManage.exe modifyvm "Almalinux" --nested-hw-virt on
       ```
       >*PS C:\WINDOWS\system32> VBoxManage.exe modifyvm "Almalinux" --nested-hw-virt on*
-
+      
+### Создаём свой RPM-пакет.    
 4. Устанавливаем набор инструментов для работы с RPM    
    ```
    sudo yum install -y wget rpmdevtools rpm-build createrepo yum-utils cmake gcc git nano    
