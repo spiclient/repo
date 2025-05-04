@@ -449,8 +449,8 @@ Pool finished*
         root         /usr/share/nginx/html;   
         # Load configuration files for the default server block.   
         include /etc/nginx/default.d/*.conf;   
-        index index.html index.htm;   
-        autoindex on;   
+        <mark>index index.html index.htm;   
+        autoindex on;</mark>   
         error_page 404 /404.html;   
         location = /404.html {   
         }   
