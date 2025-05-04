@@ -515,6 +515,12 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful*
 	enabled=1*
     b. Смотрим подключенный репозиторий.
      ```
+     yum repolist enabled | grep otus
+     ```
+     >*[root@Almalinux yum.repos.d]# yum repolist enabled | grep otus
+	otus                             otus-linux*
+
+     ```
      yum list --showduplicates | grep otus
      ```
      >*[root@Almalinux yum.repos.d]# yum list --showduplicates | grep otus*   
