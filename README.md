@@ -582,6 +582,40 @@ Metadata cache created.
 [root@Almalinux repo]# yum list | grep otus   
 percona-release.noarch                               1.0-30                              otus   
 [root@Almalinux repo]#*   
+     e. Устанавливаем новый пакет.   
+      ```
+      yum install -y percona-release.noarch
+      ```
+      >*[root@Almalinux repo]# yum install -y percona-release.noarch
+Last metadata expiration check: 0:12:42 ago on Sun May  4 16:58:56 2025.
+Dependencies resolved.*
+      <pre>
+	======================================================================================================================
+	 Package                            Architecture              Version                   Repository               Size
+	======================================================================================================================
+	Installing:
+	 percona-release                    noarch                    1.0-30                    otus                     28 k
+
+	Transaction Summary
+	======================================================================================================================
+	Install  1 Package
+
+	Total download size: 28 k
+	Installed size: 49 k
+	Downloading Packages:
+	percona-release-latest.noarch.rpm                                                     2.8 MB/s |  28 kB     00:00
+	----------------------------------------------------------------------------------------------------------------------
+	Total                                                                                 2.0 MB/s |  28 kB     00:00
+	Running transaction check
+	Transaction check succeeded.
+	Running transaction test
+	Transaction test succeeded.
+	Running transaction
+	  Preparing        :                                                                                              1/1
+	  Installing       : percona-release-1.0-30.noarch                                                                1/1
+	  Running scriptlet: percona-release-1.0-30.noarch                                                                1/1
+      </pre>
+
 
       
 
