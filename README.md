@@ -620,6 +620,8 @@ Dependencies resolved.*
 	  Running scriptlet: percona-release-1.0-30.noarch                                                                1/1
       </pre>
 
+22. Создаём bash-скрипт.
+    
  
 
 
