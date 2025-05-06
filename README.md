@@ -114,12 +114,16 @@ done*
    >*root@(none):/# mount | grep -w /
    /dev/mapper/ubuntu--vg-ubuntu--lv on / type ext4 (rw,relatime)*
   
-7. **Вариант 2**. Recovery mode.
+6. **Вариант 2**. Recovery mode.
    На экране меню загрузчика **Grub** выбираем **Advanced options for Ubuntu**.
+   
    ![image](https://github.com/user-attachments/assets/460a5aad-d567-4e5c-aae1-cab30837c07d)
 
-   Далее, пункт меню с указанием **Recovery mode** в названии.   
+   Далее, пункт меню с указанием **Recovery mode** в названии.
+    
    ![image](https://github.com/user-attachments/assets/c6b95565-1c4e-4a79-8a80-e1cae7798898)
+
+   
 
 
 9. 
