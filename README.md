@@ -128,9 +128,12 @@ done*
    
       ![image](https://github.com/user-attachments/assets/0c472b17-9a05-4725-9f66-dbc34a7e2222)
 
-   #### Переименование Volume Group на LVM.   
+   #### Переименование Volume Group на LVM.
+   
 7. Наша система Ubuntu 24.04 развернута со стандартной разметкой диска с использованием LVM.
-   a. Смотрим список **Volume Group** в системе.    
+   
+   a. Смотрим список **Volume Group** в системе.
+       
    ```
    vgs
    ```
@@ -145,14 +148,14 @@ done*
 
    ```
    >*root@nubuntu2404:~# vgrename ubuntu-vg ubuntu-otus       
-  Volume group "ubuntu-vg" successfully renamed to "ubuntu-otus"*    
+  Volume group "ubuntu-vg" successfully renamed to "ubuntu-otus"*
+      
    c. Далее, меняем название **Volume Group** в файле **grub.cfg** настроек загрузчика Grub.   
    ```
    nano /boot/grub/grub.cfg
    ```
    >*root@nubuntu2404:~# nano /boot/grub/grub.cfg*   
-   <pre>
-              <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
+   <pre><mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
         initrd  /initrd.img-6.8.0-59-generic</mark>
 }
 submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59db6a17-25be-4e0d-91ec-158ee5725aba' {
