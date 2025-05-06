@@ -206,4 +206,12 @@ done*
 
 
 
-9. 
+8. Перезагружаемся и проверяем новый нэйминг на VG.    
+   ```
+   vgs
+   ```
+   >*root@nubuntu2404:~# vgs    
+  VG          #PV #LV #SN Attr   VSize   VFree   
+  ubuntu-otus   1   1   0 wz--n- <23.00g 11.50g*
+
+
