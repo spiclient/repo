@@ -200,7 +200,6 @@ done*
         }
 }
 \### END /etc/grub.d/10_linux \###
-
    </pre>
                  
 
