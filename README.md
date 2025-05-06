@@ -23,7 +23,7 @@
 
    Комментируем строку параметра, который отвечает за скрытие меню загрузчика и выставляем задержку в 10 секунд.
 
-   ><pre>
+   <pre>
      GNU nano 6.2                                       /etc/default/grub
    # If you change this file, run 'update-grub' afterwards to update
    # /boot/grub/grub.cfg.
