@@ -154,8 +154,9 @@ done*
    ```
    nano /boot/grub/grub.cfg
    ```
-   >*root@nubuntu2404:~# nano /boot/grub/grub.cfg*   
-   <pre><mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
+   >*root@nubuntu2404:~# nano /boot/grub/grub.cfg*      
+   <pre>
+      <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
         initrd  /initrd.img-6.8.0-59-generic</mark>
 }
 submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59db6a17-25be-4e0d-91ec-158ee5725aba' {
