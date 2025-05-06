@@ -84,7 +84,7 @@ done*
 
 
    #### Запуск системы без ввода пароля.
-5. **Вариант 1**. Редактируем параметры загрузки, добавляем опцию *init=/bin/bash* в конец строки Linux.    
+5. **Вариант 1**. Редактируем параметры загрузки, добавляем опцию *init=/bin/bash* в конец строки Linux.
    На экране меню загрузчика **Grub** нажимаем клавишу *E*, находим искомую строку и добавляем новый параметр.
    
    ![image](https://github.com/user-attachments/assets/200c43a9-5870-48c6-b86f-2edd59fca746)
@@ -113,7 +113,11 @@ done*
    ```
    >*root@(none):/# mount | grep -w /
    /dev/mapper/ubuntu--vg-ubuntu--lv on / type ext4 (rw,relatime)*
-   
+  
+7. **Вариант 2**. Recovery mode.
+   На экране меню загрузчика **Grub** выбираем **Advanced options for Ubuntu**.
+   ![image](https://github.com/user-attachments/assets/460a5aad-d567-4e5c-aae1-cab30837c07d)
+
    
 
-7.
+9. 
