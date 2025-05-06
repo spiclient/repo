@@ -93,6 +93,27 @@ done*
 
    ![image](https://github.com/user-attachments/assets/b686cede-3a9b-4d85-bdd7-bd1162382edf)
 
+   Но система монтируется в режиме *Read-Only*, убеждаемся в этом.
+   ```
+   mount | grep -w /
+   ```
+   >*root@(none):/# mount | grep -w /
+   /dev/mapper/ubuntu--vg-ubuntu--lv on / type ext4 (ro,relatime)*
 
+   Перемонтируем систему в режим *Read-Write*.   
+   ```
+   mount -o remount, rw /
+   ```
+   >*root@(none):/# mount -o remount, rw /    
+   [3310.109849] EXT4-fs (dm-0): re-mounted 59db6a17-25be-4e0d-91ec-158ee5725aba r/w. Quota mode: none.*
+
+   Проверяем изменение прав на *Read-Write*.
+   ```
+   mount | grep -w /
+   ```
+   >*root@(none):/# mount | grep -w /
+   /dev/mapper/ubuntu--vg-ubuntu--lv on / type ext4 (rw,relatime)*
+   
+   
 
 7.
