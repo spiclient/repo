@@ -136,23 +136,23 @@ done*
    ```
    >*root@nubuntu2404:~# vgs
   VG        #PV #LV #SN Attr   VSize   VFree
-  ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g*
+  ubuntu-vg   1   1   0 wz--n- <23.00g 11.50g*   
 
-   b. Приступаем к переименованию группы.
+   b. Приступаем к переименованию группы.    
 
    ```
    vgrename ubuntu-vg ubuntu-otus
 
    ```
-   >*root@nubuntu2404:~# vgrename ubuntu-vg ubuntu-otus    
-  Volume group "ubuntu-vg" successfully renamed to "ubuntu-otus"*
-   c. Далее, меняем название **Volume Group** в файле **grub.cfg** настроек загрузчика Grub.
+   >*root@nubuntu2404:~# vgrename ubuntu-vg ubuntu-otus       
+  Volume group "ubuntu-vg" successfully renamed to "ubuntu-otus"*    
+   c. Далее, меняем название **Volume Group** в файле **grub.cfg** настроек загрузчика Grub.   
    ```
    nano /boot/grub/grub.cfg
    ```
    >*root@nubuntu2404:~# nano /boot/grub/grub.cfg*   
    <pre>
-              <mark></mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
+              <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
         initrd  /initrd.img-6.8.0-59-generic</mark>
 }
 submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59db6a17-25be-4e0d-91ec-158ee5725aba' {
