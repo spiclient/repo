@@ -115,6 +115,7 @@ done*
    /dev/mapper/ubuntu--vg-ubuntu--lv on / type ext4 (rw,relatime)*
   
 6. **Вариант 2**. Recovery mode.
+   
    a. На экране меню загрузчика **Grub** выбираем **Advanced options for Ubuntu**.
    
    ![image](https://github.com/user-attachments/assets/460a5aad-d567-4e5c-aae1-cab30837c07d)
