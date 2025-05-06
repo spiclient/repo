@@ -160,8 +160,8 @@ done*
    <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro</mark> 
          initrd  /initrd.img-6.8.0-59-generic
       }
-      submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59db6a17-25be-4e0d-91ec-158ee5725aba' {
-        menuentry 'Ubuntu, with Linux 6.8.0-59-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-         6.8.0->
+   submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59db6a17-25be-4e0d-91ec-158ee5725aba' {
+   menuentry 'Ubuntu, with Linux 6.8.0-59-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-         6.8.0->
                 recordfail
                 load_video
                 gfxmode $linux_gfx_mode
@@ -180,7 +180,7 @@ done*
                 echo    'Loading initial ramdisk ...'
                 initrd  /initrd.img-6.8.0-59-generic
               }
-           menuentry 'Ubuntu, with Linux 6.8.0-59-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option >
+   menuentry 'Ubuntu, with Linux 6.8.0-59-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option >
                 recordfail
                 load_video
                 insmod gzio
@@ -199,12 +199,10 @@ done*
                 initrd  /initrd.img-6.8.0-59-generic
         }
 }
-### END /etc/grub.d/10_linux ###
+\### END /etc/grub.d/10_linux \###
 
    </pre>
                  
-
-
 
 8. Перезагружаемся и проверяем новый нэйминг на VG.
    
