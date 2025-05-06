@@ -80,7 +80,7 @@ done*
 
 4. При загрузке системы появится окно загрузчика на 10 секунд.
 
-   ![image](https://github.com/user-attachments/assets/88a61502-bb50-4d3b-be56-8e18f9739a7d)
+   ![image](https://github.com/user-attachments/assets/0df1350c-4569-43dd-a81c-a0e609340a1c)
 
    #### Запуск системы без ввода пароля.
 5. апив
