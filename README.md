@@ -59,7 +59,7 @@
    update-grub
    ```
    >*root@nUbunta2204:~# update-grub   
-Sourcing file `/etc/default/grub'   
+Sourcing file \`/etc/default/grub'   
 Sourcing file `/etc/default/grub.d/init-select.cfg'   
 Generating grub configuration file ...   
 Found linux image: /boot/vmlinuz-6.14.0-061400rc5-generic   
