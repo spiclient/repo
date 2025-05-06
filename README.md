@@ -157,8 +157,8 @@ done*
    >*root@nubuntu2404:~# nano /boot/grub/grub.cfg*
        
    <pre>
-       <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
-         initrd  /initrd.img-6.8.0-59-generic</mark>
+   <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro</mark> 
+         initrd  /initrd.img-6.8.0-59-generic
       }
       submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59db6a17-25be-4e0d-91ec-158ee5725aba' {
         menuentry 'Ubuntu, with Linux 6.8.0-59-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-         6.8.0->
@@ -202,7 +202,7 @@ done*
 
 
    </pre>
-  ### END /etc/grub.d/10_linux ###
+                 ### END /etc/grub.d/10_linux ###
 
 
 
