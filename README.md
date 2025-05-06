@@ -64,17 +64,15 @@
    ```
    update-grub
    ```
-   >*root@nUbunta2204:~# update-grub   
-Sourcing file \`/etc/default/grub'   
-Sourcing file `/etc/default/grub.d/init-select.cfg'   
+   >*root@nubuntu2404:~# update-grub   
+Sourcing file `/etc/default/grub'   
 Generating grub configuration file ...   
-Found linux image: /boot/vmlinuz-6.14.0-061400rc5-generic   
-Found initrd image: /boot/initrd.img-6.14.0-061400rc5-generic   
-Found linux image: /boot/vmlinuz-5.15.0-134-generic   
-Found initrd image: /boot/initrd.img-5.15.0-134-generic   
+Found linux image: /boot/vmlinuz-6.8.0-59-generic    
+Found initrd image: /boot/initrd.img-6.8.0-59-generic    
 Warning: os-prober will not be executed to detect other bootable partitions.   
-Systems on them will not be added to the GRUB boot configuration.   
+Systems on them will not be added to the GRUB boot configuration.    
 Check GRUB_DISABLE_OS_PROBER documentation entry.   
+Adding boot menu entry for UEFI Firmware Settings ...   
 done*
    ```
    reboot
