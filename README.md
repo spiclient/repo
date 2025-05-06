@@ -154,13 +154,14 @@ done*
    ```
    nano /boot/grub/grub.cfg
    ```
-   >*root@nubuntu2404:~# nano /boot/grub/grub.cfg*      
+   >*root@nubuntu2404:~# nano /boot/grub/grub.cfg*
+       
    <pre>
-      <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
-        initrd  /initrd.img-6.8.0-59-generic</mark>
-}
-submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59db6a17-25be-4e0d-91ec-158ee5725aba' {
-        menuentry 'Ubuntu, with Linux 6.8.0-59-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-6.8.0->
+       <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro 
+         initrd  /initrd.img-6.8.0-59-generic</mark>
+      }
+      submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59db6a17-25be-4e0d-91ec-158ee5725aba' {
+        menuentry 'Ubuntu, with Linux 6.8.0-59-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-         6.8.0->
                 recordfail
                 load_video
                 gfxmode $linux_gfx_mode
@@ -170,7 +171,7 @@ submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59
                 insmod ext2
                 set root='hd0,gpt2'
                 if [ x$feature_platform_search_hint = xy ]; then
-                  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  b948ca5d-fc6e-4899-88>
+                  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt2 --hint-efi=hd0,gpt2 --hint-baremetal=ahci0,gpt2  b948ca5d-fc6e-      4899-88>
                 else
                   search --no-floppy --fs-uuid --set=root b948ca5d-fc6e-4899-88a9-7da372014cb8
                 fi
@@ -178,8 +179,8 @@ submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59
                 <mark>linux   /vmlinuz-6.8.0-59-generic root=/dev/mapper/ubuntu--otus-ubuntu--lv ro</mark>
                 echo    'Loading initial ramdisk ...'
                 initrd  /initrd.img-6.8.0-59-generic
-        }
-        menuentry 'Ubuntu, with Linux 6.8.0-59-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option >
+              }
+           menuentry 'Ubuntu, with Linux 6.8.0-59-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option >
                 recordfail
                 load_video
                 insmod gzio
@@ -201,7 +202,7 @@ submenu 'Advanced options for Ubuntu' $menuentry_id_option 'gnulinux-advanced-59
 
 
    </pre>
-### END /etc/grub.d/10_linux ###
+  ### END /etc/grub.d/10_linux ###
 
 
 
