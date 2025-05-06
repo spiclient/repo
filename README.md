@@ -91,7 +91,8 @@ done*
    
    Нажимаем **Ctrl-X** - перезагружаемся и получаем доступ к корневой оболочке под правами суперпользователя.
 
-   ![image](https://github.com/user-attachments/assets/c03bcd8d-4a08-4a5c-9b14-b17b0ffcfb19)
+   ![image](https://github.com/user-attachments/assets/b686cede-3a9b-4d85-bdd7-bd1162382edf)
+
 
 
 7.
