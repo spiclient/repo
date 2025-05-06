@@ -90,7 +90,8 @@ done*
    ![image](https://github.com/user-attachments/assets/200c43a9-5870-48c6-b86f-2edd59fca746)
    
    Нажимаем **Ctrl-X** - перезагружаемся и получаем доступ к корневой оболочке под правами суперпользователя.
-   
-   ![image](https://github.com/user-attachments/assets/55828745-b03a-46b8-b101-58055dd18758)    
+
+   ![image](https://github.com/user-attachments/assets/c03bcd8d-4a08-4a5c-9b14-b17b0ffcfb19)
+
 
 7.
