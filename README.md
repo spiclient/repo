@@ -199,10 +199,10 @@ done*
                 initrd  /initrd.img-6.8.0-59-generic
         }
 }
-
+### END /etc/grub.d/10_linux ###
 
    </pre>
-                 ### END /etc/grub.d/10_linux ###
+                 
 
 
 
