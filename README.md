@@ -27,8 +27,29 @@
       VBoxManage.exe modifyvm "nUbunta2404" --nested-hw-virt on
       ```
       >*PS C:\WINDOWS\system32> VBoxManage.exe modifyvm "nUbunta2404" --nested-hw-virt on*
-   #### Написать service по поиску слова в файле лога.      
-2. Устанавливаем обработчик **spawn-fcgi**
+      
+   ### Написать service по поиску слова в файле лога.
+
+2. Cоздаём файл с конфигурацией для сервиса в директории */etc/default*.
+   ```
+   cat << EOF >> /etc/default/watchlog
+   WORD="ALERT"
+   LOG=/var/log/watchlog.log
+   EOF
+   ```
+   >*root@nubuntu2404:/# cat << EOF >> /etc/default/watchlog
+   #Configuration file for my watchlog service
+   #Place it to /etc/default
+   #File and word in that file that we will be monit
+   WORD="ALERT"
+   LOG=/var/log/watchlog.log
+   EOF*
+
+
+
+   ### Переделываем **unit**-файл с помощью переделки **init**-скрипта.
+   
+4. Устанавливаем обработчик **spawn-fcgi**
    ```
    apt -y install spawn-fcgi
    ```
@@ -60,5 +81,5 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.*
    
 
 
-3. ожож
+5. ожож
 
