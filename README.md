@@ -37,12 +37,12 @@
    LOG=/var/log/watchlog.log
    EOF
    ```
-   >*root@nubuntu2404:/# cat << EOF >> /etc/default/watchlog
-   #Configuration file for my watchlog service
-   #Place it to /etc/default
-   #File and word in that file that we will be monit
-   WORD="ALERT"
-   LOG=/var/log/watchlog.log
+   >*root@nubuntu2404:/# cat << EOF >> /etc/default/watchlog   
+   #Configuration file for my watchlog service    
+   #Place it to /etc/default    
+   #File and word in that file that we will be monit    
+   WORD="ALERT"    
+   LOG=/var/log/watchlog.log    
    EOF*
 
 
