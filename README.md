@@ -64,20 +64,21 @@
 4. Создаём скрипт.
    ```
    cat << EOF >> /opt/watchlog.sh
-#!/bin/bash
-WORD=$1
-LOG=$2
-DATE=`date`
-if grep $WORD $LOG &> /dev/null
-then
-logger "$DATE: I found word, Master!"
-else
-exit 0
-fi
-EOF
+   '#!/bin/bash
+   WORD=$1
+   LOG=$2
+   DATE=`date`
+   if grep $WORD $LOG &> /dev/null
+   then
+   logger "$DATE: I found word, Master!"
+   else
+   exit 0
+   fi
+   EOF
    ```
-   >*root@nubuntu2404:/opt# cat watchlog.sh   
-   \#!/bin/bash   
+
+   >*root@nubuntu2404:/opt# cat watchlog.sh      
+   '#!/bin/bash      
    WORD=   
    LOG=   
    DATE=Thu May  8 07:39:49 AM UTC 2025   
@@ -93,12 +94,12 @@ EOF
       
 
 
-   ### Переделываем **unit**-файл с помощью переделки **init**-скрипта.
+### Переделываем **unit**-файл с помощью переделки **init**-скрипта.   
 
 
    
    
-6. Устанавливаем обработчик **spawn-fcgi**
+6. Устанавливаем обработчик **spawn-fcgi**    
    ```
    apt -y install spawn-fcgi
    ```
