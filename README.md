@@ -106,14 +106,14 @@
    ExecStart=/opt/watchlog.sh $WORD $LOG
    EOF
    ```
-   >*root@nubuntu2404:/# cat << EOF >> /etc/systemd/system/watchlog.service
-   [Unit]
-   Description=My watchlog service
-   [Service]
-   Type=oneshot
-   EnvironmentFile=/etc/default/watchlog
-   ExecStart=/opt/watchlog.sh $WORD $LOG
-   EOF*
+   >*root@nubuntu2404:/# cat << EOF >> /etc/systemd/system/watchlog.service   
+   [Unit]   
+   Description=My watchlog service   
+   [Service]   
+   Type=oneshot   
+   EnvironmentFile=/etc/default/watchlog   
+   ExecStart=/opt/watchlog.sh $WORD $LOG    
+   EOF*   
 
 
       
