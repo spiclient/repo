@@ -64,7 +64,7 @@
 4. Создаём скрипт.
    ```
    cat << EOF >> /opt/watchlog.sh
-   '#!/bin/bash
+   #!/bin/bash
    WORD=$1
    LOG=$2
    DATE=`date`
@@ -78,7 +78,7 @@
    ```
 
    >*root@nubuntu2404:/opt# cat watchlog.sh      
-   '#!/bin/bash      
+   #!/bin/bash      
    WORD=   
    LOG=   
    DATE=Thu May  8 07:39:49 AM UTC 2025   
