@@ -139,7 +139,12 @@
    WantedBy=multi-user.target    
    EOF   
    root@nubuntu2404:/#*    
-
+8. Запускаем таймер.
+   ```
+   systemctl start watchlog.timer
+   ```
+   >*root@nubuntu2404:/# systemctl start watchlog.timer*
+9. Проверяем работу.
       
 
 
