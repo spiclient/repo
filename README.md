@@ -145,6 +145,17 @@
    ```
    >*root@nubuntu2404:/# systemctl start watchlog.timer*
 9. Проверяем работу.
+   ```
+   tail -n 1000 /var/log/syslog | grep successfully 
+   ```
+   >*root@nubuntu2404:/# tail -n 1000 /var/log/syslog | grep successfully   
+   2025-05-07T20:16:13.250832+00:00 nubuntu2404 systemd[1]: e2scrub_reap.service: Deactivated successfully.   
+   2025-05-07T20:16:13.250899+00:00 nubuntu2404 systemd[1]: grub-common.service: Deactivated successfully.   
+   2025-05-07T20:16:13.267947+00:00 nubuntu2404 systemd[1]: grub-initrd-fallback.service: Deactivated successfully.   
+   2025-05-07T20:16:13.984844+00:00 nubuntu2404 systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.  
+   2025-05-07T20:16:14.218053+00:00 nubuntu2404 systemd[1]: dmesg.service: Deactivated successfully.  
+   2025-05-07T20:16:21.681903+00:00 nubuntu2404 systemd[1]: snapd.service: Deactivated successfully.*   
+ 
       
 
 
