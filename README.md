@@ -90,6 +90,31 @@
    fi   
    root@nubuntu2404:/opt#*   
 
+5. Добавляем права на запуск скрипта.
+   ```
+   chmod +x /opt/watchlog.sh
+   ```
+   >*root@nubuntu2404:/opt# chmod +x /opt/watchlog.sh*
+6. Создаём Unit для сервиса.
+   ```
+   cat << EOF >> /etc/systemd/system/watchlog.service
+   [Unit]
+   Description=My watchlog service
+   [Service]
+   Type=oneshot
+   EnvironmentFile=/etc/default/watchlog
+   ExecStart=/opt/watchlog.sh $WORD $LOG
+   EOF
+   ```
+   >*root@nubuntu2404:/# cat << EOF >> /etc/systemd/system/watchlog.service
+   [Unit]
+   Description=My watchlog service
+   [Service]
+   Type=oneshot
+   EnvironmentFile=/etc/default/watchlog
+   ExecStart=/opt/watchlog.sh $WORD $LOG
+   EOF*
+
 
       
 
