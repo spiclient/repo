@@ -44,12 +44,31 @@
    WORD="ALERT"    
    LOG=/var/log/watchlog.log    
    EOF*
-
+3. Создаём файл лога **watchlog.log** со своими строками, в котором и будем осуществлять поиск по ключевому слову **Alert**.
+   ```
+   cat << EOF >> /var/log/watchlog.log    
+   trigger 1
+   trigger 2
+   ALERT
+   STOP SERVICE
+   zabbix
+   EOF
+   ```
+   >*root@nubuntu2404:/# cat << EOF >> /var/log/watchlog.log    
+   trigger 1
+   trigger 2
+   ALERT
+   STOP SERVICE
+   zabbix
+   EOF*
+4. Создаём скрипт.
+   ```
+      
 
 
    ### Переделываем **unit**-файл с помощью переделки **init**-скрипта.
    
-4. Устанавливаем обработчик **spawn-fcgi**
+6. Устанавливаем обработчик **spawn-fcgi**
    ```
    apt -y install spawn-fcgi
    ```
@@ -81,5 +100,5 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.*
    
 
 
-5. ожож
+7. ожож
 
