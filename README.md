@@ -115,6 +115,30 @@
    ExecStart=/opt/watchlog.sh $WORD $LOG    
    EOF*   
 
+7. Создаём Unit для таймера.
+   ```
+   cat <<EOF >> /etc/systemd/system/watchlog.timer   
+   [Unit]    
+   Description=Run watchlog script every 30 second    
+   [Timer]   
+   # Run every 30 second    
+   OnUnitActiveSec=30    
+   Unit=watchlog.service   
+   [Install]    
+   WantedBy=multi-user.target    
+   EOF   
+   ```
+   >*root@nubuntu2404:/# cat <<EOF >> /etc/systemd/system/watchlog.timer   
+   [Unit]    
+   Description=Run watchlog script every 30 second    
+   [Timer]   
+   #Run every 30 second    
+   OnUnitActiveSec=30    
+   Unit=watchlog.service   
+   [Install]    
+   WantedBy=multi-user.target    
+   EOF   
+   root@nubuntu2404:/#*    
 
       
 
