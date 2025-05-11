@@ -130,22 +130,36 @@
    WantedBy=multi-user.target    
    EOF   
    root@nubuntu2404:/#*    
-8. Запускаем таймер.
+8. Запускаем созданные Unit для таймера и сервиса.
    ```
    systemctl start watchlog.timer
    ```
    >*root@nubuntu2404:/# systemctl start watchlog.timer*
+   ```
+   systemctl start watchlog.service
+   ```
+   >*
 9. Проверяем работу.
    ```
-   tail -n 1000 /var/log/syslog | grep successfully 
+   tail -n 1000 /var/log/syslog | grep word 
    ```
-   >*root@nubuntu2404:/# tail -n 1000 /var/log/syslog | grep successfully   
-   2025-05-07T20:16:13.250832+00:00 nubuntu2404 systemd[1]: e2scrub_reap.service: Deactivated successfully.   
-   2025-05-07T20:16:13.250899+00:00 nubuntu2404 systemd[1]: grub-common.service: Deactivated successfully.   
-   2025-05-07T20:16:13.267947+00:00 nubuntu2404 systemd[1]: grub-initrd-fallback.service: Deactivated successfully.   
-   2025-05-07T20:16:13.984844+00:00 nubuntu2404 systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.  
-   2025-05-07T20:16:14.218053+00:00 nubuntu2404 systemd[1]: dmesg.service: Deactivated successfully.  
-   2025-05-07T20:16:21.681903+00:00 nubuntu2404 systemd[1]: snapd.service: Deactivated successfully.*   
+   >*root@nubuntu2404:/# tail -n 1000 /var/log/syslog | grep word    
+2025-05-11T18:51:02.676130+00:00 nubuntu2404 systemd[1]: Started systemd-ask-password-console.path - Dispatch Password Requests to Console Directory Watch.    
+2025-05-11T18:51:02.676138+00:00 nubuntu2404 systemd[1]: systemd-ask-password-plymouth.path - Forward Password Requests to Plymouth Directory Watch was skipped because of an unmet condition check (ConditionPathExists=/run/plymouth/pid).    
+2025-05-11T18:51:02.742616+00:00 nubuntu2404 kernel: systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.    
+2025-05-11T18:51:02.742792+00:00 nubuntu2404 kernel: audit: type=1400 audit(1746989455.982:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=469 comm="apparmor_parser"    
+2025-05-11T21:11:48.577979+00:00 nubuntu2404 root: Sun May 11 09:11:48 PM UTC 2025: I found word, Master!   
+2025-05-11T21:11:51.135921+00:00 nubuntu2404 root: Sun May 11 09:11:51 PM UTC 2025: I found word, Master!    
+2025-05-11T21:12:34.740804+00:00 nubuntu2404 root: Sun May 11 09:12:34 PM UTC 2025: I found word, Master!   
+2025-05-11T21:13:24.749906+00:00 nubuntu2404 root: Sun May 11 09:13:24 PM UTC 2025: I found word, Master!   
+2025-05-11T21:14:34.725747+00:00 nubuntu2404 root: Sun May 11 09:14:34 PM UTC 2025: I found word, Master!   
+2025-05-11T21:15:44.721460+00:00 nubuntu2404 root: Sun May 11 09:15:44 PM UTC 2025: I found word, Master!    
+2025-05-11T21:16:44.759779+00:00 nubuntu2404 root: Sun May 11 09:16:44 PM UTC 2025: I found word, Master!   
+2025-05-11T21:18:34.741291+00:00 nubuntu2404 root: Sun May 11 09:18:34 PM UTC 2025: I found word, Master!   
+2025-05-11T21:20:24.751357+00:00 nubuntu2404 root: Sun May 11 09:20:24 PM UTC 2025: I found word, Master!   
+2025-05-11T21:21:34.719551+00:00 nubuntu2404 root: Sun May 11 09:21:34 PM UTC 2025: I found word, Master!   
+2025-05-11T21:22:44.758722+00:00 nubuntu2404 root: Sun May 11 09:22:44 PM UTC 2025: I found word, Master!   
+2025-05-11T21:34:24.719512+00:00 nubuntu2404 root: Sun May 11 09:34:24 PM UTC 2025: I found word, Master!*   
  
       
 
