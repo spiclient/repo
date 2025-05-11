@@ -63,7 +63,11 @@
    EOF*   
 4. Создаём скрипт.
    ```
-   cat << EOF >> /opt/watchlog.sh
+   touch /opt/watchlog.sh && nano /opt/watchlog.sh
+   ```
+   >*root@nubuntu2404:/# touch /opt/watchlog.sh && nano /opt/watchlog.sh*
+   <pre>
+     GNU nano 7.2                                                       watchlog.sh
    #!/bin/bash
    WORD=$1
    LOG=$2
@@ -74,21 +78,8 @@
    else
    exit 0
    fi
-   EOF
-   ```
+   </pre>
 
-   >*root@nubuntu2404:/opt# cat watchlog.sh      
-   #!/bin/bash      
-   WORD=   
-   LOG=   
-   DATE=Thu May  8 07:39:49 AM UTC 2025   
-   if grep   &> /dev/null   
-   then   
-   logger ": I found word, Master!"   
-   else   
-   exit 0    
-   fi   
-   root@nubuntu2404:/opt#*   
 
 5. Добавляем права на запуск скрипта.
    ```
