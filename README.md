@@ -54,13 +54,13 @@
    zabbix
    EOF
    ```
-   >*root@nubuntu2404:/# cat << EOF >> /var/log/watchlog.log    
-   trigger 1
-   trigger 2
-   ALERT
-   STOP SERVICE
-   zabbix
-   EOF*
+   >*root@nubuntu2404:/# cat << EOF >> /var/log/watchlog.log       
+   trigger 1   
+   trigger 2    
+   ALERT   
+   STOP SERVICE   
+   zabbix   
+   EOF*   
 4. Создаём скрипт.
    ```
    cat << EOF >> /opt/watchlog.sh
