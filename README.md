@@ -138,7 +138,8 @@
    ```
    systemctl start watchlog.service
    ```
-   >*
+   >*root@nubuntu2404:/# systemctl start watchlog.service*
+
 9. Проверяем работу.
    ```
    tail -n 1000 /var/log/syslog | grep word 
