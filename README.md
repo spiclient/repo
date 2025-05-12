@@ -165,10 +165,10 @@
 ### Переделываем **unit**-файл с помощью переделки **init**-скрипта.   
   
 10. Устанавливаем обработчик **spawn-fcgi** и все необходимые для него компоненты.    
-   ```
-   apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y
-   ```
-   >*root@nubuntu2404:/# apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y   
+    ```
+    apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y
+    ```
+    >*root@nubuntu2404:/# apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y   
    Reading package lists... Done   
    Building dependency tree... Done   
    Reading state information... Done   
