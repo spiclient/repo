@@ -161,43 +161,30 @@
 2025-05-11T21:21:34.719551+00:00 nubuntu2404 root: Sun May 11 09:21:34 PM UTC 2025: I found word, Master!   
 2025-05-11T21:22:44.758722+00:00 nubuntu2404 root: Sun May 11 09:22:44 PM UTC 2025: I found word, Master!   
 2025-05-11T21:34:24.719512+00:00 nubuntu2404 root: Sun May 11 09:34:24 PM UTC 2025: I found word, Master!*   
- 
-      
-
-
+  
 ### Переделываем **unit**-файл с помощью переделки **init**-скрипта.   
-
-
-   
-   
-6. Устанавливаем обработчик **spawn-fcgi**    
+  
+10. Устанавливаем обработчик **spawn-fcgi** и все необходимые для него компоненты.    
    ```
-   apt -y install spawn-fcgi
+   apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y
    ```
-   >*root@nubuntu2404:~# apt -y install spawn-fcgi   
+   >*root@nubuntu2404:/# apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y   
 Reading package lists... Done   
 Building dependency tree... Done   
 Reading state information... Done   
+spawn-fcgi is already the newest version (1.6.4-2).   
+The following additional packages will be installed:   
+  apache2-bin apache2-data apache2-utils libapache2-mod-php8.3 libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64 liblua5.4-0   
+  php-common php8.3 php8.3-cgi php8.3-cli php8.3-common php8.3-opcache php8.3-readline ssl-cert   
+Suggested packages:   
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser php-pear   
 The following NEW packages will be installed:   
-  spawn-fcgi   
-0 upgraded, 1 newly installed, 0 to remove and 64 not upgraded.   
-Need to get 14.9 kB of archives.   
-After this operation, 48.1 kB of additional disk space will be used.   
-Get:1 http://ru.archive.ubuntu.com/ubuntu noble/universe amd64 spawn-fcgi amd64 1.6.4-2 [14.9 kB]    
-Fetched 14.9 kB in 0s (77.9 kB/s)    
-Selecting previously unselected package spawn-fcgi.    
-(Reading database ... 86743 files and directories currently installed.)    
-Preparing to unpack .../spawn-fcgi_1.6.4-2_amd64.deb ...    
-Unpacking spawn-fcgi (1.6.4-2) ...    
-Setting up spawn-fcgi (1.6.4-2) ...    
-Processing triggers for man-db (2.12.0-4build2) ...    
-Scanning processes...     
-Scanning linux images...    
-Running kernel seems to be up-to-date.     
-No services need to be restarted.     
-No containers need to be restarted.    
-No user sessions are running outdated binaries.    
-No VM guests are running outdated hypervisor (qemu) binaries on this host.*    
+  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-fcgid libapache2-mod-php8.3 libapr1t64 libaprutil1-dbd-sqlite3   
+  libaprutil1-ldap libaprutil1t64 liblua5.4-0 php php-cgi php-cli php-common php8.3 php8.3-cgi php8.3-cli php8.3-common php8.3-opcache   
+  php8.3-readline ssl-cert   
+0 upgraded, 22 newly installed, 0 to remove and 64 not upgraded.   
+Need to get 8,942 kB of archives.   
+After this operation, 42.1 MB of additional disk space will be used.*    
 
    
 
