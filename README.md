@@ -187,14 +187,14 @@
    After this operation, 42.1 MB of additional disk space will be used.*    
 
    
-11. Создаём конфигурационный файл **fcgi.conf** в каталоге */etc/spawn-fcgi* содержащем следующий текст:      
+11. Создаём конфигурационный файл **fcgi.conf** в каталоге */etc/spawn-fcgi* содержащий следующий текст:      
 
-    *\# You must set some working options before the "spawn-fcgi" service will work.
-     \# If SOCKET points to a file, then this file is cleaned up by the init script.
-     \# See spawn-fcgi(1) for all possible options.
-     \# Example :
-     SOCKET=/var/run/php-fcgi.sock
-     OPTIONS="-u www-data -g www-data -s $SOCKET -S -M 0600 -C 32 -F 1 -- /usr/bin/php-cgi"*
+    *\# You must set some working options before the "spawn-fcgi" service will work.   
+     \# If SOCKET points to a file, then this file is cleaned up by the init script.   
+     \# See spawn-fcgi(1) for all possible options.   
+     \# Example :   
+     SOCKET=/var/run/php-fcgi.sock   
+     OPTIONS="-u www-data -g www-data -s $SOCKET -S -M 0600 -C 32 -F 1 -- /usr/bin/php-cgi"*    
  
     ```
     mkdir /etc/spawn-fcgi && cd /etc/spawn-fcgi && touch fcgi.conf    
