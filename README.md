@@ -250,7 +250,7 @@
     ```
     systemctl status spawn-fcgi
     ```
-    >*root@nubuntu2404:/# systemctl status spawn-fcgi
+    <pre>root@nubuntu2404:/# systemctl status spawn-fcgi
 ● spawn-fcgi.service - Spawn-fcgi startup service by Otus
      Loaded: loaded (/etc/systemd/system/spawn-fcgi.service; disabled; preset: enabled)
      Active: active (running) since Mon 2025-05-12 22:54:39 UTC; 1s ago
@@ -293,7 +293,7 @@
              ├─25000 /usr/bin/php-cgi
              └─25001 /usr/bin/php-cgi
 May 12 22:54:39 nubuntu2404 systemd[1]: Started spawn-fcgi.service - Spawn-fcgi startup service by Otus.*
-
+      </pre>
     
 15. rggreg 
 
