@@ -250,50 +250,50 @@
     ```
     systemctl status spawn-fcgi
     ```
-    <pre>root@nubuntu2404:/# systemctl status spawn-fcgi
-● spawn-fcgi.service - Spawn-fcgi startup service by Otus
-     Loaded: loaded (/etc/systemd/system/spawn-fcgi.service; disabled; preset: enabled)
-     Active: active (running) since Mon 2025-05-12 22:54:39 UTC; 1s ago
-   Main PID: 24969 (php-cgi)
-      Tasks: 33 (limit: 2272)
-     Memory: 14.7M (peak: 14.9M)
-        CPU: 69ms
-     CGroup: /system.slice/spawn-fcgi.service
-             ├─24969 /usr/bin/php-cgi
-             ├─24970 /usr/bin/php-cgi
-             ├─24971 /usr/bin/php-cgi
-             ├─24972 /usr/bin/php-cgi
-             ├─24973 /usr/bin/php-cgi
-             ├─24974 /usr/bin/php-cgi
-             ├─24975 /usr/bin/php-cgi
-             ├─24976 /usr/bin/php-cgi
-             ├─24977 /usr/bin/php-cgi
-             ├─24978 /usr/bin/php-cgi
-             ├─24979 /usr/bin/php-cgi
-             ├─24980 /usr/bin/php-cgi
-             ├─24981 /usr/bin/php-cgi
-             ├─24982 /usr/bin/php-cgi
-             ├─24983 /usr/bin/php-cgi
-             ├─24984 /usr/bin/php-cgi
-             ├─24985 /usr/bin/php-cgi
-             ├─24986 /usr/bin/php-cgi
-             ├─24987 /usr/bin/php-cgi
-             ├─24988 /usr/bin/php-cgi
-             ├─24989 /usr/bin/php-cgi
-             ├─24990 /usr/bin/php-cgi
-             ├─24991 /usr/bin/php-cgi
-             ├─24992 /usr/bin/php-cgi
-             ├─24993 /usr/bin/php-cgi
-             ├─24994 /usr/bin/php-cgi
-             ├─24995 /usr/bin/php-cgi
-             ├─24996 /usr/bin/php-cgi
-             ├─24997 /usr/bin/php-cgi
-             ├─24998 /usr/bin/php-cgi
-             ├─24999 /usr/bin/php-cgi
-             ├─25000 /usr/bin/php-cgi
-             └─25001 /usr/bin/php-cgi
+    >*root@nubuntu2404:/# systemctl status spawn-fcgi   
+● spawn-fcgi.service - Spawn-fcgi startup service by Otus   
+     Loaded: loaded (/etc/systemd/system/spawn-fcgi.service; disabled; preset: enabled)   
+     Active: active (running) since Mon 2025-05-12 22:54:39 UTC; 1s ago   
+   Main PID: 24969 (php-cgi)   
+      Tasks: 33 (limit: 2272)   
+     Memory: 14.7M (peak: 14.9M)   
+        CPU: 69ms   
+     CGroup: /system.slice/spawn-fcgi.service   
+             ├─24969 /usr/bin/php-cgi   
+             ├─24970 /usr/bin/php-cgi   
+             ├─24971 /usr/bin/php-cgi   
+             ├─24972 /usr/bin/php-cgi   
+             ├─24973 /usr/bin/php-cgi   
+             ├─24974 /usr/bin/php-cgi   
+             ├─24975 /usr/bin/php-cgi   
+             ├─24976 /usr/bin/php-cgi   
+             ├─24977 /usr/bin/php-cgi   
+             ├─24978 /usr/bin/php-cgi   
+             ├─24979 /usr/bin/php-cgi   
+             ├─24980 /usr/bin/php-cgi   
+             ├─24981 /usr/bin/php-cgi   
+             ├─24982 /usr/bin/php-cgi   
+             ├─24983 /usr/bin/php-cgi   
+             ├─24984 /usr/bin/php-cgi    
+             ├─24985 /usr/bin/php-cgi    
+             ├─24986 /usr/bin/php-cgi   
+             ├─24987 /usr/bin/php-cgi    
+             ├─24988 /usr/bin/php-cgi   
+             ├─24989 /usr/bin/php-cgi   
+             ├─24990 /usr/bin/php-cgi   
+             ├─24991 /usr/bin/php-cgi   
+             ├─24992 /usr/bin/php-cgi   
+             ├─24993 /usr/bin/php-cgi   
+             ├─24994 /usr/bin/php-cgi   
+             ├─24995 /usr/bin/php-cgi   
+             ├─24996 /usr/bin/php-cgi   
+             ├─24997 /usr/bin/php-cgi   
+             ├─24998 /usr/bin/php-cgi   
+             ├─24999 /usr/bin/php-cgi   
+             ├─25000 /usr/bin/php-cgi   
+             └─25001 /usr/bin/php-cgi   
 May 12 22:54:39 nubuntu2404 systemd[1]: Started spawn-fcgi.service - Spawn-fcgi startup service by Otus.*
-      </pre>
+      
     
 15. rggreg 
 
