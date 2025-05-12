@@ -294,6 +294,6 @@
              └─25001 /usr/bin/php-cgi   
 May 12 22:54:39 nubuntu2404 systemd[1]: Started spawn-fcgi.service - Spawn-fcgi startup service by Otus.*
       
-### Доработать **unit**-файл Nginx (**nginx.service**) для запуска нескольких инстансов сервера с разными конфигурационными файлами одновременно.
+ ### Доработать **unit**-файл Nginx (**nginx.service**) для запуска нескольких инстансов сервера с разными конфигурационными файлами одновременно.
 14. rggreg 
 
