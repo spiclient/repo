@@ -295,5 +295,27 @@
 May 12 22:54:39 nubuntu2404 systemd[1]: Started spawn-fcgi.service - Spawn-fcgi startup service by Otus.*
       
  ### Доработать **unit**-файл Nginx (**nginx.service**) для запуска нескольких инстансов сервера с разными конфигурационными файлами одновременно.
-14. rggreg 
+14. Устанавливаем **Nginx** из репозитория.
+    ```
+    apt install nginx -y
+    ```
+    >*root@nubuntu2404:/# apt install nginx -y   
+Reading package lists... Done   
+Building dependency tree... Done   
+Reading state information... Done   
+The following additional packages will be installed:   
+  nginx-common   
+Suggested packages:   
+  fcgiwrap nginx-doc   
+The following NEW packages will be installed:   
+  nginx nginx-common   
+0 upgraded, 2 newly installed, 0 to remove and 64 not upgraded.   
+Need to get 551 kB of archives.   
+After this operation, 1,596 kB of additional disk space will be used.    
+Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx-common all 1.24.0-2ubuntu7.3 [31.2 kB]    
+Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx amd64 1.24.0-2ubuntu7.3 [520 kB]     
+Fetched 551 kB in 0s (3,915 kB/s)     
+Preconfiguring packages ...*
+
+16. впып
 
