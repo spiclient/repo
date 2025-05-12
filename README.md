@@ -316,6 +316,66 @@ Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx-common 
 Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx amd64 1.24.0-2ubuntu7.3 [520 kB]     
 Fetched 551 kB in 0s (3,915 kB/s)     
 Preconfiguring packages ...*
+    
+15. Создаём новый Unit-файл для работы с шаблонами **nginx@.service** в каталоге */etc/systemd/system*
+    ```
+    cat << EOF >> /etc/systemd/system/nginx@.service
+      # Stop dance for nginx
+      # =======================
+      # ExecStop sends SIGSTOP (graceful stop) to the nginx process.
+      # If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control
+      # and sends SIGTERM (fast shutdown) to the main process.
+      # After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends
+      # SIGKILL to all the remaining processes in the process group (KillMode=mixed).
+      # nginx signals reference doc:
+      # http://nginx.org/en/docs/control.html
+      #
+      [Unit]
+      Description=A high performance web server and a reverse proxy server
+      Documentation=man:nginx(8)
+      After=network.target nss-lookup.target
+      [Service]
+      Type=forking
+      PIDFile=/run/nginx-%I.pid
+      ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx-%I.conf -q -g 'daemon on; master_process on;'
+      ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx-%I.conf -g 'daemon on; master_process on;'
+      ExecReload=/usr/sbin/nginx -c /etc/nginx/nginx-%I.conf -g 'daemon on; master_process on;' -s reload
+      ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx-%I.pid
+      TimeoutStopSec=5
+      KillMode=mixed
+      [Install]
+      WantedBy=multi-user.target
+      EOF*
+    ```
+    >*root@nubuntu2404:/# cat << EOF >> /etc/systemd/system/nginx@.service
+      \# Stop dance for nginx
+      \# =======================
+      \# ExecStop sends SIGSTOP (graceful stop) to the nginx process.
+      \# If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control
+      \# and sends SIGTERM (fast shutdown) to the main process.
+      \# After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends
+      \# SIGKILL to all the remaining processes in the process group (KillMode=mixed).
+      \# nginx signals reference doc:
+      \# http://nginx.org/en/docs/control.html
+      \#
+      [Unit]
+      Description=A high performance web server and a reverse proxy server
+      Documentation=man:nginx(8)
+      After=network.target nss-lookup.target
+      [Service]
+      Type=forking
+      PIDFile=/run/nginx-%I.pid
+      ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx-%I.conf -q -g 'daemon on; master_process on;'
+      ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx-%I.conf -g 'daemon on; master_process on;'
+      ExecReload=/usr/sbin/nginx -c /etc/nginx/nginx-%I.conf -g 'daemon on; master_process on;' -s reload
+      ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx-%I.pid
+      TimeoutStopSec=5
+      KillMode=mixed
+      [Install]
+      WantedBy=multi-user.target
+      EOF*
 
-16. впып
+17. k.kj.
+
+    
 
