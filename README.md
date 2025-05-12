@@ -375,7 +375,21 @@ Preconfiguring packages ...*
       WantedBy=multi-user.target
       EOF*
 
-17. k.kj.
+16. Создаём 2 конфигурационных файла **(/etc/nginx/nginx-first.conf, /etc/nginx/nginx-second.conf)**, на основе стандартного конфига **nginx.conf** c разделением по портам и модификацией путей до pid - файлов
+    ```
+    etc/nginx# cp nginx.conf nginx-first.conf
+    ``
+    >*root@nubuntu2404:/etc/nginx cp nginx.conf nginx-first.conf*    
+    ```
+    ```
+    cp nginx.conf nginx-second.conf    
+    ```
+    >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-second.conf*     
+
+
+
+
+18. ддн
 
     
 
