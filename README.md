@@ -169,22 +169,22 @@
    apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y
    ```
    >*root@nubuntu2404:/# apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y   
-Reading package lists... Done   
-Building dependency tree... Done   
-Reading state information... Done   
-spawn-fcgi is already the newest version (1.6.4-2).   
-The following additional packages will be installed:   
-  apache2-bin apache2-data apache2-utils libapache2-mod-php8.3 libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64 liblua5.4-0   
-  php-common php8.3 php8.3-cgi php8.3-cli php8.3-common php8.3-opcache php8.3-readline ssl-cert   
-Suggested packages:   
-  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser php-pear   
-The following NEW packages will be installed:   
-  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-fcgid libapache2-mod-php8.3 libapr1t64 libaprutil1-dbd-sqlite3   
-  libaprutil1-ldap libaprutil1t64 liblua5.4-0 php php-cgi php-cli php-common php8.3 php8.3-cgi php8.3-cli php8.3-common php8.3-opcache   
-  php8.3-readline ssl-cert   
-0 upgraded, 22 newly installed, 0 to remove and 64 not upgraded.   
-Need to get 8,942 kB of archives.   
-After this operation, 42.1 MB of additional disk space will be used.*    
+   Reading package lists... Done   
+   Building dependency tree... Done   
+   Reading state information... Done   
+   spawn-fcgi is already the newest version (1.6.4-2).   
+   The following additional packages will be installed:   
+   apache2-bin apache2-data apache2-utils libapache2-mod-php8.3 libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64 liblua5.4-0   
+   php-common php8.3 php8.3-cgi php8.3-cli php8.3-common php8.3-opcache php8.3-readline ssl-cert   
+   Suggested packages:   
+   apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser php-pear   
+   The following NEW packages will be installed:   
+   apache2 apache2-bin apache2-data apache2-utils libapache2-mod-fcgid libapache2-mod-php8.3 libapr1t64 libaprutil1-dbd-sqlite3   
+   libaprutil1-ldap libaprutil1t64 liblua5.4-0 php php-cgi php-cli php-common php8.3 php8.3-cgi php8.3-cli php8.3-common php8.3-opcache   
+   php8.3-readline ssl-cert   
+   0 upgraded, 22 newly installed, 0 to remove and 64 not upgraded.   
+   Need to get 8,942 kB of archives.   
+   After this operation, 42.1 MB of additional disk space will be used.*    
 
    
 
