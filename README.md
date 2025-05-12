@@ -202,13 +202,13 @@
     >*root@nubuntu2404:/# mkdir /etc/spawn-fcgi && cd /etc/spawn-fcgi && touch fcgi.conf
     root@nubuntu2404:/etc/spawn-fcgi# nano fcgi.conf*
     <pre>
-      GNU nano 7.2                                      fcgi.conf
-\# You must set some working options before the "spawn-fcgi" service will work.
-\# If SOCKET points to a file, then this file is cleaned up by the init script.
-\# See spawn-fcgi(1) for all possible options.
-\# Example :
-SOCKET=/var/run/php-fcgi.sock
-OPTIONS="-u www-data -g www-data -s $SOCKET -S -M 0600 -C 32 -F 1 -- /usr/bin/php-cgi"
+      GNU nano 7.2                                      fcgi.conf   
+    \# You must set some working options before the "spawn-fcgi" service will work.   
+    \# If SOCKET points to a file, then this file is cleaned up by the init script.   
+    \# See spawn-fcgi(1) for all possible options.   
+    \# Example :   
+    SOCKET=/var/run/php-fcgi.sock   
+    OPTIONS="-u www-data -g www-data -s $SOCKET -S -M 0600 -C 32 -F 1 -- /usr/bin/php-cgi"   
     </pre>
 
 12. Создаём unit-файл **spawn-fcgi.service**
