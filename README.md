@@ -382,10 +382,12 @@ Preconfiguring packages ...*
     ```
     >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-first.conf*     
     ```
+    
     ```
-    cp nginx.conf nginx-second.conf     
+    cp nginx.conf nginx-second.conf    
     ```
-    >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-second.conf*
+    >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-second.conf*    
+
 
 18. ддн
 
