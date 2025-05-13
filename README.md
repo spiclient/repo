@@ -387,8 +387,6 @@ Preconfiguring packages ...*
     ```
     >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-second.conf*
 
-
-
 18. ддн
 
     
