@@ -385,7 +385,7 @@ Preconfiguring packages ...*
     ```
     cp nginx.conf nginx-second.conf     
     ```
-   >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-second.conf*
+    >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-second.conf*
 
 
 
