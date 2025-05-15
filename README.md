@@ -375,20 +375,120 @@ Preconfiguring packages ...*
       WantedBy=multi-user.target
       EOF*
 
-16. Создаём 2 конфигурационных файла **(/etc/nginx/nginx-first.conf, /etc/nginx/nginx-second.conf)**, на основе стандартного конфига **nginx.conf** c разделением по портам и модификацией путей до pid - файлов.     
+16. Создаём 2 конфигурационных файла **(/etc/nginx/nginx-first.conf, /etc/nginx/nginx-second.conf)**, на основе стандартного конфига **nginx.conf**, но разделяющиеся по портам и модификациям путей до **pid**-файлов.     
     
     ```
-    cp nginx.conf nginx-first.conf   
+    cd /etc/nginx/ && cp nginx.conf nginx-first.conf   
     ```
-    >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-first.conf*     
-    
+    >*root@nubuntu2404:/# cd /etc/nginx/ && cp nginx.conf nginx-first.conf        
+      root@nubuntu2404:/etc/nginx# nano nginx-first.conf*
+    <pre>  GNU nano 7.2                                       nginx-first.conf
+         user www-data;
+         worker_processes auto;
+         <mark>pid /run/nginx-first.pid;</mark>
+         error_log /var/log/nginx/error.log;
+         include /etc/nginx/modules-enabled/*.conf;
+         events {
+                 worker_connections 768;
+                 # multi_accept on;
+         }
+         http {
+                 ##
+                 # Basic Settings
+                 ##
+                 sendfile on;
+                 tcp_nopush on;
+                 types_hash_max_size 2048;
+                 # server_tokens off;
+                 # server_names_hash_bucket_size 64;
+                 # server_name_in_redirect off;
+                 <mark>server {
+                      listen 9001;
+                 }</mark>
+                 include /etc/nginx/mime.types;
+                 default_type application/octet-stream;
+                 ##
+                 # SSL Settings
+                 ##
+                 ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+                 ssl_prefer_server_ciphers on;
+                 ##
+                 # Logging Settings
+                 ##
+                 access_log /var/log/nginx/access.log;
+                 ##
+                 # Gzip Settings
+                 ##
+                 gzip on;
+                 # gzip_vary on;
+                 # gzip_proxied any;
+                 # gzip_comp_level 6;
+                 # gzip_buffers 16 8k;
+                 # gzip_http_version 1.1;
+                 # gzip_types text/plain text/css application/json application/javascript text/xml application/xml applicatio>
+                 ##
+                 # Virtual Host Configs
+                 ##
+                 include /etc/nginx/conf.d/*.conf;
+                 <mark>#include /etc/nginx/sites-enabled/*;</mark>
+         }
+    </pre>
+
     ```
-    cp nginx.conf nginx-second.conf    
+    cd /etc/nginx/ && cp nginx.conf nginx-second.conf    
     ```
-    >*root@nubuntu2404:/etc/nginx# cp nginx.conf nginx-second.conf*    
+    >*root@nubuntu2404:/# cd /etc/nginx/ && cp nginx.conf nginx-second.conf*    
 
 
 18. ддн
+   root@nubuntu2404:/etc/nginx# systemctl start nginx@first
+root@nubuntu2404:/etc/nginx# systemctl status nginx@first
+● nginx@first.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/etc/systemd/system/nginx@.service; disabled; preset: enabled)
+     Active: active (running) since Thu 2025-05-15 18:43:23 UTC; 1h 14min ago
+       Docs: man:nginx(8)
+    Process: 63008 ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx-first.conf -q -g daemon on; master_process on>
+    Process: 63013 ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx-first.conf -g daemon on; master_process on; (code=e>
+   Main PID: 63015 (nginx)
+      Tasks: 2 (limit: 2272)
+     Memory: 1.7M (peak: 1.9M)
+        CPU: 35ms
+     CGroup: /system.slice/system-nginx.slice/nginx@first.service
+             ├─63015 "nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-first.conf -g daemon on; master_proc>
+             └─63016 "nginx: worker process"
+
+May 15 18:43:23 nubuntu2404 systemd[1]: Starting nginx@first.service - A high performance web server and a reverse p>
+May 15 18:43:23 nubuntu2404 systemd[1]: Started nginx@first.service - A high performance web server and a reverse pr>
+lines 1-16/16 (END)
+
+
+
+
+
+root@nubuntu2404:/etc/nginx# nano nginx-second.conf
+root@nubuntu2404:/etc/nginx# systemctl start nginx@second
+root@nubuntu2404:/etc/nginx# systemctl status nginx@second
+● nginx@second.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/etc/systemd/system/nginx@.service; disabled; preset: enabled)
+     Active: active (running) since Thu 2025-05-15 18:45:38 UTC; 9s ago
+       Docs: man:nginx(8)
+    Process: 63034 ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx-second.conf -q -g daemon o>
+    Process: 63039 ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx-second.conf -g daemon on; master>
+   Main PID: 63041 (nginx)
+      Tasks: 2 (limit: 2272)
+     Memory: 1.7M (peak: 1.8M)
+        CPU: 30ms
+     CGroup: /system.slice/system-nginx.slice/nginx@second.service
+             ├─63041 "nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-second.conf -g da>
+             └─63042 "nginx: worker process"
+
+May 15 18:45:38 nubuntu2404 systemd[1]: Starting nginx@second.service - A high performance web se>
+May 15 18:45:38 nubuntu2404 systemd[1]: Started nginx@second.service - A high performance web ser>
+lines 1-16/16 (END)
+
+
+
+19. ykyiky
 
     
 
