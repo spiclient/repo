@@ -440,7 +440,7 @@ Preconfiguring packages ...*
     ```
     >*root@nubuntu2404:/# cd /etc/nginx/ && cp nginx.conf nginx-second.conf   
       root@nubuntu2404:/etc/nginx# nano nginx-second.conf*
-    <pre>  GNU nano 7.2                                       nginx-first.conf
+    <pre>  GNU nano 7.2                                       nginx-second.conf
          user www-data;
          worker_processes auto;
          <mark>pid /run/nginx-second.pid;</mark>
