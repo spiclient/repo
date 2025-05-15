@@ -493,7 +493,7 @@ Preconfiguring packages ...*
     </pre>
 
 
-17. Запускаем оба сервиса и проверяем их статус.
+17. Запускаем оба сервиса и смотрим их статус.
     ```
     systemctl start nginx@first
     ```
