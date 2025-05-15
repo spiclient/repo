@@ -553,20 +553,20 @@ Preconfiguring packages ...*
     ```
     ss -tnulp | grep nginx
     ```
-    >*root@nubuntu2404:/etc/nginx# ss -tnulp | grep nginx
-tcp   LISTEN 0      511                <mark>0.0.0.0:9001</mark>      0.0.0.0:\*    users:(("nginx",pid=63016,fd=5),("nginx",pid=63015,fd=5))         
+    >*root@nubuntu2404:/etc/nginx# ss -tnulp | grep nginx   
+tcp   LISTEN 0      511                <mark>0.0.0.0:9001</mark>      0.0.0.0:\*    users:(("nginx",pid=63016,fd=5),("nginx",pid=63015,fd=5))            
 tcp   LISTEN 0      511                <mark>0.0.0.0:9002</mark>      0.0.0.0:\*    users:(("nginx",pid=63042,fd=5),("nginx",pid=63041,fd=5))*
     
     ***Смотрим список процессов Nginx***                                    
     ```
     ps afx | grep nginx
     ```
-    >*root@nubuntu2404:/etc/nginx# ps afx | grep nginx
-     64158 pts/1    S+     0:00  |                       \_ grep --color=auto nginx
-     63015 ?        Ss     0:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-first.conf -g daemon on; master_process on;
-     63016 ?        S      0:00  \_ nginx: worker process
-     63041 ?        Ss     0:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-second.conf -g daemon on; master_process on;
-     63042 ?        S      0:00  \_ nginx: worker process*
+    >*root@nubuntu2404:/etc/nginx# ps afx | grep nginx    
+     64158 pts/1    S+     0:00  |                       \_ grep --color=auto nginx    
+     63015 ?        Ss     0:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-first.conf -g daemon on; master_process on;    
+     63016 ?        S      0:00  \_ nginx: worker process    
+     63041 ?        Ss     0:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-second.conf -g daemon on; master_process on;    
+     63042 ?        S      0:00  \_ nginx: worker process*    
 
 
     
