@@ -500,6 +500,7 @@ Preconfiguring packages ...*
     ```
     systemctl status nginx@first
     ```
+
     <pre>  root@nubuntu2404:/etc/nginx# systemctl start nginx@first
       root@nubuntu2404:/etc/nginx# systemctl status nginx@first
       ● nginx@first.service - A high performance web server and a reverse proxy server
@@ -526,6 +527,7 @@ May 15 18:43:23 nubuntu2404 systemd[1]: Started nginx@first.service - A high per
     ```
     systemctl status nginx@second
     ```
+    
     <pre>  root@nubuntu2404:/etc/nginx# systemctl start nginx@second
       root@nubuntu2404:/etc/nginx# systemctl status nginx@second
       ● nginx@second.service - A high performance web server and a reverse proxy server
