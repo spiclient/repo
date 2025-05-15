@@ -501,8 +501,8 @@ Preconfiguring packages ...*
     systemctl status nginx@first
     ```
     >*root@nubuntu2404:/etc/nginx# systemctl start nginx@first   
-    root@nubuntu2404:/etc/nginx# systemctl status nginx@first   
-    ● nginx@first.service - A high performance web server and a reverse proxy server
+    root@nubuntu2404:/etc/nginx# systemctl status nginx@first*   
+    <pre>● nginx@first.service - A high performance web server and a reverse proxy server
        Loaded: loaded (/etc/systemd/system/nginx@.service; disabled; preset: enabled)
        Active: active (running) since Thu 2025-05-15 18:43:23 UTC; 1h 51min ago
          Docs: man:nginx(8)
@@ -516,8 +516,9 @@ Preconfiguring packages ...*
                ├─63015 "nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-first.conf -g daemon on; master_process on;"
                └─63016 "nginx: worker process"
       May 15 18:43:23 nubuntu2404 systemd[1]: Starting nginx@first.service - A high performance web server and a reverse proxy server...
-      May 15 18:43:23 nubuntu2404 systemd[1]: Started nginx@first.service - A high performance web server and a reverse proxy server.*
-
+      May 15 18:43:23 nubuntu2404 systemd[1]: Started nginx@first.service - A high performance web server and a reverse proxy server.
+    </pre>
+    
     ```
     systemctl start nginx@second
     ```
