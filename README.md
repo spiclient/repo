@@ -502,7 +502,7 @@ Preconfiguring packages ...*
     ```
     >*root@nubuntu2404:/etc/nginx# systemctl start nginx@first   
 root@nubuntu2404:/etc/nginx# systemctl status nginx@first*   
-    <pre>root@nubuntu2404:/etc/nginx# systemctl start nginx@first
+    <pre>  root@nubuntu2404:/etc/nginx# systemctl start nginx@first
       root@nubuntu2404:/etc/nginx# systemctl status nginx@first
       ● nginx@first.service - A high performance web server and a reverse proxy server
            Loaded: loaded (/etc/systemd/system/nginx@.service; disabled; preset: enabled)
