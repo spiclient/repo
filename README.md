@@ -402,9 +402,9 @@ Preconfiguring packages ...*
                  # server_tokens off;
                  # server_names_hash_bucket_size 64;
                  # server_name_in_redirect off;
-                 <mark>server {   </mark>
+                 <mark>server {         </mark>
                  <mark>     listen 9001;</mark>
-                 <mark>}</mark>
+                 <mark>}                </mark>
                  include /etc/nginx/mime.types;
                  default_type application/octet-stream;
                  ##
