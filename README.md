@@ -199,7 +199,7 @@
     ```
     mkdir /etc/spawn-fcgi && cd /etc/spawn-fcgi && touch fcgi.conf    
     ```
-    >*root@nubuntu2404:/# mkdir /etc/spawn-fcgi && cd /etc/spawn-fcgi && touch fcgi.conf
+    >*root@nubuntu2404:/# mkdir /etc/spawn-fcgi && cd /etc/spawn-fcgi && touch fcgi.conf    
     root@nubuntu2404:/etc/spawn-fcgi# nano fcgi.conf*
     <pre>
       GNU nano 7.2                                      fcgi.conf   
