@@ -318,7 +318,7 @@ Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx amd64 1
 Fetched 551 kB in 0s (3,915 kB/s)     
 Preconfiguring packages ...*
     
-15. Создаём новый Unit-файл для работы с шаблонами **nginx@.service** в каталоге */etc/systemd/system*
+15. Создаём новый Unit-файл для работы с шаблонами **nginx\@.service** в каталоге */etc/systemd/system*
     ```
     cat << EOF >> /etc/systemd/system/nginx@.service
       # Stop dance for nginx
