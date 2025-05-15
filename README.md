@@ -547,7 +547,7 @@ Preconfiguring packages ...*
     </pre>
 
 
-18. Проверяем, что у нас запустилось 2 экземпляра сервиса, каждый со своей конфигурацией.
+18. Проверяем, что запустилось 2 экземпляра сервиса, каждый со своей конфигурацией.
 
     ***Смотрим какие порты слушаются***
     ```
@@ -568,6 +568,6 @@ tcp   LISTEN 0      511                <mark>0.0.0.0:9002</mark>      0.0.0.0:\*
      63041 ?        Ss     0:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-second.conf -g daemon on; master_process on;    
      63042 ?        S      0:00  \_ nginx: worker process*    
 
-19. Если сервисы не запустились, то сначала смотрим их статус и затем ищем ошибки в логах */var/log/nginx/error.log* и в *journalctl -u nginx@first*.
+19. Если сервисы не запустились, то сначала смотрим их статус, а затем ищем ошибки в логах */var/log/nginx/error.log* и в *journalctl -u nginx@first*.
     
 
